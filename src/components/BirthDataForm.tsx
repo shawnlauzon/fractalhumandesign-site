@@ -15,7 +15,7 @@ import {
   ChevronUpDownIcon,
   XMarkIcon,
 } from '@heroicons/react/20/solid'
-import { DevTool } from '@hookform/devtools'
+// import { DevTool } from '@hookform/devtools'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useEffect, useRef, useState } from 'react'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
@@ -388,7 +388,7 @@ const BirthDataForm = () => {
           {/* {isSubmitting ? 'Loading...' : 'Next'} */}
         </Input>
       </form>
-      <DevTool control={control} />
+      {/* <DevTool control={control} /> */}
     </div>
   )
 }
