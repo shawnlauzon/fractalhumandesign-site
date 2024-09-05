@@ -21,7 +21,8 @@ import { useEffect, useRef, useState } from 'react'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import * as yup from 'yup'
 
-const BirthDataForm = () => {
+export default function BirthDataForm() {
+  const [cityQuery, setCityQuery] = useState('')
   const [cities, setCities] = useState<string[]>([])
   const [isCitiesLoading, setCitiesLoading] = useState(false)
   const [timeZoneCities, setTimeZoneCities] = useState<TimeZones>()
@@ -38,6 +39,59 @@ const BirthDataForm = () => {
   interface TimeZones {
     [name: string]: string[]
   }
+
+  useEffect(() => {
+    async function fetchCities() {
+      if (cityQuery.length === 0) {
+        setCities([])
+      } else if (cityQuery.length >= 2) {
+        const params = new URLSearchParams([
+          ['country', countryAbbr],
+          ['search', cityQuery],
+        ])
+
+        // Abort any pending requests
+        if (abortControllerRef.current) {
+          abortControllerRef.current.abort()
+        }
+
+        // Create new abort controller
+        const newAbortController = new AbortController()
+        abortControllerRef.current = newAbortController
+
+        const headers = new Headers()
+        headers.append('Content-Type', 'application/json')
+        headers.append('Accept', 'application/json; q=0.01')
+
+        try {
+          setCitiesLoading(true)
+          const response = await fetch(
+            `https://app.maiamechanics.com/places-v1/cities?${params}`,
+            {
+              method: 'GET',
+              headers,
+              signal: newAbortController.signal,
+            },
+          )
+
+          if (response.ok) {
+            const data = (await response.json()) as TimeZones
+            console.log('response from cities', data)
+            setTimeZoneCities(data)
+            setCities(Object.values(data).flat())
+          } else {
+            console.error(`HTTP error, status = ${response.status}`)
+          }
+        } catch (error) {
+          console.error('Error fetching cities:', error)
+        } finally {
+          setCitiesLoading(false)
+        }
+      }
+    }
+
+    fetchCities()
+  }, [cityQuery])
 
   const schema = yup
     .object({
@@ -83,56 +137,6 @@ const BirthDataForm = () => {
   const dateFormatter = new Intl.DateTimeFormat('default', {
     dateStyle: 'medium',
   })
-
-  // Fetch cities based on input
-  const fetchCities = async (cityQuery: string) => {
-    if (cityQuery.length === 0) {
-      setCities([])
-    } else if (cityQuery.length >= 2) {
-      const params = new URLSearchParams([
-        ['country', countryAbbr],
-        ['search', cityQuery],
-      ])
-
-      // Abort any pending requests
-      if (abortControllerRef.current) {
-        abortControllerRef.current.abort()
-      }
-
-      // Create new abort controller
-      const newAbortController = new AbortController()
-      abortControllerRef.current = newAbortController
-
-      const headers = new Headers()
-      headers.append('Content-Type', 'application/json')
-      headers.append('Accept', 'application/json; q=0.01')
-
-      try {
-        setCitiesLoading(true)
-        const response = await fetch(
-          `https://app.maiamechanics.com/places-v1/cities?${params}`,
-          {
-            method: 'GET',
-            headers,
-            signal: newAbortController.signal,
-          },
-        )
-
-        if (response.ok) {
-          const data = (await response.json()) as TimeZones
-          console.log('response from cities', data)
-          setTimeZoneCities(data)
-          setCities(Object.values(data).flat())
-        } else {
-          console.error(`HTTP error, status = ${response.status}`)
-        }
-      } catch (error) {
-        console.error('Error fetching cities:', error)
-      } finally {
-        setCitiesLoading(false)
-      }
-    }
-  }
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     setSubmitting(true)
@@ -319,7 +323,7 @@ const BirthDataForm = () => {
                       <ComboboxInput
                         className="w-full rounded-md border-0 bg-white py-1.5 pl-3 pr-10 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                         onBlur={onBlur}
-                        onChange={(event) => fetchCities(event.target.value)}
+                        onChange={(event) => setCityQuery(event.target.value)}
                       />
                       {cities.length > 0 && (
                         <ComboboxButton className="absolute inset-y-0 right-0 flex items-center rounded-r-md px-2 focus:outline-none">
@@ -394,5 +398,3 @@ const BirthDataForm = () => {
     </div>
   )
 }
-
-export default BirthDataForm
