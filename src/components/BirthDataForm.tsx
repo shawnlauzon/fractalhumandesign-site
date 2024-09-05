@@ -127,7 +127,10 @@ const BirthDataForm = () => {
     setSubmitting(true)
 
     const maiaHeaders = new Headers()
-    maiaHeaders.append('Calculator-Token', process.env.REACT_APP_MAIA_API_KEY!)
+    maiaHeaders.append(
+      'Calculator-Token',
+      process.env.NEXT_PUBLIC_MAIA_API_KEY!,
+    )
     maiaHeaders.append('Content-Type', 'application/json')
 
     const timeZone =
