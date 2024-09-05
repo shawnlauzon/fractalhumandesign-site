@@ -24,7 +24,7 @@ import * as yup from 'yup'
 const BirthDataForm = () => {
   const [cities, setCities] = useState<string[]>([])
   const [isCitiesLoading, setCitiesLoading] = useState(false)
-  const [timeZoneCities, setTimeZoneCities] = useState<Map<string, string[]>>()
+  const [timeZoneCities, setTimeZoneCities] = useState<TimeZones>()
   const [isSubmitting, setSubmitting] = useState(false)
   const abortControllerRef = useRef<AbortController | null>(null)
 
@@ -33,6 +33,10 @@ const BirthDataForm = () => {
     time: string
     countryAbbr: string
     city: string
+  }
+
+  interface TimeZones {
+    [name: string]: string[]
   }
 
   const schema = yup
@@ -73,6 +77,13 @@ const BirthDataForm = () => {
     }
   }, [])
 
+  const timeFormatter = new Intl.DateTimeFormat('default', {
+    timeStyle: 'short',
+  })
+  const dateFormatter = new Intl.DateTimeFormat('default', {
+    dateStyle: 'medium',
+  })
+
   // Fetch cities based on input
   const fetchCities = async (cityQuery: string) => {
     if (cityQuery.length === 0) {
@@ -108,7 +119,7 @@ const BirthDataForm = () => {
         )
 
         if (response.ok) {
-          const data = (await response.json()) as Map<string, string[]>
+          const data = (await response.json()) as TimeZones
           console.log('response from cities', data)
           setTimeZoneCities(data)
           setCities(Object.values(data).flat())
@@ -133,31 +144,31 @@ const BirthDataForm = () => {
     )
     maiaHeaders.append('Content-Type', 'application/json')
 
-    const timeZone =
-      timeZoneCities && data.city
-        ? Object.keys(timeZoneCities).find((tz) => tz.includes(data.city))
-        : null
+    const timezone = Object.keys(timeZoneCities!).find((tz) =>
+      timeZoneCities?.[tz].includes(data.city),
+    )
 
     const raw = JSON.stringify({
       tzData: {
         country: data.countryAbbr,
         city: data.city,
-        timezone: timeZone,
+        timezone,
         timeInUtc: false,
-        time: `${data.date}T${data.time}Z`,
+        time: `${data.date}T${data.time}:00Z`,
       },
       data: {
         city: {
           name: data.city,
-          timezone: timeZone,
-          tz: timeZone,
+          timezone,
+          tz: timezone,
         },
         country: {
           id: data.countryAbbr,
           name: countries.find((c) => c.abbr === data.countryAbbr)?.name,
+          tz: null,
         },
-        date: data.date,
-        time: `${data.date}T${data.time}Z`,
+        date: `${data.date}T00:00:00.000Z`,
+        time: `1970-01-01T${data.time}:00.000Z`,
       },
     })
     console.log('raw', raw)
@@ -214,19 +225,6 @@ const BirthDataForm = () => {
     }
   }
 
-  // Computed properties
-  // const dateFormatted = date ? dateFormatter.format(new Date(date + 'T00:00:00')) : '';
-  // const timeFormatted = time ? timeFormatter.format(new Date('1970-01-01T' + time)) : '';
-  // const timePickerFormat = timeFormatter.resolvedOptions().hour12 ? 'ampm' : '24hr';
-  // const timeZone =
-  //   timeZoneCities && city ? Object.keys(timeZoneCities).find((tz) => timeZoneCities[tz].includes(city)) : null;
-  // const isComplete = date && time && country && city;
-
-  useEffect(() => {
-    // Equivalent to Vue's `mounted` hook
-    console.log('Mounted and tracking pageview')
-  }, [])
-
   return (
     <div className="container mx-auto p-4">
       <div className="my-6">
@@ -243,6 +241,7 @@ const BirthDataForm = () => {
               <input
                 id="date"
                 type="date"
+                max={new Date().toISOString()}
                 placeholder="Birth date"
                 className="inputform"
                 autoFocus
