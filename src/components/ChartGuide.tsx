@@ -9,9 +9,12 @@ interface ChartGuideProps {
 
 // Fetch data from the server
 async function fetchChartData(chartId: string) {
-  const response = await fetch(`/api/get-chart?id=${chartId}`, {
-    cache: 'no-store', // Prevent caching to always fetch fresh data
-  })
+  const response = await fetch(
+    `${process.env.BASE_URL}/api/get-chart?id=${chartId}`,
+    {
+      cache: 'no-store', // Prevent caching to always fetch fresh data
+    },
+  )
 
   if (!response.ok) {
     throw new Error('Failed to fetch chart data')

@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 // Fetch data from the server
 async function fetchCharts() {
-  const response = await fetch('/api/list-charts')
+  const response = await fetch(`${process.env.BASE_URL}/api/list-charts`)
 
   if (!response.ok) {
     throw new Error('Failed to fetch charts')

@@ -10,23 +10,29 @@ export async function storeChart(data: ChartData, user: User) {
 
     // Store user and chart
     try {
-      const storeUserResp = await fetch('/api/store-user', {
-        method: 'POST',
-        headers: localHeaders,
-        body: JSON.stringify(Object.assign({}, user)),
-      })
+      const storeUserResp = await fetch(
+        `${process.env.BASE_URL}/api/store-user`,
+        {
+          method: 'POST',
+          headers: localHeaders,
+          body: JSON.stringify(Object.assign({}, user)),
+        },
+      )
       const newUser = await storeUserResp.json()
       console.log('newUser', newUser)
 
-      const storeChartResp = await fetch('/api/store-chart', {
-        method: 'POST',
-        headers: localHeaders,
-        body: JSON.stringify({
-          userId: newUser.id,
-          chart: data.chart,
-          meta: data.meta,
-        }),
-      })
+      const storeChartResp = await fetch(
+        `${process.env.BASE_URL}/api/store-chart`,
+        {
+          method: 'POST',
+          headers: localHeaders,
+          body: JSON.stringify({
+            userId: newUser.id,
+            chart: data.chart,
+            meta: data.meta,
+          }),
+        },
+      )
 
       const newChart = await storeChartResp.json()
       console.log('newChart', newChart)
