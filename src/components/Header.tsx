@@ -99,10 +99,11 @@ export function Header() {
             {/* <div className="hidden md:block">
               <NavLink href="/login">Sign in</NavLink>
             </div> */}
-            <Button href="/guide" color="blue">
-              <span>
-                Get started <span className="hidden lg:inline">today</span>
-              </span>
+            <Button
+              href="https://calendly.com/fractalhumandesign/quick"
+              color="blue"
+            >
+              <span>Schedule a call</span>
             </Button>
             {/* <div className="-mr-1 md:hidden">
               <MobileNavigation />
