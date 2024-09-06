@@ -1,4 +1,4 @@
-import { SimpleChart } from '@/types/SimpleChart'
+import { SimpleChartData } from '@/types/SimpleChart'
 import hdChart from '@/utils/hd-chart'
 import Link from 'next/link'
 
@@ -10,7 +10,7 @@ async function fetchCharts() {
     throw new Error('Failed to fetch charts')
   }
 
-  const charts = (await response.json()) as SimpleChart[]
+  const charts = (await response.json()) as SimpleChartData[]
   return charts
 }
 
@@ -49,7 +49,7 @@ export default async function ChartList() {
               </Link>
             </td>
             <td className="px-4 py-2">{chart.user?.email}</td>
-            <td className="px-4 py-2">{hdChart(chart).toString()}</td>
+            <td className="px-4 py-2">{hdChart(chart.chart).toString()}</td>
             {/* <td className="px-4 py-2">
               <button
                 onClick={() => createContact(chart)}

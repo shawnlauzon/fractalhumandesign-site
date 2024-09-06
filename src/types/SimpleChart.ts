@@ -1,4 +1,4 @@
-export interface SimpleChart {
+export interface SimpleChartData {
   id: string
   user: {
     id: string
@@ -6,14 +6,7 @@ export interface SimpleChart {
     lastName: string
     email: string
   }
-  chart: {
-    type: number
-    authority: number
-    gates: Gate[]
-    definition: number
-    centers: number[]
-    profile: number
-  }
+  chart: SimpleChart
   meta: {
     birthData: {
       time: {
@@ -21,6 +14,15 @@ export interface SimpleChart {
       }
     }
   }
+}
+
+export interface SimpleChart {
+  type: number
+  authority: number
+  gates: Gate[]
+  definition: number
+  centers: number[]
+  profile: number
 }
 
 interface Gate {

@@ -1,6 +1,6 @@
 // This is a Next.js Server Component by default in the /app directory.
 import ChartDetail from '@/components/ChartDetail'
-import ChartView from '@/components/ChartImage'
+import ChartImage from '@/components/ChartImage'
 import { Button } from './Button'
 
 interface ChartGuideProps {
@@ -62,7 +62,7 @@ export default async function ChartGuide({ chartId }: ChartGuideProps) {
 
       <div className="mx-auto flex flex-wrap">
         <div className="w-full px-2 sm:w-7/12">
-          <ChartView birthTime={birthTime} />
+          <ChartImage birthTime={birthTime} />
         </div>
         <div className="w-full px-2 sm:w-5/12">
           <div className="rounded-lg bg-white p-4 shadow">

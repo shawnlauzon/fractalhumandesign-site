@@ -1,5 +1,8 @@
+import fairSelectionTest from '@/images/fair-selection-test.png'
+import thisIsTheWay from '@/images/this-is-the-way.jpg'
 import { SimpleChart } from '@/types/SimpleChart'
 import hdChart from '@/utils/hd-chart'
+import Image from 'next/image'
 import React from 'react'
 
 interface ChartDetailProps {
@@ -247,8 +250,8 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
       <h2 className="text-lg">
         Your way to make decisions is to <b>{hd.decisionMakingStrategy()}</b>.
       </h2>
-      <img
-        src="/this-is-the-way.jpg"
+      <Image
+        src={thisIsTheWay}
         alt="Decision-making strategy"
         className="mx-auto my-4 w-full max-w-md"
       />
@@ -297,8 +300,8 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
         unique and that there's absolutely no point comparing yourself to anyone
         else. It's like comparing yourself to a cheetah: it's not your fault
         that you can't run as fast.
-        <img
-          src="/fair-selection-test.png"
+        <Image
+          src={fairSelectionTest}
           alt="Fair selection test"
           className="mx-auto my-4 w-full max-w-md"
         />

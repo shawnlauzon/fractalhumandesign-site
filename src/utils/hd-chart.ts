@@ -109,34 +109,32 @@ export default function (chart: SimpleChart) {
     ['21', '45'],
   ]
 
-  const type = () => types[chart.chart.type]
-  const strategy = () => strategies[chart.chart.type]
-  const authority = () => authorityTypes[chart.chart.authority]
-  const authorityDescription = () =>
-    authorityDescriptions[chart.chart.authority]
-  const definition = () => definitions[chart.chart.definition]
+  const type = () => types[chart.type]
+  const strategy = () => strategies[chart.type]
+  const authority = () => authorityTypes[chart.authority]
+  const authorityDescription = () => authorityDescriptions[chart.authority]
+  const definition = () => definitions[chart.definition]
   const profile = () => {
-    const p = chart.chart.profile.toString()
+    const p = chart.profile.toString()
     return `${p[0]}/${p[1]}`
   }
 
-  const isOpportunist = () => chart.chart.profile.toFixed().includes('4')
+  const isOpportunist = () => chart.profile.toFixed().includes('4')
 
-  const careerDesign = () => careerDesigns[chart.chart.type]
-  const signatureTheme = () => signatureThemes[chart.chart.type]
-  const notSelfTheme = () => notSelfThemes[chart.chart.type]
-  const signatureThemeAdjective = () =>
-    signatureThemesAdjectives[chart.chart.type]
-  const notSelfThemeAdjective = () => notSelfThemesAdjectives[chart.chart.type]
+  const careerDesign = () => careerDesigns[chart.type]
+  const signatureTheme = () => signatureThemes[chart.type]
+  const notSelfTheme = () => notSelfThemes[chart.type]
+  const signatureThemeAdjective = () => signatureThemesAdjectives[chart.type]
+  const notSelfThemeAdjective = () => notSelfThemesAdjectives[chart.type]
   const decisionMakingStrategy = () =>
-    chart.chart.type === 2
-      ? `${authorityDescriptions[chart.chart.type]}, and then ${
-          strategies[chart.chart.authority]
+    chart.type === 2
+      ? `${authorityDescriptions[chart.type]}, and then ${
+          strategies[chart.authority]
         }`
-      : `${strategies[chart.chart.type]}, and then ${
-          authorityDescriptions[chart.chart.authority]
+      : `${strategies[chart.type]}, and then ${
+          authorityDescriptions[chart.authority]
         }`
-  const personalInteraction = () => strategies[chart.chart.type]
+  const personalInteraction = () => strategies[chart.type]
 
   const toString = () =>
     `${profile()} ${_.capitalize(authority())} ${_.startCase(
@@ -145,7 +143,7 @@ export default function (chart: SimpleChart) {
 
   const gates = () =>
     _.reduce(
-      chart.chart.gates,
+      chart.gates,
       function (gates, val) {
         gates.push(val.gate)
         return gates
@@ -154,7 +152,7 @@ export default function (chart: SimpleChart) {
     )
 
   // function hasPentaRoleStrengths() {
-  //   const gates = chart.chart.gates
+  //   const gates = chart.gates
   //   return pentaRoleStrengths.reduce(
   //     (a, v) => !!((gates.includes(v[0]) && gates.includes(v[1])) || a),
   //     false,
@@ -162,7 +160,7 @@ export default function (chart: SimpleChart) {
   // }
 
   // function hasPentaManagedStrengths() {
-  //   const gates = chart.chart.gates
+  //   const gates = chart.gates
   //   return pentaManagedStrengths.reduce(
   //     (a, v) => !!((gates.includes(v[0]) && gates.includes(v[1])) || a),
   //     false,
@@ -170,7 +168,7 @@ export default function (chart: SimpleChart) {
   // }
 
   // function hasOc16Strengths() {
-  //   const gates = chart.chart.gates
+  //   const gates = chart.gates
   //   return oc16Strengths.reduce(
   //     (a, v) => !!((gates.includes(v[0]) && gates.includes(v[1])) || a),
   //     false,
@@ -178,16 +176,16 @@ export default function (chart: SimpleChart) {
   // }
 
   // function hasMoneyLineGate() {
-  //   const gates = chart.chart.gates
+  //   const gates = chart.gates
   //   return gates.includes('45') || gates.includes('21')
   // }
 
   // function definedCenters() {
   //   return _.reduce(
-  //     chart.chart.centers,
+  //     chart.centers,
   //     function (result, value, key) {
   //       if (value === 2) {
-  //         result.push(chart.chart.centers[key])
+  //         result.push(chart.centers[key])
   //       }
   //       return result
   //     },
@@ -197,7 +195,7 @@ export default function (chart: SimpleChart) {
 
   // function undefinedCenters() {
   //   return _.reduce(
-  //     chart.chart.centers,
+  //     chart.centers,
   //     function (result, value, key) {
   //       if (value !== 2) {
   //         result.push(centers[key])
@@ -210,10 +208,10 @@ export default function (chart: SimpleChart) {
 
   return {
     type,
-    isGenerator: () => chart.chart.type === 0,
-    isReflector: () => chart.chart.type === 1,
-    isManifestor: () => chart.chart.type === 2,
-    isProjector: () => chart.chart.type === 3,
+    isGenerator: () => chart.type === 0,
+    isReflector: () => chart.type === 1,
+    isManifestor: () => chart.type === 2,
+    isProjector: () => chart.type === 3,
     careerDesign,
     strategy,
     authority,
