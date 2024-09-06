@@ -10,6 +10,8 @@ export async function GET(req: Request) {
   const id = url.searchParams.get('id')
   console.log('get-chart >', id)
 
+  console.log('Using secret', process.env.FAUNADB_SERVER_SECRET)
+
   // configure your client
   const client = new Client({
     secret: process.env.FAUNADB_SERVER_SECRET,
