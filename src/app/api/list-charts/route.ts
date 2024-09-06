@@ -1,6 +1,6 @@
 export const dynamic = 'force-dynamic' // static by default, unless reading the request
 
-import { Chart } from '@/types/Chart'
+import { SimpleChart } from '@/types/SimpleChart'
 import { Client, fql, QuerySuccess } from 'fauna'
 
 export async function GET() {
@@ -12,7 +12,7 @@ export async function GET() {
   })
 
   type Page = {
-    data: Chart[]
+    data: SimpleChart[]
     after: string
   }
 
