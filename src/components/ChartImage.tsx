@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 interface ChartImageProps {
@@ -18,7 +19,15 @@ const ChartImage: React.FC<ChartImageProps> = ({ birthTime }) => {
     return null // Return null if chartUrl is not generated
   }
 
-  return <img src={chartUrl} alt="Chart" className="h-auto w-full" />
+  return (
+    <Image
+      src={chartUrl}
+      width={727}
+      height={488}
+      alt="Chart"
+      className="h-auto w-full"
+    />
+  )
 }
 
 export default ChartImage
