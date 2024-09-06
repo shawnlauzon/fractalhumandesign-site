@@ -165,11 +165,13 @@ export function Guide({
     console.log('submitting props', guideProps)
     try {
       const chart = await createChartAction(guideProps)
+      console.log('Chart created ... now storing')
       await storeChart(chart, {
         firstName: guideProps.firstName,
         lastName: guideProps.lastName,
         email: guideProps.email,
       })
+      console.log('Chart saved.')
     } catch (e) {
       console.error('Failure creating chart', e)
     }
