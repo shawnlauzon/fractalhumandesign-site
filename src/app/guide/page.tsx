@@ -1,7 +1,7 @@
 import { Footer } from '@/components/Footer'
 import { Guide } from '@/components/Guide'
 import { Header } from '@/components/Header'
-import { createChart } from '../actions'
+import { createChart } from './chart'
 
 export default function Home() {
   return (
