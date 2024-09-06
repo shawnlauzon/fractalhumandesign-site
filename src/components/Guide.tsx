@@ -1,8 +1,11 @@
 'use client'
 
+import { storeChart } from '@/app/actions'
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
+import { ChartData } from '@/types/ChartData'
 import { GuideProps } from '@/types/GuideProps'
+import { User } from '@/types/User'
 import { countries } from '@/utils/countries'
 import {
   Combobox,
@@ -26,7 +29,8 @@ import * as yup from 'yup'
 export function Guide({
   createChartAction,
 }: {
-  createChartAction: (guideProps: GuideProps) => void
+  createChartAction: (guideProps: GuideProps) => Promise<ChartData>
+  storeChartAction: (chartData: ChartData, userData: User) => void
 }) {
   const [cityQuery, setCityQuery] = useState('')
   const [cities, setCities] = useState<string[]>([])
@@ -160,7 +164,12 @@ export function Guide({
   const onSubmit = async (guideProps: GuideProps) => {
     console.log('submitting props', guideProps)
     try {
-      createChartAction(guideProps)
+      const chart = await createChartAction(guideProps)
+      await storeChart(chart, {
+        firstName: guideProps.firstName,
+        lastName: guideProps.lastName,
+        email: guideProps.email,
+      })
     } catch (e) {
       console.error('Failure creating chart', e)
     }

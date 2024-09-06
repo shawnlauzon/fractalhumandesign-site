@@ -1,5 +1,6 @@
 'use client'
 
+import { ChartData } from '@/types/ChartData'
 import { GuideProps } from '@/types/GuideProps'
 import { countries } from '@/utils/countries'
 
@@ -60,39 +61,12 @@ export async function createChart(data: GuideProps) {
       )
     }
 
-    const respData = await response.json()
+    const respData = (await response.json()) as ChartData
 
-    if (respData.chart) {
-      const localHeaders = new Headers()
-      localHeaders.append('Content-Type', 'application/json')
-
-      // Store user and chart
-      try {
-        const storeUserResp = await fetch('/api/store-user', {
-          method: 'POST',
-          headers: localHeaders,
-          body: '{}',
-        })
-        const newUser = await storeUserResp.json()
-
-        const storeChartResp = await fetch('/api/store-chart', {
-          method: 'POST',
-          headers: localHeaders,
-          body: JSON.stringify({
-            userId: newUser.id,
-            chart: respData.chart,
-            meta: respData.meta,
-          }),
-        })
-
-        const newChart = await storeChartResp.json()
-        // onChart(newChart.id);
-      } catch (e) {
-        console.error('Could not save:', e)
-      }
-    }
+    return respData
   } catch (error) {
     console.error('Error during chart generation:', error)
+    throw error
   } finally {
     // setSubmitting(false)
   }
