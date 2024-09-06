@@ -2,7 +2,7 @@ export const dynamic = 'force-dynamic' // static by default, unless reading the 
 
 import { Client, fql, QuerySuccess } from 'fauna'
 
-export default async (req: Request) => {
+export async function POST(req: Request) {
   let httpResponse
   const params = await req.json()
   console.log('store-user params', params)

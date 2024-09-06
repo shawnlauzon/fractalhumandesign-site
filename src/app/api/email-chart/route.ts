@@ -3,7 +3,7 @@ export const dynamic = 'force-dynamic' // static by default, unless reading the 
 import _ from 'lodash'
 import * as postmark from 'postmark'
 
-export default async (req: Request) => {
+export async function POST(req: Request) {
   let httpResponse
   const params = await req.json()
   if (_.isEmpty(params)) {

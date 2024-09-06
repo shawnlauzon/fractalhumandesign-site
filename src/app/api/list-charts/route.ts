@@ -3,7 +3,7 @@ export const dynamic = 'force-dynamic' // static by default, unless reading the 
 import { Chart } from '@/types/Chart'
 import { Client, fql, QuerySuccess } from 'fauna'
 
-export default async () => {
+export async function GET() {
   let httpResponse
 
   // configure your client
