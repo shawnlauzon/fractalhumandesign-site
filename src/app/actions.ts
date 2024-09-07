@@ -38,19 +38,15 @@ export async function sendChart(data: ChartData, user: User) {
     console.log('Chart stored', newChart)
 
     // Now send it
-    const emailChartResp = await fetch(
-      `${process.env.BASE_URL}/api/email-chart`,
-      {
-        method: 'POST',
-        headers: localHeaders,
-        body: JSON.stringify({
-          chartId: newChart.id,
-          email: user.email,
-          firstName: user.firstName,
-        }),
-      },
-    )
-    const sendResponse = await emailChartResp.json()
-    console.log('Chart sent', sendResponse)
+    await fetch(`${process.env.BASE_URL}/api/email-chart`, {
+      method: 'POST',
+      headers: localHeaders,
+      body: JSON.stringify({
+        chartId: newChart.id,
+        email: user.email,
+        firstName: user.firstName,
+      }),
+    })
+    console.log('Chart sent')
   }
 }
