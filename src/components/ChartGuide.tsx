@@ -1,4 +1,4 @@
-import ChartDetail from '@/components/ChartDetail'
+import PersonalizedGuide from '@/components/PersonalizedGuide'
 import { Button } from './Button'
 import ChartImage from './ChartImage'
 
@@ -45,7 +45,7 @@ export default async function ChartGuide({ chartId }: ChartGuideProps) {
           with your authentic self.
         </p>
         <div className="mt-10 max-w-2xl">
-          <ChartDetail chart={chart} />
+          <PersonalizedGuide chart={chart} />
         </div>
 
         <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
