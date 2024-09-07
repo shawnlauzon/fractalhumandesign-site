@@ -1,6 +1,5 @@
 'use client'
 
-import { storeChart } from '@/app/actions'
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { ChartData } from '@/types/ChartData'
@@ -29,9 +28,10 @@ import * as yup from 'yup'
 
 export function BirthDataForm({
   createChartAction,
+  sendChartAction,
 }: {
   createChartAction: (guideProps: GuideProps) => Promise<ChartData>
-  storeChartAction: (chartData: ChartData, userData: User) => void
+  sendChartAction: (chartData: ChartData, userData: User) => void
 }) {
   const [cityQuery, setCityQuery] = useState('')
   const [cities, setCities] = useState<string[]>([])
@@ -167,14 +167,14 @@ export function BirthDataForm({
     console.log('submitting props', guideProps)
     try {
       const chart = await createChartAction(guideProps)
-      console.log('Chart created ... now storing')
-      await storeChart(chart, {
+      console.log('Chart created ... now sending')
+      await sendChartAction(chart, {
         firstName: guideProps.firstName,
         lastName: guideProps.lastName,
         email: guideProps.email,
       })
-      console.log('Chart saved.')
-      router.push('/dashboard')
+      console.log('Chart sent.')
+      router.push('/guide/success')
     } catch (e) {
       console.error('Failure creating chart', e)
     }

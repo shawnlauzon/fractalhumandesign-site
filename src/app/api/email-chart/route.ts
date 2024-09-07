@@ -19,7 +19,7 @@ export async function POST(req: Request) {
 
       const thisUrl = 'https://' + req.headers.get('host')
 
-      const actionUrl = thisUrl + '/show-chart?chart=' + params.chartId
+      const actionUrl = `${thisUrl}/guide/${params.chartId}`
 
       const emailData = {
         From: 'shawn@fractalhumandesign.com',

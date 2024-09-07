@@ -1,9 +1,10 @@
 'use server'
 
 import { ChartData } from '@/types/ChartData'
+import { SimpleChartData } from '@/types/SimpleChart'
 import { User } from '@/types/User'
 
-export async function storeChart(data: ChartData, user: User) {
+export async function sendChart(data: ChartData, user: User) {
   if (data) {
     const localHeaders = new Headers()
     localHeaders.append('Content-Type', 'application/json')
@@ -34,11 +35,24 @@ export async function storeChart(data: ChartData, user: User) {
         },
       )
 
-      const newChart = await storeChartResp.json()
-      console.log('newChart', newChart)
-      // onChart(newChart.id);
+      const newChart = (await storeChartResp.json()) as SimpleChartData
+      console.log('Chart stored', newChart)
+
+      // Now send it
+      const emailChartResp = await fetch(
+        `${process.env.BASE_URL}/api/email-chart`,
+        {
+          method: 'POST',
+          headers: localHeaders,
+          body: JSON.stringify({
+            chartId: newChart.id,
+          }),
+        },
+      )
+      const sendResponse = await emailChartResp.json()
+      console.log('Chart sent', sendResponse)
     } catch (e) {
-      console.error('Could not save:', e)
+      console.error('Could not send:', e)
     }
   }
 }
