@@ -1,5 +1,5 @@
-// This is a Next.js Server Component by default in the /app directory.
 import ChartDetail from '@/components/ChartDetail'
+import { Button } from './Button'
 import ChartImage from './ChartImage'
 
 interface ChartGuideProps {
@@ -49,14 +49,45 @@ export default async function ChartGuide({ chartId }: ChartGuideProps) {
         </div>
 
         <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
-          Your Human Design chart
+          Where did all this come from?
         </h2>
 
-        <p className="mt-8"></p>
+        <p className="mt-6">
+          Human Design is based on many things, one of them being astrology.
+          When you entered your birth info, we created this chart, and all the
+          information above comes from reading the chart. It can be
+          overwhelming, and so we have done the hard work for you and broken
+          down into pieces that you can immediately put to good use.
+        </p>
 
         <figure className="mt-16">
           <ChartImage birthTime={birthTime} />
         </figure>
+
+        <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
+          To learn more
+        </h2>
+
+        <p className="mt-6">
+          You don't need anything else to get started. Simply by following your
+          decision-making strategy, you will begin to have more flow in your
+          life.
+        </p>
+        <p className="mt-8">
+          If you'd like personalized guidance, let's talk! Simply tap the button
+          below and choose the time that works best for you.
+        </p>
+        <div className="mt-4 flex items-center gap-x-5 md:gap-x-8">
+          <Button
+            href="https://calendly.com/fractalhumandesign/quick"
+            color="sky"
+          >
+            <span>Book a call</span>
+          </Button>
+        </div>
+        <p className="mt-6">
+          We look forward to guiding you to a life of more magic and flow.
+        </p>
       </div>
     </div>
   )
