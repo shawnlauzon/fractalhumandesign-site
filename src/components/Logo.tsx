@@ -1,4 +1,4 @@
-import fhdLogoBgLight from '@/images/logos/fhd-bg-light.svg'
+import fhdLogoBgLight from '@/images/logos/fhd-dark.svg'
 import fhdIconLogo from '@/images/logos/fhd-icon.svg'
 import Image from 'next/image'
 

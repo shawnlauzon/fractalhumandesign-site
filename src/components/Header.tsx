@@ -101,7 +101,7 @@ export function Header() {
             </div> */}
             <Button
               href="https://calendly.com/fractalhumandesign/quick"
-              color="blue"
+              color="sky"
             >
               <span>Book a call</span>
             </Button>

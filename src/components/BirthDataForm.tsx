@@ -26,7 +26,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import * as yup from 'yup'
 
-export function Guide({
+export function BirthDataForm({
   createChartAction,
 }: {
   createChartAction: (guideProps: GuideProps) => Promise<ChartData>
@@ -182,7 +182,7 @@ export function Guide({
       <div className="mx-auto max-w-2xl lg:max-w-4xl lg:px-12">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:text-center">
-            <h2 className="text-base font-semibold leading-7 text-indigo-600">
+            <h2 className="text-base font-semibold leading-7 text-sky-600">
               Ready?
             </h2>
             <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -529,16 +529,8 @@ export function Guide({
           </div>
 
           <div className="mt-6 flex items-center justify-end gap-x-6">
-            <Button
-              type="button"
-              className="text-sm font-semibold leading-6 text-gray-900"
-            >
-              Cancel
-            </Button>
-            <Button
-              type="submit"
-              className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-            >
+            <Button type="button">Cancel</Button>
+            <Button type="submit" color="sky">
               Save
             </Button>
           </div>

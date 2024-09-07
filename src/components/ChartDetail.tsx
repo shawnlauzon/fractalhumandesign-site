@@ -224,7 +224,7 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
       <li className="flex gap-x-3">
         <CheckCircleIcon
           aria-hidden="true"
-          className="mt-1 h-5 w-5 flex-none text-indigo-600"
+          className="mt-1 h-5 w-5 flex-none text-sky-600"
         />
         <span>
           <strong className="font-semibold text-gray-900">Career Type.</strong>
@@ -232,7 +232,7 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
         </span>
       </li>
       <p className="mt-6">{strategyWriteups.get(hd.type())}</p>
-      <figure className="mt-10 border-l border-indigo-600 pl-9">
+      <figure className="mt-10 border-l border-sky-600 pl-9">
         <blockquote className="font-semibold text-gray-900">
           <p>"{raQuotes.get(hd.type())}"</p>
         </blockquote>
@@ -254,7 +254,7 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
       <li className="flex gap-x-3">
         <CheckCircleIcon
           aria-hidden="true"
-          className="mt-1 h-5 w-5 flex-none text-indigo-600"
+          className="mt-1 h-5 w-5 flex-none text-sky-600"
         />
         <span>
           <strong className="font-semibold text-gray-900">
@@ -279,7 +279,7 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
             happy, or even something which brings you {hd.signatureTheme()}.
           </p>
 
-          <figure className="mt-10 border-l border-indigo-600 pl-9">
+          <figure className="mt-10 border-l border-sky-600 pl-9">
             <blockquote className="font-semibold text-gray-900">
               <p>
                 "So many people think that waiting is a stagnant sort of dead
@@ -315,7 +315,7 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
       <li className="flex gap-x-3">
         <CheckCircleIcon
           aria-hidden="true"
-          className="mt-1 h-5 w-5 flex-none text-indigo-600"
+          className="mt-1 h-5 w-5 flex-none text-sky-600"
         />
         <span>
           <strong className="font-semibold text-gray-900">
@@ -353,7 +353,7 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
       <li className="mt-6 flex gap-x-3">
         <CheckCircleIcon
           aria-hidden="true"
-          className="mt-1 h-5 w-5 flex-none text-indigo-600"
+          className="mt-1 h-5 w-5 flex-none text-sky-600"
         />
         <span>
           <strong className="font-semibold text-gray-900">
@@ -385,7 +385,7 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
       <li className="mt-6 flex gap-x-3">
         <CheckCircleIcon
           aria-hidden="true"
-          className="mt-1 h-5 w-5 flex-none text-indigo-600"
+          className="mt-1 h-5 w-5 flex-none text-sky-600"
         />
         <span>
           <strong className="font-semibold text-gray-900">
