@@ -13,7 +13,7 @@ const variantStyles = {
     slate:
       'bg-slate-900 text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900',
     blue: 'bg-blue-600 text-white hover:text-slate-100 hover:bg-blue-500 active:bg-blue-800 active:text-blue-100 focus-visible:outline-blue-600',
-    sky: 'bg-sky-600 text-white hover:text-slate-100 hover:bg-sky-500 active:bg-sky-800 active:text-sky-100 focus-visible:outline-sky-600',
+    sky: 'bg-sky-600 text-white hover:text-slate-100 hover:bg-sky-500 active:bg-sky-800 active:text-sky-100 focus-visible:outline-sky-600 disabled:bg-sky-200 disabled:text-white',
     cyan: 'bg-cyan-600 text-white hover:text-slate-100 hover:bg-cyan-500 active:bg-cyan-800 active:text-cyan-100 focus-visible:outline-cyan-600',
     white:
       'bg-white text-slate-900 hover:bg-blue-50 active:bg-blue-200 active:text-slate-600 focus-visible:outline-white',
@@ -58,7 +58,29 @@ export function Button({ className, ...props }: ButtonProps) {
   )
 
   return typeof props.href === 'undefined' ? (
-    <button className={className} {...props} />
+    <button className={className} {...props}>
+      <svg
+        className="-ml-1 mr-3 hidden h-5 w-5 animate-spin text-white disabled:inline"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <circle
+          className="opacity-25"
+          cx="12"
+          cy="12"
+          r="10"
+          stroke="currentColor"
+          stroke-width="4"
+        ></circle>
+        <path
+          className="opacity-75"
+          fill="currentColor"
+          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+        ></path>
+      </svg>
+      {props.children}
+    </button>
   ) : (
     <Link className={className} {...props} />
   )

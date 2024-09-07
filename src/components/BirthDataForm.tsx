@@ -35,7 +35,6 @@ export function BirthDataForm({
 }) {
   const [cityQuery, setCityQuery] = useState('')
   const [cities, setCities] = useState<string[]>([])
-  const [isCitiesLoading, setCitiesLoading] = useState(false)
   const [timeZoneCities, setTimeZoneCities] = useState<TimeZones>()
   const [isSubmitting, setSubmitting] = useState(false)
   const abortControllerRef = useRef<AbortController | null>(null)
@@ -165,6 +164,7 @@ export function BirthDataForm({
 
   const onSubmit = async (guideProps: GuideProps) => {
     console.log('submitting props', guideProps)
+    setSubmitting(true)
     try {
       const chart = await createChartAction(guideProps)
       console.log('Chart created ... now sending')
@@ -177,6 +177,8 @@ export function BirthDataForm({
       router.push('/guide/success')
     } catch (e) {
       console.error('Failure creating chart', e)
+    } finally {
+      setSubmitting(false)
     }
   }
 
