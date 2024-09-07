@@ -10,49 +10,47 @@ export async function sendChart(data: ChartData, user: User) {
     localHeaders.append('Content-Type', 'application/json')
 
     // Store user and chart
-    try {
-      const storeUserResp = await fetch(
-        `${process.env.BASE_URL}/api/store-user`,
-        {
-          method: 'POST',
-          headers: localHeaders,
-          body: JSON.stringify(Object.assign({}, user)),
-        },
-      )
-      const newUser = await storeUserResp.json()
-      console.log('newUser', newUser)
+    const storeUserResp = await fetch(
+      `${process.env.BASE_URL}/api/store-user`,
+      {
+        method: 'POST',
+        headers: localHeaders,
+        body: JSON.stringify(Object.assign({}, user)),
+      },
+    )
+    const newUser = await storeUserResp.json()
+    console.log('newUser', newUser)
 
-      const storeChartResp = await fetch(
-        `${process.env.BASE_URL}/api/store-chart`,
-        {
-          method: 'POST',
-          headers: localHeaders,
-          body: JSON.stringify({
-            userId: newUser.id,
-            chart: data.chart,
-            meta: data.meta,
-          }),
-        },
-      )
+    const storeChartResp = await fetch(
+      `${process.env.BASE_URL}/api/store-chart`,
+      {
+        method: 'POST',
+        headers: localHeaders,
+        body: JSON.stringify({
+          userId: newUser.id,
+          chart: data.chart,
+          meta: data.meta,
+        }),
+      },
+    )
 
-      const newChart = (await storeChartResp.json()) as SimpleChartData
-      console.log('Chart stored', newChart)
+    const newChart = (await storeChartResp.json()) as SimpleChartData
+    console.log('Chart stored', newChart)
 
-      // Now send it
-      const emailChartResp = await fetch(
-        `${process.env.BASE_URL}/api/email-chart`,
-        {
-          method: 'POST',
-          headers: localHeaders,
-          body: JSON.stringify({
-            chartId: newChart.id,
-          }),
-        },
-      )
-      const sendResponse = await emailChartResp.json()
-      console.log('Chart sent', sendResponse)
-    } catch (e) {
-      console.error('Could not send:', e)
-    }
+    // Now send it
+    const emailChartResp = await fetch(
+      `${process.env.BASE_URL}/api/email-chart`,
+      {
+        method: 'POST',
+        headers: localHeaders,
+        body: JSON.stringify({
+          chartId: newChart.id,
+          email: user.email,
+          firstName: user.firstName,
+        }),
+      },
+    )
+    const sendResponse = await emailChartResp.json()
+    console.log('Chart sent', sendResponse)
   }
 }
