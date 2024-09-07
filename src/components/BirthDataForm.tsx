@@ -107,7 +107,6 @@ export function BirthDataForm({
         headers.append('Accept', 'application/json; q=0.01')
 
         try {
-          setCitiesLoading(true)
           const response = await fetch(
             `https://app.maiamechanics.com/places-v1/cities?${params}`,
             {
@@ -131,8 +130,6 @@ export function BirthDataForm({
           } else {
             console.error('Error fetching cities:', error)
           }
-        } finally {
-          setCitiesLoading(false)
         }
       }
     }
