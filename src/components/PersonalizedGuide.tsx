@@ -6,6 +6,10 @@ import hdChart from '@/utils/hd-chart'
 import {
   CheckCircleIcon,
   InformationCircleIcon,
+  KeyIcon,
+  LightBulbIcon,
+  MagnifyingGlassIcon,
+  PaintBrushIcon,
 } from '@heroicons/react/20/solid'
 import Image from 'next/image'
 import React from 'react'
@@ -59,18 +63,99 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
 
   const strategyWriteups: Map<string, string> = new Map([
     [
+      'wait to respond before engaging',
+      `In other words, allowing life to move us, rather than choosing what we
+      think we should do next.
+      For most of us, this is quite a change. To go from thinking "what should I do
+      next?" to waiting for the internal desire to move us is a radical change.`,
+    ],
+    [
+      'inform before taking action',
+      `You are designed to guide specific people. To do this, it is not for you
+    to try to make things happen. Your path to success is to become the expert in a
+    system, perhaps by experimentation, study, or some other way. The right people will
+    then recognize you and invite you to help them. Your mission is to wait for people
+    who you also recognize, wait for them to invite you, and then follow your authority
+    (described next) to decide if this invitation is right for you.`,
+    ],
+    [
+      'wait for recognition and invitation',
+      `Because of your strong desire to have an impact, it can be tempting to
+    simply DO without telling anyone. This can create disharmony between yourself and
+    others who you interact with. Your strategy then is to INFORM people of what you are
+    planning to do, before you do it. Informing others will create more harmony with
+    so that they are not so challenged the change you want to make happen.`,
+    ],
+    [
+      'wait a 28 day cycle to reflect and assess',
+      `First, realize how unique you are. Your gift is to reflect what is
+    happening with others and then share it back with them. Patience and allowing are the
+    key words to remember when deciding what to do. Then reflect and discuss what you
+    perceive.`,
+    ],
+  ])
+
+  const careerWriteups: Map<string, string> = new Map([
+    [
       'Generator',
-      `As a Generator, your life is all about this type
-    of waiting. Which really means doing whatever you want to do, while at the same time
-    being aware of how your body responds. When you are in flow, your life consists of
-    effortlessly responding to everything that life presents to you.`,
+      `Builders are designed to find their greatest pleasure in doing work that
+      they love. Builders have a continually regenerated source of energy (this is
+      why they are called Generators). A perfect day for them is to get up in the
+      morning, spend the day creating what they love, and then come home and rest,
+      feeling completely satisfied.`,
     ],
     [
       'Manifesting Generator',
-      `As a Generator, your life is all about this type
-    of waiting. Which really means doing whatever you want to do, while at the same time
-    being aware of how your body responds. When you are in flow, your life consists of
-    effortlessly responding to everything that life presents to you.`,
+      `Builders are designed to find their greatest pleasure in doing work that
+      they love. Builders have a continually regenerated source of energy (this is
+      why they are called Generators). A perfect day for them is to get up in the
+      morning, spend the day creating what they love, and then come home and rest,
+      feeling completely satisfied.`,
+    ],
+    [
+      'Projector',
+      `You are designed to guide specific people. To do this, it is not for you
+    to try to make things happen. Your path to success is to become the expert in a
+    system, perhaps by experimentation, study, or some other way. The right people will
+    then recognize you and invite you to help them. Your mission is to wait for people
+    who you also recognize, wait for them to invite you, and then follow your authority
+    (described next) to decide if this invitation is right for you.`,
+    ],
+    [
+      'Manifestor',
+      `Because of your strong desire to have an impact, it can be tempting to
+    simply DO without telling anyone. This can create disharmony between yourself and
+    others who you interact with. Your strategy then is to INFORM people of what you are
+    planning to do, before you do it. Informing others will create more harmony with
+    so that they are not so challenged the change you want to make happen.`,
+    ],
+    [
+      'Reflector',
+      `First, realize how unique you are. Your gift is to reflect what is
+    happening with others and then share it back with them. Patience and allowing are the
+    key words to remember when deciding what to do. Then reflect and discuss what you
+    perceive.`,
+    ],
+  ])
+
+  const careerNotSelfWriteups: Map<string, string> = new Map([
+    [
+      'Generator',
+      `Unfortunately, most Builders in the world have not found the work that
+      they love to do. These people get up in the morning already exhausted, and
+      do their best to avoid doing work. Most quiet quitters are frustrated Builders,
+      because they don't see a way to get out of the system. If this is you, then 
+      Human Design will give you the tools to begin to break out of your rut and
+      find a career which is satisfying.`,
+    ],
+    [
+      'Manifesting Generator',
+      `Unfortunately, most Builders in the world have not found the work that
+      they love to do. These people get up in the morning already exhausted, and
+      do their best to avoid doing work. Most quiet quitters are frustrated Builders,
+      because they don't see a way to get out of the system. If this is you, then 
+      Human Design will give you the tools to begin to break out of your rut and
+      find a career which is satisfying.`,
     ],
     [
       'Projector',
@@ -101,7 +186,7 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
   const authorityWriteups: Map<string, string> = new Map([
     [
       'sacral',
-      `And what does it mean to respond? Well for you, it means to follow your gut.
+      `Many suggest to follow your gut, and for you this is great advice.
     How this works for you is only something you can know by experimenting. In my
     Living Your Design workshop, we practice this by asking Yes-No questions and feeling
     how the body responds. There is often a gutteral "uh-huh" for yes or "uh-uh" for no,
@@ -207,42 +292,174 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
 
   return (
     <>
-      <p>
-        Some of what is shared here you might resonate with, and others not so
-        much. This is normal: most of us have been conditioned for years to be
-        someone that we aren't, and so it can be hard to recognize our true
-        nature.
-      </p>
-      <p className="mt-8">
-        Keep in mind that this is an experiment. You can't do anything wrong!
-        Simply follow the practices, notice how you feel, and then make any
-        adjustments you think will help.
-      </p>
       <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
         Success Code 1: Career Type
       </h2>
-      <p className="mt-6">
-        At the core of the practice is to move from mindlessly reacting to
-        things that happen, to following a way of being that is specific to you.
-        By following this <i>decision-making strategy</i> which is described
-        below, we let go of the old patterns which have controlled us in the
-        past, and move towards a new way of being which is authentically
-        ourselves. This is not an instant fix; it can take years to completely
-        let go of these destructive patterns. But the payoff is worth it: a life
-        without {hd.notSelfTheme()} and a nearly effortless way of being.
+      <div className="px-4 sm:px-6 lg:px-8">
+        <p className="mt-6">
+          Broadly speaking there are four different types of careers. None of
+          them are more important than others, although most people act
+          according to their conditioning rather than their genetic type. Each
+          is critical to the process of creation.
+        </p>
+
+        <div className="mt-8 flow-root">
+          <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+            <div className="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+              <table className="min-w-full divide-y divide-gray-300">
+                <thead>
+                  <tr>
+                    <th
+                      scope="col"
+                      className="py-3.5 pl-4 pr-3 text-left text-center text-sm font-semibold text-gray-900 sm:pl-0"
+                    >
+                      Career Type
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                    >
+                      Purpose
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                    >
+                      Freq.
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                    >
+                      Tony Robbins Gift
+                    </th>
+                    <th
+                      scope="col"
+                      className="relative py-3.5 pl-3 pr-4 sm:pr-0"
+                    >
+                      <span className="sr-only">Edit</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-200">
+                  <tr>
+                    <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
+                      <div className="flex flex-col items-center">
+                        <LightBulbIcon
+                          aria-hidden="true"
+                          className="mt-1 h-10 w-10 flex-none text-sky-600"
+                        />
+                        <p className="text-sm font-semibold leading-6 text-gray-900">
+                          Initiators
+                        </p>
+                      </div>
+                    </td>
+                    <td className="px-3 py-4 text-sm text-gray-500">
+                      Get things started
+                    </td>
+                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                      10%
+                    </td>
+                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                      Entrepreneur
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
+                      <div className="flex flex-col items-center">
+                        <PaintBrushIcon
+                          aria-hidden="true"
+                          className="mt-1 h-10 w-10 flex-none text-sky-600"
+                        />
+                        <p className="text-sm font-semibold leading-6 text-gray-900">
+                          Builders
+                        </p>
+                      </div>
+                    </td>
+                    <td className="px-3 py-4 text-sm text-gray-500">
+                      Do the work they love to do
+                    </td>
+                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                      66%
+                    </td>
+                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                      Artist / Skilled worker
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
+                      <div className="flex flex-col items-center">
+                        <KeyIcon
+                          aria-hidden="true"
+                          className="mt-1 h-10 w-10 flex-none text-sky-600"
+                        />
+                        <p className="text-sm font-semibold leading-6 text-gray-900">
+                          Advisors
+                        </p>
+                      </div>
+                    </td>
+                    <td className="px-3 py-4 text-sm text-gray-500">
+                      Guide others to peak performance
+                    </td>
+                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                      23%
+                    </td>
+                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                      Manager / Leader
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
+                      <div className="flex flex-col items-center">
+                        <MagnifyingGlassIcon
+                          aria-hidden="true"
+                          className="mt-1 h-10 w-10 flex-none text-sky-600"
+                        />
+                        <p className="text-sm font-semibold leading-6 text-gray-900">
+                          Evaluators
+                        </p>
+                      </div>
+                    </td>
+                    <td className="px-3 py-4 text-sm text-gray-500">
+                      See how things are going
+                    </td>
+                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                      1%
+                    </td>
+                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                      N/A
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p className="mt-8">
+        As stated before, none of these are any better or worse than others.
+        Each of them have positive and negative aspects. And most people try to
+        be a type they are not. For example, the coaching industry (basically
+        Advisors) has seen massive growth, leading some Builders (myself
+        included) to try to teach others rather than looking to do what they
+        love. Builders who do this are frequently frustrated.
       </p>
-      <p className="py-2 text-center text-xl font-black">Welcome home.</p>
-      <li className="flex gap-x-3">
-        <CheckCircleIcon
-          aria-hidden="true"
-          className="mt-1 h-5 w-5 flex-none text-sky-600"
-        />
-        <span>
-          <strong className="font-semibold text-gray-900">Career Type.</strong>
-          You are a {hd.careerDesign()}, also known as {hd.type()}.
-        </span>
-      </li>
-      <p className="mt-6">{strategyWriteups.get(hd.type())}</p>
+      <p className="mt-8">So now your type:</p>
+      <ul role="list" className="mt-8 max-w-xl space-y-8 text-gray-600">
+        <li className="flex gap-x-3">
+          <CheckCircleIcon
+            aria-hidden="true"
+            className="mt-1 h-5 w-5 flex-none text-sky-600"
+          />
+          <span>
+            <strong className="font-semibold text-gray-900">
+              Career Type.
+            </strong>
+            You are a {hd.careerDesign()}, also known as a {hd.type()}.
+          </span>
+        </li>
+      </ul>
+      <p className="mt-6">{careerWriteups.get(hd.type())}</p>
       <figure className="mt-10 border-l border-sky-600 pl-9">
         <blockquote className="font-semibold text-gray-900">
           <p>"{raQuotes.get(hd.type())}"</p>
@@ -259,25 +476,33 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
           </div>
         </figcaption>
       </figure>
+      <p className="mt-6">{careerNotSelfWriteups.get(hd.type())}</p>
       <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
         Success Code 2: Personal Interaction Style
       </h2>
-      <li className="flex gap-x-3">
-        <CheckCircleIcon
-          aria-hidden="true"
-          className="mt-1 h-5 w-5 flex-none text-sky-600"
-        />
-        <span>
-          <strong className="font-semibold text-gray-900">
-            Personal Interaction Style.
-          </strong>
-          Your main way of being in the world is to {hd.strategy()}.
-        </span>
-      </li>
-      {/* <h2 className="mt-10 text-lg">
-        Your daily mission is to find activities that bring you{' '}
-        {hd.signatureTheme()}.
-      </h2> */}
+      <p className="mt-8">
+        Each of the types has a different way to move though life. For most of
+        us, living according to our design means to stop trying to make things
+        happen, and more about being aware of what is happening around us, and
+        then allowing this awareness to guide us in our actions. The first step
+        is to simply
+      </p>
+      <ul role="list" className="mt-8 max-w-xl space-y-8 text-gray-600">
+        <li className="flex gap-x-3">
+          <CheckCircleIcon
+            aria-hidden="true"
+            className="mt-1 h-5 w-5 flex-none text-sky-600"
+          />
+          <span>
+            <strong className="font-semibold text-gray-900">
+              Personal Interaction Style.
+            </strong>
+            Your personal style is to {hd.strategy()}.
+          </span>
+        </li>
+      </ul>
+      <p className="mt-6">{strategyWriteups.get(hd.strategy())}</p>
+
       {hd.type() !== 'Manifestor' && (
         <>
           <p className="mt-6">
@@ -318,23 +543,42 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
               </div>
             </figcaption>
           </figure>
+          <p className="mt-6">
+            This sort of waiting is quite common in spiritual teachings, less so
+            in the hyper-competitive society most of us find ourselves in.
+          </p>
         </>
       )}
       <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
         Success Code 3: Your Decision-Making Strategy
       </h2>
-      <li className="flex gap-x-3">
-        <CheckCircleIcon
-          aria-hidden="true"
-          className="mt-1 h-5 w-5 flex-none text-sky-600"
-        />
-        <span>
-          <strong className="font-semibold text-gray-900">
-            Decision-Making Strategy.
-          </strong>
-          Your way to make decisions is to {hd.decisionMakingStrategy()}
-        </span>
-      </li>
+      <p className="mt-8">
+        At the core of the practice is to move from mindlessly reacting to
+        things that happen, to following a way of being that is specific to you.
+        By following this <i>decision-making strategy</i> which is described
+        below, we let go of the old patterns which have controlled us in the
+        past, and move towards a new way of being which is authentically
+        ourselves. This is not an instant fix; it can take years to completely
+        let go of these destructive patterns. But the payoff is worth it: a life
+        without {hd.notSelfTheme()} and a nearly effortless way of being.
+      </p>
+
+      <ul role="list" className="mt-8 max-w-xl space-y-8 text-gray-600">
+        <li className="flex gap-x-3">
+          <CheckCircleIcon
+            aria-hidden="true"
+            className="mt-1 h-5 w-5 flex-none text-sky-600"
+          />
+          <span>
+            <strong className="font-semibold text-gray-900">
+              Decision-Making Strategy.
+            </strong>
+            Your way to make decisions is to {hd.decisionMakingStrategy()}
+          </span>
+        </li>
+      </ul>
+      <p className="mt-6">{authorityWriteups.get(hd.authority())}</p>
+
       <figure className="mt-16">
         <Image
           alt="Star Wars Mandalorian - This is the way"
@@ -349,6 +593,14 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
           Your way is to<b>{hd.decisionMakingStrategy()}</b>.
         </figcaption>
       </figure>
+
+      <p className="mt-8">
+        This brings us to a basic Human Design teaching: the mind is never the
+        best way to make decisions. It is great for taking in information and
+        considering different options. But when it is time to make a decision,
+        you should always {hd.authorityDescription()}.
+      </p>
+
       <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
         Success Code 4: Your Key Indicators
       </h2>
@@ -361,18 +613,20 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
         Thankfully, there's a simple way of knowing whether you are on-track or
         off-track. Look back at your day
       </p>
-      <li className="mt-6 flex gap-x-3">
-        <CheckCircleIcon
-          aria-hidden="true"
-          className="mt-1 h-5 w-5 flex-none text-sky-600"
-        />
-        <span>
-          <strong className="font-semibold text-gray-900">
-            Negative key indicator.
-          </strong>
-          Your sign of resistance is {hd.notSelfTheme()}.
-        </span>
-      </li>
+      <ul role="list" className="mt-8 max-w-xl space-y-8 text-gray-600">
+        <li className="mt-6 flex gap-x-3">
+          <CheckCircleIcon
+            aria-hidden="true"
+            className="mt-1 h-5 w-5 flex-none text-sky-600"
+          />
+          <span>
+            <strong className="font-semibold text-gray-900">
+              Negative key indicator.
+            </strong>
+            Your sign of resistance is {hd.notSelfTheme()}.
+          </span>
+        </li>
+      </ul>
       <p className="mt-6">
         You might have had a lot of {hd.notSelfTheme()} in your life. This is a
         sign that you are attempting to do something that{' '}
@@ -393,18 +647,20 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
         {hd.notSelfThemeAdjective()} than before! The only thing to do is to
         follow your decision-making strategy to {hd.decisionMakingStrategy()}.
       </p>
-      <li className="mt-6 flex gap-x-3">
-        <CheckCircleIcon
-          aria-hidden="true"
-          className="mt-1 h-5 w-5 flex-none text-sky-600"
-        />
-        <span>
-          <strong className="font-semibold text-gray-900">
-            Positive Key indicator.
-          </strong>
-          You are on-track if you have a feeling of {hd.signatureTheme()}.
-        </span>
-      </li>
+      <ul role="list" className="mt-8 max-w-xl space-y-8 text-gray-600">
+        <li className="mt-6 flex gap-x-3">
+          <CheckCircleIcon
+            aria-hidden="true"
+            className="mt-1 h-5 w-5 flex-none text-sky-600"
+          />
+          <span>
+            <strong className="font-semibold text-gray-900">
+              Positive Key indicator.
+            </strong>
+            You are on-track if you have a feeling of {hd.signatureTheme()}.
+          </span>
+        </li>
+      </ul>
       <p className="mt-8">
         Your goal is not money, fame, or power, although those can feel good as
         well. When you feel {hd.signatureThemeAdjective()}, that is{' '}
@@ -418,28 +674,15 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
         <b>
           move from {hd.notSelfTheme()} to {hd.signatureTheme()}
         </b>
-        . Look back at the things that cause you to get{' '}
+        . Look back at the things that cause you to get
         {hd.notSelfThemeAdjective()}: did you {hd.authorityDescription()} or did
         you make a decision based on what your mind thought you should do?
       </p>
-      <p className="mt-8">
-        This brings us to a basic Human Design teaching: the mind is never the
-        best way to make decisions. It is great for taking in information and
-        considering different options. But when it is time to make a decision,
-        you should always {hd.authorityDescription()}.
-      </p>
-      <p>Let's break it down.</p>
-      <h2 className="text-base">{hd.personalInteraction()} ...</h2>
-      <p>{strategyWriteups.get(hd.type())}</p>
-      <h2 className="text-base">{hd.authorityDescription()}</h2>
-      <p>{authorityWriteups.get(hd.type())}</p>
-      <h2 className="text-lg">
-        Pause - observe - {hd.decisionMakingStrategy()}
-      </h2>
+      <h2 className="mt-8">Pause - observe - {hd.decisionMakingStrategy()}</h2>
       <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
         Want more?
       </h2>
-      These
+
       <figure className="mt-16">
         <Image
           src={fairSelection}

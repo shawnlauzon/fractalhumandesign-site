@@ -1,4 +1,7 @@
 import PersonalizedGuide from '@/components/PersonalizedGuide'
+import puzzleFittingIn from '@/images/puzzle-fitting-in.webp'
+import { InformationCircleIcon } from '@heroicons/react/20/solid'
+import Image from 'next/image'
 import { Button } from './Button'
 import ChartImage from './ChartImage'
 
@@ -30,7 +33,7 @@ export default async function ChartGuide({ chartId }: ChartGuideProps) {
   const lastName = user?.lastName
 
   return (
-    <div className="bg-white px-6 py-32 lg:px-8">
+    <div className="bg-white px-6 py-8 lg:px-8">
       <div className="mx-auto max-w-3xl text-base leading-7 text-gray-700">
         <p className="text-base font-semibold leading-7 text-sky-600">
           Crafted for {firstName} {lastName}
@@ -44,6 +47,55 @@ export default async function ChartGuide({ chartId }: ChartGuideProps) {
           you some basic knowledge that will help you live a life in alignment
           with your authentic self.
         </p>
+        <p className="mt-8">
+          Some of what is shared here you might resonate with, and others not so
+          much. This is normal: most of us have been conditioned for years to be
+          someone that we aren't, and so it can be hard to recognize our true
+          nature.
+        </p>
+        <p className="mt-8">
+          Why would this be? Well our parents, doing their best, wanted to guide
+          us with what they have learned is best for themselves. Unfortunately,
+          what worked for them will very likely not be the best for us. But
+          still, our parents are our only source of love, and so we will do
+          absolutely anything to not lose their love. Even that means going
+          against our very nature. And this "fitting in" process happens at
+          home, at school, when we're looking for a job, or for a partner.
+        </p>
+        <figure className="mt-16">
+          <Image
+            src={puzzleFittingIn}
+            alt="Puzzle cutting himself to fit in "
+            className="aspect-auto rounded-xl bg-gray-50 object-cover"
+          />
+          <figcaption className="mt-4 flex gap-x-2 text-sm leading-6 text-gray-500">
+            <InformationCircleIcon
+              aria-hidden="true"
+              className="mt-0.5 h-5 w-5 flex-none text-gray-300"
+            />
+            Don't change yourself to try to fit in.
+          </figcaption>
+        </figure>
+        <p className="mt-8">
+          Human Design gives us tools to let go of the conditioning we have
+          received from all those people in our life, both those trying to help
+          us or do us harm. These tools bring us back to our true nature on this
+          planet: that each of us are completely individual and here to follow
+          what is right for us.
+        </p>
+        <p className="mt-8">
+          One final note to keep in mind: treat everything you read here as an
+          opportunity to experiment. You can't do anything wrong! Furthermore,
+          everything you see here might not be exactly right for you,
+          <em>right now</em>. The invitation is for you to try something, so how
+          it works for you, and then keep it or leave it, perhaps coming back to
+          it later.
+        </p>
+        <p className="mt-8">
+          Enjoy the process. Let go of what you <em>think</em> you need to do
+          and relax into what feels natural.
+        </p>
+
         <div className="mt-10 max-w-2xl">
           <PersonalizedGuide chart={chart} />
         </div>
