@@ -42,8 +42,8 @@ export default async function ChartList() {
           <tr key={chart.id} className="border-b">
             <td className="px-4 py-2">
               <Link
-                href={`/chart/${chart.id}`}
-                className="text-blue-500 hover:underline"
+                href={`/guide/${chart.id}`}
+                className="text-sky-600 hover:underline"
               >
                 {chart.user.firstName} {chart.user.lastName}
               </Link>
