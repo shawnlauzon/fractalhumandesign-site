@@ -22,6 +22,7 @@ import {
 } from '@heroicons/react/20/solid'
 import { yupResolver } from '@hookform/resolvers/yup'
 import _ from 'lodash'
+import { useRouter } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import * as yup from 'yup'
@@ -38,6 +39,7 @@ export function BirthDataForm({
   const [timeZoneCities, setTimeZoneCities] = useState<TimeZones>()
   const [isSubmitting, setSubmitting] = useState(false)
   const abortControllerRef = useRef<AbortController | null>(null)
+  const router = useRouter()
 
   interface TimeZones {
     [name: string]: string[]
@@ -172,6 +174,7 @@ export function BirthDataForm({
         email: guideProps.email,
       })
       console.log('Chart saved.')
+      router.push('/dashboard')
     } catch (e) {
       console.error('Failure creating chart', e)
     }
@@ -529,9 +532,8 @@ export function BirthDataForm({
           </div>
 
           <div className="mt-6 flex items-center justify-end gap-x-6">
-            <Button type="button">Cancel</Button>
-            <Button type="submit" color="sky">
-              Save
+            <Button type="submit" color="sky" disabled={isSubmitting}>
+              Let's go!
             </Button>
           </div>
         </form>
