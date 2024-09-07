@@ -39,7 +39,7 @@ export default async function ChartGuide({ chartId }: ChartGuideProps) {
           Crafted for {firstName} {lastName}
         </p>
         <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-          Your Personal Tools for Flow
+          Your Personal Guide for Flow
         </h1>
         <p className="mt-6 text-xl leading-8">
           Congratulations on taking the first step to understanding yourself and
