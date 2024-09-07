@@ -34,15 +34,26 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
     ],
     [
       'Manifestor',
-      `You know, we're not warm, fuzzy people, Manifestors. It's not the way we work. Manifestors are designed simply to go out there and do their thing, period. And hopefully there are others that they drag along with them.`,
+      `You know, we're not warm, fuzzy people, Manifestors. It's not the way we work. 
+      Manifestors are designed simply to go out there and do their thing, period. And 
+      hopefully there are others that they drag along with them.`,
     ],
     [
       'Projector',
-      `Everything about a projector is that a projector is here to guide, to guide. There's something very important to understand if you're a projector. Probably the most important thing I can tell you only deal with one person at a time, one person at a time. ... You know, if you're a projector and you got a family and you got a problem, don't do group therapy. Oh, let's all talk about it together, right? Oh, is that awful for you? You always end up the loser in that because you can only deal one being at a time.`,
+      `Everything about a projector is that a projector is here to guide, to guide.
+       There's something very important to understand if you're a projector. 
+       Probably the most important thing I can tell you only deal with one person at 
+       a time, one person at a time. ... You know, if you're a projector and you got 
+       a family and you got a problem, don't do group therapy. Oh, let's all talk 
+       about it together, right? Oh, is that awful for you? You always end up the 
+       loser in that because you can only deal one being at a time.`,
     ],
     [
       'Reflector',
-      `I'm always glad when Reflectors come into human design, because it's sort of like Neo and matrix. You know, the Reflector says, Oh, we can pull this one out, because this one's really weird and different. It doesn't follow the rules. Maybe they'll be okay here.`,
+      `I'm always glad when Reflectors come into human design, because it's sort of 
+      like Neo and matrix. You know, the Reflector says, Oh, we can pull this one 
+      out, because this one's really weird and different. It doesn't follow the 
+      rules. Maybe they'll be okay here.`,
     ],
   ])
 
