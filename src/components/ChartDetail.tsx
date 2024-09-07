@@ -1,7 +1,12 @@
-import fairSelectionTest from '@/images/fair-selection-test.png'
+import raUruHu from '@/images/avatars/ra-uru-hu.jpg'
+import fairSelection from '@/images/fair-selection.webp'
 import thisIsTheWay from '@/images/this-is-the-way.jpg'
 import { SimpleChart } from '@/types/SimpleChart'
 import hdChart from '@/utils/hd-chart'
+import {
+  CheckCircleIcon,
+  InformationCircleIcon,
+} from '@heroicons/react/20/solid'
 import Image from 'next/image'
 import React from 'react'
 
@@ -12,33 +17,35 @@ interface ChartDetailProps {
 const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
   const hd = hdChart(chart)
 
-  // Define the type for strategy and authority keys
-  type StrategyType =
-    | 'Generator'
-    | 'Manifesting Generator'
-    | 'Projector'
-    | 'Manifestor'
-    | 'Reflector'
-  type AuthorityType =
-    | 'sacral'
-    | 'emotional'
-    | 'splenic'
-    | 'ego'
-    | 'self projected'
-    | 'outer'
-    | 'lunar'
-  type ShadowType =
-    | 'root'
-    | 'sacral'
-    | 'splenic'
-    | 'solarplexus'
-    | 'ego'
-    | 'gcenter'
-    | 'throat'
-    | 'ajna'
-    | 'head'
+  const raQuotes: Map<string, string> = new Map([
+    [
+      'Generator',
+      `There's nothing more special on this planet than Generators ... there is 
+      no difference between finding a life and getting a job; you come into the
+      world to find the right work. It is only once you've found the right work
+      that you get a life.`,
+    ],
+    [
+      'Manifesting Generator',
+      `So a manifesting generator is a generator with manifesting potential, with
+      manifesting potential ... A generator is a generator is a generator. It is
+      about response. The power of the manifesting generator is the quality of energy
+      that they can put to any task.`,
+    ],
+    [
+      'Manifestor',
+      `You know, we're not warm, fuzzy people, Manifestors. It's not the way we work. Manifestors are designed simply to go out there and do their thing, period. And hopefully there are others that they drag along with them.`,
+    ],
+    [
+      'Projector',
+      `Everything about a projector is that a projector is here to guide, to guide. There's something very important to understand if you're a projector. Probably the most important thing I can tell you only deal with one person at a time, one person at a time. ... You know, if you're a projector and you got a family and you got a problem, don't do group therapy. Oh, let's all talk about it together, right? Oh, is that awful for you? You always end up the loser in that because you can only deal one being at a time.`,
+    ],
+    [
+      'Reflector',
+      `I'm always glad when Reflectors come into human design, because it's sort of like Neo and matrix. You know, the Reflector says, Oh, we can pull this one out, because this one's really weird and different. It doesn't follow the rules. Maybe they'll be okay here.`,
+    ],
+  ])
 
-  // Define the maps with TypeScript types
   const strategyWriteups: Map<string, string> = new Map([
     [
       'Generator',
@@ -167,7 +174,7 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
     ['head', "Trying to answer other people's questions"],
   ])
 
-  const shadowWriteups: Map<ShadowType, string> = new Map([
+  const shadowWriteups: Map<string, string> = new Map([
     [
       'root',
       `You may find that you feel pressured to get things done, which would cause you
@@ -188,25 +195,22 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
   ])
 
   return (
-    <div>
-      <p>
-        Congratulations on taking the first step to understanding yourself and
-        how absolutely, incredibly unique you are. The goal here is to give you
-        some basic knowledge that will help you live a life in alignment with
-        your authentic self.
-      </p>
+    <>
       <p>
         Some of what is shared here you might resonate with, and others not so
         much. This is normal: most of us have been conditioned for years to be
         someone that we aren't, and so it can be hard to recognize our true
         nature.
       </p>
-      <p>
+      <p className="mt-8">
         Keep in mind that this is an experiment. You can't do anything wrong!
         Simply follow the practices, notice how you feel, and then make any
         adjustments you think will help.
       </p>
-      <p>
+      <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
+        Success Code 1: Career Type
+      </h2>
+      <p className="mt-6">
         At the core of the practice is to move from mindlessly reacting to
         things that happen, to following a way of being that is specific to you.
         By following this <i>decision-making strategy</i> which is described
@@ -217,45 +221,187 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
         without {hd.notSelfTheme()} and a nearly effortless way of being.
       </p>
       <p className="py-2 text-center text-xl font-black">Welcome home.</p>
-      <h2 className="text-lg">
-        You are a {hd.type()}, also known as {hd.careerDesign()}.
+      <li className="flex gap-x-3">
+        <CheckCircleIcon
+          aria-hidden="true"
+          className="mt-1 h-5 w-5 flex-none text-indigo-600"
+        />
+        <span>
+          <strong className="font-semibold text-gray-900">Career Type.</strong>
+          You are a {hd.careerDesign()}, also known as {hd.type()}.
+        </span>
+      </li>
+      <p className="mt-6">{strategyWriteups.get(hd.type())}</p>
+      <figure className="mt-10 border-l border-indigo-600 pl-9">
+        <blockquote className="font-semibold text-gray-900">
+          <p>"{raQuotes.get(hd.type())}"</p>
+        </blockquote>
+        <figcaption className="mt-6 flex gap-x-4">
+          <Image
+            alt="Ra Uru Hu headshot"
+            src={raUruHu}
+            className="h-6 w-6 flex-none rounded-full bg-gray-50"
+          />
+          <div className="text-sm leading-6">
+            <strong className="font-semibold text-gray-900">Ra Uru Hu</strong> –
+            Human Design Founder
+          </div>
+        </figcaption>
+      </figure>
+      <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
+        Success Code 2: Personal Interaction Style
       </h2>
-      <p>{strategyWriteups.get(hd.type())}</p>
-      <h2 className="text-lg">
+      <li className="flex gap-x-3">
+        <CheckCircleIcon
+          aria-hidden="true"
+          className="mt-1 h-5 w-5 flex-none text-indigo-600"
+        />
+        <span>
+          <strong className="font-semibold text-gray-900">
+            Personal Interaction Style.
+          </strong>
+          Your main way of being in the world is to {hd.strategy()}.
+        </span>
+      </li>
+      {/* <h2 className="mt-10 text-lg">
         Your daily mission is to find activities that bring you{' '}
         {hd.signatureTheme()}.
+      </h2> */}
+      {hd.type() !== 'Manifestor' && (
+        <>
+          <p className="mt-6">
+            You're probably not used to so much waiting. You might even feel
+            that if you're not actively doing something, you're falling behind.
+            Or maybe even feel like you're being lazy! But waiting is not just
+            sitting around, waiting for something to happen. It's an active
+            state of awareness. Rather than running around and DOING, it's more
+            of a state of BEING. And then doing what you want, what makes you
+            happy, or even something which brings you {hd.signatureTheme()}.
+          </p>
+
+          <figure className="mt-10 border-l border-indigo-600 pl-9">
+            <blockquote className="font-semibold text-gray-900">
+              <p>
+                "So many people think that waiting is a stagnant sort of dead
+                space. You know, nothing is happening, nothing is going on,
+                nothing's ever going on ... It doesn't mean that nothing is
+                going on. Waiting can be translated as a higher state of
+                alertness ... It is a state of awareness. It is being present.
+                It is being ready for precisely those things that you're
+                actually waiting for, waiting for that perfect stimulation that
+                is going to allow you to operate correctly, to make a decision
+                correctly, because you're present here now, waiting you."
+              </p>
+            </blockquote>
+            <figcaption className="mt-6 flex gap-x-4">
+              <Image
+                alt="Ra Uru Hu headshot"
+                src={raUruHu}
+                className="h-6 w-6 flex-none rounded-full bg-gray-50"
+              />
+              <div className="text-sm leading-6">
+                <strong className="font-semibold text-gray-900">
+                  Ra Uru Hu
+                </strong>{' '}
+                – Human Design Founder
+              </div>
+            </figcaption>
+          </figure>
+        </>
+      )}
+      <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
+        Success Code 3: Your Decision-Making Strategy
       </h2>
-      <p>
-        Your goal is not money, fame, or power, although those can feel good as
-        well. When you feel {hd.signatureThemeAdjective()}, that is{' '}
-        <b>the sign that you're in the flow</b>, that you are in alignment with
-        your true self. The more you feel {hd.signatureThemeAdjective()}{' '}
-        throughout the day, the more you will find yourself moving with ease.
+      <li className="flex gap-x-3">
+        <CheckCircleIcon
+          aria-hidden="true"
+          className="mt-1 h-5 w-5 flex-none text-indigo-600"
+        />
+        <span>
+          <strong className="font-semibold text-gray-900">
+            Decision-Making Strategy.
+          </strong>
+          Your way to make decisions is to {hd.decisionMakingStrategy()}
+        </span>
+      </li>
+      <figure className="mt-16">
+        <Image
+          alt="Star Wars Mandalorian - This is the way"
+          src={thisIsTheWay}
+          className="aspect-video rounded-xl bg-gray-50 object-cover"
+        />
+        <figcaption className="mt-4 flex gap-x-2 text-sm leading-6 text-gray-500">
+          <InformationCircleIcon
+            aria-hidden="true"
+            className="mt-0.5 h-5 w-5 flex-none text-gray-300"
+          />
+          Your way is to<b>{hd.decisionMakingStrategy()}</b>.
+        </figcaption>
+      </figure>
+      <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
+        Success Code 4: Your Key Indicators
+      </h2>
+      <p className="mt-6">
+        For many people, all this talk about decision making process can feel a
+        bit ungrounded. How do you see progress? How do you know if these
+        changes that you're making have an impact?
       </p>
-      <h2 className="text-lg">
-        Your sign of resistance is {hd.notSelfTheme()}.
-      </h2>
-      <p>
+      <p className="mt-8">
+        Thankfully, there's a simple way of knowing whether you are on-track or
+        off-track. Look back at your day
+      </p>
+      <li className="mt-6 flex gap-x-3">
+        <CheckCircleIcon
+          aria-hidden="true"
+          className="mt-1 h-5 w-5 flex-none text-indigo-600"
+        />
+        <span>
+          <strong className="font-semibold text-gray-900">
+            Negative key indicator.
+          </strong>
+          Your sign of resistance is {hd.notSelfTheme()}.
+        </span>
+      </li>
+      <p className="mt-6">
         You might have had a lot of {hd.notSelfTheme()} in your life. This is a
         sign that you are attempting to do something that{' '}
         <b>doesn't align with your core nature</b>. When you consistently do
         things that make you {hd.notSelfThemeAdjective()}, you will find
         yourself increasingly drained of energy.
       </p>
-      <p>
+      <p className="mt-8">
         When you find yourself {hd.notSelfThemeAdjective()}, think about how you
         decided to do this activity: is it something that you thought you{' '}
         <i>should do</i>? Or is it something you actually wanted to do?
       </p>
-      <h2 className="text-lg">
-        Your way to make decisions is to <b>{hd.decisionMakingStrategy()}</b>.
-      </h2>
-      <Image
-        src={thisIsTheWay}
-        alt="Decision-making strategy"
-        className="mx-auto my-4 w-full max-w-md"
-      />
-      <p>
+      <p className="mt-8">
+        Interestingly, actively attempting to avoid {hd.notSelfThemeAdjective()}{' '}
+        can itself cause it! Thinking to yourself "oh, I don't want to feel{' '}
+        {hd.notSelfThemeAdjective()}" and so let me just avoid it all together.
+        And then how do you feel? Probably even more{' '}
+        {hd.notSelfThemeAdjective()} than before! The only thing to do is to
+        follow your decision-making strategy to {hd.decisionMakingStrategy()}.
+      </p>
+      <li className="mt-6 flex gap-x-3">
+        <CheckCircleIcon
+          aria-hidden="true"
+          className="mt-1 h-5 w-5 flex-none text-indigo-600"
+        />
+        <span>
+          <strong className="font-semibold text-gray-900">
+            Positive Key indicator.
+          </strong>
+          You are on-track if you have a feeling of {hd.signatureTheme()}.
+        </span>
+      </li>
+      <p className="mt-8">
+        Your goal is not money, fame, or power, although those can feel good as
+        well. When you feel {hd.signatureThemeAdjective()}, that is{' '}
+        <b>the sign that you're in the flow</b>, that you are in alignment with
+        your true self. The more you feel {hd.signatureThemeAdjective()}{' '}
+        throughout the day, the more you will find yourself moving with ease.
+      </p>
+      <p className="mt-6">
         If you can only remember one thing, this is it. By living life in this
         manner, you will{' '}
         <b>
@@ -265,7 +411,7 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
         {hd.notSelfThemeAdjective()}: did you {hd.authorityDescription()} or did
         you make a decision based on what your mind thought you should do?
       </p>
-      <p>
+      <p className="mt-8">
         This brings us to a basic Human Design teaching: the mind is never the
         best way to make decisions. It is great for taking in information and
         considering different options. But when it is time to make a decision,
@@ -273,40 +419,39 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
       </p>
       <p>Let's break it down.</p>
       <h2 className="text-base">{hd.personalInteraction()} ...</h2>
-      {hd.type() !== 'Manifestor' && (
-        <div>
-          <p>
-            Let's first get clear on what it means <b>to wait</b>. Many people
-            think that waiting means sitting around and doing nothing, waiting
-            for the <i>deus ex machina</i> to come down and tell you{' '}
-            <b>this is what you are meant to do</b>. Unfortunately for most of
-            us, that's not the case. Waiting involves doing what you want, what
-            makes you happy, or even something which brings you{' '}
-            {hd.signatureTheme()}.
-          </p>
-        </div>
-      )}
       <p>{strategyWriteups.get(hd.type())}</p>
       <h2 className="text-base">{hd.authorityDescription()}</h2>
       <p>{authorityWriteups.get(hd.type())}</p>
-
       <h2 className="text-lg">
         Pause - observe - {hd.decisionMakingStrategy()}
       </h2>
-      <div>
+      <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
+        Want more?
+      </h2>
+      These
+      <figure className="mt-16">
+        <Image
+          src={fairSelection}
+          alt="Fair selection test"
+          className="aspect-auto rounded-xl bg-gray-50 object-cover"
+        />
+        <figcaption className="mt-4 flex gap-x-2 text-sm leading-6 text-gray-500">
+          <InformationCircleIcon
+            aria-hidden="true"
+            className="mt-0.5 h-5 w-5 flex-none text-gray-300"
+          />
+          Your way is to<b>{hd.decisionMakingStrategy()}</b>.
+        </figcaption>
+      </figure>
+      <p className="mt-8">
         You have the strengths needed to be successful. Your strengths are
         different from other people's, and so it can be easy to compare with
         others and want what they have. But Human Design shows us how we are
         unique and that there's absolutely no point comparing yourself to anyone
         else. It's like comparing yourself to a cheetah: it's not your fault
         that you can't run as fast.
-        <Image
-          src={fairSelectionTest}
-          alt="Fair selection test"
-          className="mx-auto my-4 w-full max-w-md"
-        />
-      </div>
-    </div>
+      </p>
+    </>
   )
 }
 

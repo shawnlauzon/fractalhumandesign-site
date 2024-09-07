@@ -103,7 +103,7 @@ export function Header() {
               href="https://calendly.com/fractalhumandesign/quick"
               color="blue"
             >
-              <span>Schedule a call</span>
+              <span>Book a call</span>
             </Button>
             {/* <div className="-mr-1 md:hidden">
               <MobileNavigation />

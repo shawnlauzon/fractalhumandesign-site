@@ -24,8 +24,8 @@ const ChartImage: React.FC<ChartImageProps> = ({ birthTime }) => {
       src={chartUrl}
       width={727}
       height={488}
-      alt="Chart"
-      className="h-auto w-full"
+      alt="Human Design Chart"
+      className="aspect-auto rounded-xl object-cover"
     />
   )
 }

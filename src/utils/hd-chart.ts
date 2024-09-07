@@ -67,8 +67,8 @@ export default function (chart: SimpleChart) {
     'disappointed',
   ]
   const strategies = [
-    'wait to respond',
-    'wait to respond',
+    'wait to respond before engaging',
+    'wait to respond before engaging',
     'inform before taking action',
     'wait for recognition and invitation',
     'wait a 28 day cycle to reflect and assess',
