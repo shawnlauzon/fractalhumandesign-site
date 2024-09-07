@@ -54,6 +54,10 @@ export function BirthDataForm({
       countryAbbr: yup.string().length(2).required(),
       city: yup.string().required(),
       timezone: yup.string().required(),
+      emailOptIn: yup
+        .bool()
+        .required('Emails are required.')
+        .oneOf([true], 'Emails are required'),
     })
     .required()
 
@@ -75,6 +79,7 @@ export function BirthDataForm({
       countryAbbr: countries.find((c) => c.abbr === 'US')?.abbr,
       city: '',
       timezone: '',
+      emailOptIn: false,
     },
     resolver: yupResolver(schema),
   })
@@ -169,6 +174,7 @@ export function BirthDataForm({
         firstName: guideProps.firstName,
         lastName: guideProps.lastName,
         email: guideProps.email,
+        emailOptIn: guideProps.emailOptIn,
       })
       console.log('Chart sent.')
       router.push('/guide/success')
@@ -449,80 +455,34 @@ export function BirthDataForm({
               <h2 className="text-base font-semibold leading-7 text-gray-900">
                 Notifications
               </h2>
-              <p className="mt-1 text-sm leading-6 text-gray-600">
-                We'll always let you know about important changes, but you pick
-                what else you want to hear about.
-              </p>
 
               <div className="mt-10 space-y-10">
                 <fieldset>
-                  <legend className="text-sm font-semibold leading-6 text-gray-900">
-                    By Email
-                  </legend>
-                  <div className="mt-6 space-y-6">
-                    <div className="relative flex gap-x-3">
-                      <div className="flex h-6 items-center">
-                        <input
-                          id="comments"
-                          name="comments"
-                          type="checkbox"
-                          className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                        />
-                      </div>
-                      <div className="text-sm leading-6">
-                        <label
-                          htmlFor="comments"
-                          className="font-medium text-gray-900"
-                        >
-                          Spam
-                        </label>
-                        <p className="text-gray-500">
-                          Every single piece of content we create, we'll send
-                          you.
-                        </p>
-                      </div>
+                  <div className="relative flex gap-x-3">
+                    <div className="flex h-6 items-center">
+                      <input
+                        id="emailOptIn"
+                        type="checkbox"
+                        {...register('emailOptIn')}
+                        className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                      />
                     </div>
-                    <div className="relative flex gap-x-3">
-                      <div className="flex h-6 items-center">
-                        <input
-                          id="candidates"
-                          name="candidates"
-                          type="checkbox"
-                          className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                        />
-                      </div>
-                      <div className="text-sm leading-6">
-                        <label
-                          htmlFor="candidates"
-                          className="font-medium text-gray-900"
-                        >
-                          Newsletter
-                        </label>
-                        <p className="text-gray-500">
-                          Receive our weekly newsletter.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="relative flex gap-x-3">
-                      <div className="flex h-6 items-center">
-                        <input
-                          id="offers"
-                          name="offers"
-                          type="checkbox"
-                          className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                        />
-                      </div>
-                      <div className="text-sm leading-6">
-                        <label
-                          htmlFor="offers"
-                          className="font-medium text-gray-900"
-                        >
-                          Offers
-                        </label>
-                        <p className="text-gray-500">
-                          When we launch a new offering.
-                        </p>
-                      </div>
+                    <div className="text-sm leading-6">
+                      <label
+                        htmlFor="emailOptIn"
+                        className="font-medium text-gray-900"
+                      >
+                        Emails
+                      </label>
+                      <p className="text-gray-500">
+                        I agree to receive emails, max a couple times a week.
+                        Cancel anytime.
+                      </p>
+                      {errors.emailOptIn && (
+                        <div className="mt-2 text-sm text-red-600">
+                          {errors.emailOptIn.message}
+                        </div>
+                      )}
                     </div>
                   </div>
                 </fieldset>

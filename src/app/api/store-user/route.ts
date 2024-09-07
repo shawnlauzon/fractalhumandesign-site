@@ -1,5 +1,6 @@
 export const dynamic = 'force-dynamic' // static by default, unless reading the request
 
+import { User } from '@/types/User'
 import { Client, fql, QuerySuccess } from 'fauna'
 
 export async function POST(req: Request) {
@@ -7,18 +8,11 @@ export async function POST(req: Request) {
   const params = await req.json()
   console.log('store-user params', params)
 
-  type User = {
-    id: string
-    firstName: string
-    lastName: string
-    email: string
-    phoneNumber: string
-  }
-
   const user = {
     firstName: params.firstName,
     lastName: params.lastName,
     email: params.email,
+    emailOptIn: params.emailOptIn,
     phoneNumber: params.phoneNumber,
   }
 
@@ -29,8 +23,8 @@ export async function POST(req: Request) {
 
   try {
     const query = params.id
-      ? fql`User.byId(${params.id})?.update(${user}) { id, firstName, lastName, email, phoneNumber }`
-      : fql`User.create(${user}) { id, firstName, lastName, email, phoneNumber }`
+      ? fql`User.byId(${params.id})?.update(${user}) { id, firstName, lastName, email, emailOptIn, phoneNumber }`
+      : fql`User.create(${user}) { id, firstName, lastName, email, emailOptIn, phoneNumber }`
 
     // execute the query
     const queryResponse: QuerySuccess<User> = await client.query<User>(query)
