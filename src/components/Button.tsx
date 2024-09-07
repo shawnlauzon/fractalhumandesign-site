@@ -60,7 +60,7 @@ export function Button({ className, ...props }: ButtonProps) {
   return typeof props.href === 'undefined' ? (
     <button className={className} {...props}>
       <svg
-        className="-ml-1 mr-3 hidden h-5 w-5 animate-spin text-white disabled:inline"
+        className="-ml-1 mr-3 hidden h-5 w-5 animate-spin text-white group-disabled:inline"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
