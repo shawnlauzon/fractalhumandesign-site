@@ -13,7 +13,7 @@ interface ChartGuideProps {
 // Fetch data from the server
 async function fetchChartData(chartId: string) {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/get-chart?id=${chartId}`,
+    `${process.env.BASE_URL}/api/get-chart?id=${chartId}`,
     {
       cache: 'no-store', // Prevent caching to always fetch fresh data
     },

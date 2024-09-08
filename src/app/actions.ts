@@ -11,7 +11,7 @@ export async function sendChart(data: ChartData, user: User) {
 
     // Store user and chart
     const storeUserResp = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/api/store-user`,
+      `${process.env.BASE_URL}/api/store-user`,
       {
         method: 'POST',
         headers: localHeaders,
@@ -22,7 +22,7 @@ export async function sendChart(data: ChartData, user: User) {
     console.log('newUser', newUser)
 
     const storeChartResp = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/api/store-chart`,
+      `${process.env.BASE_URL}/api/store-chart`,
       {
         method: 'POST',
         headers: localHeaders,
@@ -38,7 +38,7 @@ export async function sendChart(data: ChartData, user: User) {
     console.log('Chart stored', newChart)
 
     // Now send it
-    await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/email-chart`, {
+    await fetch(`${process.env.BASE_URL}/api/email-chart`, {
       method: 'POST',
       headers: localHeaders,
       body: JSON.stringify({
