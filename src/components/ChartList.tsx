@@ -5,7 +5,7 @@ import Link from 'next/link'
 // Fetch data from the server
 async function fetchCharts() {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/list-charts`,
+    `https://${process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL}/api/list-charts`,
   )
 
   if (!response.ok) {
