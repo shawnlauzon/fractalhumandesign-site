@@ -1,4 +1,5 @@
 import PersonalizedGuide from '@/components/PersonalizedGuide'
+import fairSelection from '@/images/fair-selection.webp'
 import puzzleFittingIn from '@/images/puzzle-fitting-in.webp'
 import { InformationCircleIcon } from '@heroicons/react/20/solid'
 import Image from 'next/image'
@@ -34,33 +35,33 @@ export default async function ChartGuide({ chartId }: ChartGuideProps) {
 
   return (
     <div className="bg-white px-6 py-8 lg:px-8">
-      <div className="mx-auto max-w-3xl text-base leading-7 text-gray-700">
+      <div className="mx-auto max-w-2xl text-base leading-7 text-gray-700">
         <p className="text-base font-semibold leading-7 text-sky-600">
           Crafted for {firstName} {lastName}
         </p>
         <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
           Your Personal Guide for Flow
         </h1>
-        <p className="mt-6 text-xl leading-8">
+        <p className="mt-8 text-xl leading-8">
           Congratulations on taking the first step to understanding yourself and
           how absolutely, incredibly unique you are. The goal here is to give
           you some basic knowledge that will help you live a life in alignment
           with your authentic self.
         </p>
-        <p className="mt-8">
-          Some of what is shared here you might resonate with, and others not so
-          much. This is normal: most of us have been conditioned for years to be
+        <p className="mt-6">
+          Some of what you read you might resonate with, and others not so much.
+          This is normal: most of us have been conditioned for years to be
           someone that we aren't, and so it can be hard to recognize our true
           nature.
         </p>
-        <p className="mt-8">
+        <p className="mt-6">
           Why would this be? Well our parents, doing their best, wanted to guide
-          us with what they have learned is best for themselves. Unfortunately,
-          what worked for them will very likely not be the best for us. But
-          still, our parents are our only source of love, and so we will do
-          absolutely anything to not lose their love. Even that means going
-          against our very nature. And this "fitting in" process happens at
-          home, at school, when we're looking for a job, or for a partner.
+          us by their own experiences. Unfortunately, what worked for them is
+          often different from what we need. We are all different! However, our
+          parents being our only source of love as a child, we did absolutely
+          anything to not lose their love ... even if that means going against
+          our very nature. And this goal of "fitting in" repeats itself at
+          school, when we're looking for a job, or looking a partner.
         </p>
         <figure className="mt-16">
           <Image
@@ -73,61 +74,88 @@ export default async function ChartGuide({ chartId }: ChartGuideProps) {
               aria-hidden="true"
               className="mt-0.5 h-5 w-5 flex-none text-gray-300"
             />
-            Don't change yourself to try to fit in.
+            Check out the fake smile and bags under his eyes in the last panel
+            🥺
           </figcaption>
         </figure>
         <p className="mt-8">
-          Human Design gives us tools to let go of the conditioning we have
-          received from all those people in our life, both those trying to help
-          us or do us harm. These tools bring us back to our true nature on this
-          planet: that each of us are completely individual and here to follow
-          what is right for us.
+          Human Design gives us tools to let go of this conditioning from all
+          these influences, both those trying to help us or do us harm. These
+          tools bring us back to our true nature: that each of these bodies are
+          different and how to trust the guidance we receive daily.
         </p>
-        <p className="mt-8">
-          One final note to keep in mind: treat everything you read here as an
-          opportunity to experiment. You can't do anything wrong! Furthermore,
-          everything you see here might not be exactly right for you,
-          <em>right now</em>. The invitation is for you to try something, so how
-          it works for you, and then keep it or leave it, perhaps coming back to
-          it later.
-        </p>
-        <p className="mt-8">
-          Enjoy the process. Let go of what you <em>think</em> you need to do
-          and relax into what feels natural.
+        <p className="mt-6">
+          One final suggestion: treat everything you read here as an opportunity
+          to experiment. Try it out, see how it works, and then take it or leave
+          it; don't believe anything that anyone tells you, even what you read
+          here! Enjoy the process. Let go of what you <em>think</em> you need to
+          do and relax into your body's wisdom.
         </p>
 
-        <div className="mt-10 max-w-2xl">
+        <div className="mt-10">
           <PersonalizedGuide chart={chart} />
         </div>
 
         <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
-          Where did all this come from?
+          In conclusion
         </h2>
 
-        <p className="mt-6">
-          Human Design is based on many things, one of them being astrology.
-          When you entered your birth info, we created this chart, and all the
-          information above comes from reading the chart. It can be
-          overwhelming, and so we have done the hard work for you and broken
-          down into pieces that you can immediately put to good use.
-        </p>
-
         <figure className="mt-16">
-          <ChartImage birthTime={birthTime} />
+          <Image
+            src={fairSelection}
+            alt="Fair selection test"
+            className="aspect-auto rounded-xl bg-gray-50 object-cover"
+          />
+          <figcaption className="mt-4 flex gap-x-2 text-sm leading-6 text-gray-500">
+            <InformationCircleIcon
+              aria-hidden="true"
+              className="mt-0.5 h-5 w-5 flex-none text-gray-300"
+            />
+            What happens when we all try to play by the same rules.
+          </figcaption>
         </figure>
+        <p className="mt-8">
+          You have the strengths needed to be successful. Your strengths are
+          different from other people's, and so it can be easy to compare with
+          others and want what they have. But Human Design shows us how we are
+          unique and that there's absolutely no point comparing yourself to
+          anyone else. It's like comparing yourself to a cheetah: it's not your
+          fault that you can't run as fast.
+        </p>
 
         <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
           To learn more
         </h2>
 
-        <p className="mt-6">
+        <p className="mt-8">
           You don't need anything else to get started. Simply by following your
           decision-making strategy, you will begin to have more flow in your
           life.
         </p>
+        <p className="mt-6">
+          However, some people get massive value by hearing it directly from
+          someone who has been practicing it for years. I am available to answer
+          any questions you might have, and to share more individual guidance
+          based on your chart.
+        </p>
+        <figure className="mt-16">
+          <ChartImage birthTime={birthTime} />
+          <figcaption className="mt-4 flex gap-x-2 text-sm leading-6 text-gray-500">
+            <InformationCircleIcon
+              aria-hidden="true"
+              className="mt-0.5 h-5 w-5 flex-none text-gray-300"
+            />
+            Your personal chart
+          </figcaption>
+        </figure>
+
         <p className="mt-8">
-          If you'd like personalized guidance, let's talk! Simply tap the button
-          below and choose the time that works best for you.
+          People study the system for years and only begin to understand all the
+          nuances. Even this chart, which is quite detailed, leaves out much of
+          the more detailed information. You now have the informaetion you need
+          to go down the rabbit hole yourself. Or if you'd like to save some
+          time, tap the button below and let's connect: I'd love to hear from
+          you.
         </p>
         <div className="mt-4 flex items-center gap-x-5 md:gap-x-8">
           <Button
@@ -138,7 +166,7 @@ export default async function ChartGuide({ chartId }: ChartGuideProps) {
           </Button>
         </div>
         <p className="mt-6">
-          We look forward to guiding you to a life of more magic and flow.
+          Looking forward to guiding you in a life of more magic and flow.
         </p>
       </div>
     </div>
