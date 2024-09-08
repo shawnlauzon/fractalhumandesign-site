@@ -44,24 +44,23 @@ export default async function ChartGuide({ chartId }: ChartGuideProps) {
         </h1>
         <p className="mt-8 text-xl leading-8">
           Congratulations on taking the first step to understanding yourself and
-          how absolutely, incredibly unique you are. The goal here is to give
-          you some basic knowledge that will help you live a life in alignment
-          with your authentic self.
+          how absolutely, incredibly unique you are! My goal is to give you some
+          basic wisdom to help you live a life in alignment with your authentic
+          self.
         </p>
         <p className="mt-6">
-          Some of what you read you might resonate with, and others not so much.
-          This is normal: most of us have been conditioned for years to be
-          someone that we aren't, and so it can be hard to recognize our true
-          nature.
+          Some of what you read might resonate with you, and others not so much.
+          This is normal: most of us have been conditioned over time to be
+          someone we aren't, and so it can be hard to recognize our true nature.
         </p>
         <p className="mt-6">
-          Why would this be? Well our parents, doing their best, wanted to guide
-          us by their own experiences. Unfortunately, what worked for them is
-          often different from what we need. We are all different! However, our
-          parents being our only source of love as a child, we did absolutely
-          anything to not lose their love ... even if that means going against
-          our very nature. And this goal of "fitting in" repeats itself at
-          school, when we're looking for a job, or looking a partner.
+          Why is that? Well our parents, doing their best, wanted to guide us by
+          their own experiences. Unfortunately, what worked for them is often
+          different from what we need. We are all different! But our parents,
+          they being our only source of love as a child, we would do absolutely
+          anything not lose it ... even if that means going against our very
+          nature. And this process of "fitting in" repeats itself at school,
+          when we're looking for a job, or looking a partner.
         </p>
         <figure className="mt-16">
           <Image
