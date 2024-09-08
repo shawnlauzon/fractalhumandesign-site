@@ -2508,6 +2508,42 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fractalhumandesign-site@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "fractalhumandesign-site@workspace:."
+  dependencies:
+    "@headlessui/react": ^2.1.0
+    "@headlessui/tailwindcss": ^0.2.0
+    "@heroicons/react": ^2.1.5
+    "@hookform/devtools": ^4.3.1
+    "@hookform/resolvers": ^3.9.0
+    "@tailwindcss/forms": ^0.5.3
+    "@types/eslint-plugin-tailwindcss": ^3.17.0
+    "@types/node": ^20.10.8
+    "@types/react": ^18.2.47
+    "@types/react-dom": ^18.2.18
+    autoprefixer: ^10.4.12
+    clsx: ^2.1.0
+    eslint: ^8.56.0
+    eslint-config-next: ^14.0.4
+    eslint-plugin-tailwindcss: ^3.17.4
+    fauna: ^2.2.0
+    lodash: ^4.17.21
+    next: ^14.2.8
+    postcss: ^8.4.45
+    postmark: ^4.0.5
+    prettier: ^3.3.3
+    prettier-plugin-tailwindcss: ^0.6.6
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    react-hook-form: ^7.53.0
+    sharp: 0.33.1
+    tailwindcss: ^3.4.1
+    typescript: ^5.3.3
+    yup: ^1.4.0
+  languageName: unknown
+  linkType: soft
+
 "fraction.js@npm:^4.3.6":
   version: 4.3.7
   resolution: "fraction.js@npm:4.3.7"
@@ -4990,42 +5026,6 @@ __metadata:
   checksum: ef5a587dd32bb4e91e1549ead6162f85f0b78d3e6ffd8b4e8eeb15585b7b886cb3af6ae9df5092ed8ccb7e590608d1b3eec79ca08c862b07cd9ff7e72f73104b
   languageName: node
   linkType: hard
-
-"tailwindui-salient@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "tailwindui-salient@workspace:."
-  dependencies:
-    "@headlessui/react": ^2.1.0
-    "@headlessui/tailwindcss": ^0.2.0
-    "@heroicons/react": ^2.1.5
-    "@hookform/devtools": ^4.3.1
-    "@hookform/resolvers": ^3.9.0
-    "@tailwindcss/forms": ^0.5.3
-    "@types/eslint-plugin-tailwindcss": ^3.17.0
-    "@types/node": ^20.10.8
-    "@types/react": ^18.2.47
-    "@types/react-dom": ^18.2.18
-    autoprefixer: ^10.4.12
-    clsx: ^2.1.0
-    eslint: ^8.56.0
-    eslint-config-next: ^14.0.4
-    eslint-plugin-tailwindcss: ^3.17.4
-    fauna: ^2.2.0
-    lodash: ^4.17.21
-    next: ^14.2.8
-    postcss: ^8.4.45
-    postmark: ^4.0.5
-    prettier: ^3.3.3
-    prettier-plugin-tailwindcss: ^0.6.6
-    react: ^18.2.0
-    react-dom: ^18.2.0
-    react-hook-form: ^7.53.0
-    sharp: 0.33.1
-    tailwindcss: ^3.4.1
-    typescript: ^5.3.3
-    yup: ^1.4.0
-  languageName: unknown
-  linkType: soft
 
 "tapable@npm:^2.2.0":
   version: 2.2.1
