@@ -40,20 +40,20 @@ export default function GuideToFlowHero({
                   Inside are the keys to a more easeful life, specifically for
                   you.
                 </p>
-                <div className="mt-10 flex items-center gap-x-6">
-                  <Button href="#top">Get started</Button>
-                </div>
+                <Button className="mt-10 flex items-center gap-x-6">
+                  <a href="#top">Get started</a>
+                </Button>
               </div>
             </div>
           </div>
         </div>
-        <div className="bg-gray-50 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-          <img
-            alt=""
-            src="https://images.unsplash.com/photo-1545400841-4ac11ae0bfd2?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            className="aspect-[3/2] object-cover lg:aspect-auto lg:h-full lg:w-full"
-          />
-        </div>
+      </div>
+      <div className="bg-gray-50 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+        <img
+          alt=""
+          src="https://images.unsplash.com/photo-1545400841-4ac11ae0bfd2?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          className="aspect-[3/2] object-cover lg:aspect-auto lg:h-full lg:w-full"
+        />
       </div>
     </div>
   )

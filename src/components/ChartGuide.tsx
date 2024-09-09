@@ -40,7 +40,6 @@ export default async function ChartGuide({ chartId }: ChartGuideProps) {
 
       <div className="bg-white px-6 py-8 lg:px-8">
         <div className="mx-auto max-w-2xl text-base leading-7 text-gray-700">
-          <a id="top" href="top" />
           <p id="top" className="mt-8 text-xl leading-8">
             Some of what you read might resonate with you, and others not so
             much. This is normal: most of us have been conditioned over time to
