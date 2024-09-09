@@ -216,7 +216,9 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
       don't have to go out and look for them: you are designed to be found, when
       you have mastered your craft! Eventually, the right people will
       recognize you and invite you to guide them. Only when you truly feel seen
-      and recognized will you have the possibility of this being a good connection.`,
+      and recognized will you have the possibility of this being a good connection.
+      Waiting for a formal invitation is necessary in four areas of life: 
+      love, career, bonding with others, and finding a place to live.`,
     ],
     [
       'inform before taking action',
@@ -273,7 +275,9 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
       'ego',
       `This may sound completely heretical, but your way of making decisions is to BE
     SELFISH! What do YOU specifically want, what is in it for you? Ask yourself if your
-    heart is in it: if yes, then it's likely something good for you to do.`,
+    heart is in it: if yes, then it's likely something good for you to do. And make
+    sure you have a balance between your drive and getting plenty of rest; like all
+    Advisors, it can be difficult to know when enough is enough.`,
     ],
     [
       'self projected',
@@ -337,15 +341,31 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
       is sometimes a test: the opportunity which is right for you appears
       only after saying no to one that isn't.`,
     ],
-    ['ego', ``],
-    ['self projected', ``],
-    ['outer', ``],
+    [
+      'ego',
+      `You stay healthy by making and keeping promises, which is pretty rare.
+      So have compassion for the majority of people who lack your willpower
+      and should never make promises. `,
+    ],
+    [
+      'self projected',
+      `Make sure to talk with many different people to get a full sense of your
+      own direction. In addition to talking it out with others, ask yourself 1) does this feel
+      like me? 2) will it make me happy? 3) Will it help me express myself?
+      4) Will it bring me in the right direction?`,
+    ],
+    [
+      'outer',
+      `In addition to talking it out with others, ask yourself 1) does this feel
+      like me? 2) will it make me happy? 3) Will it help me express myself?
+      4) Will it bring me in the right direction?`,
+    ],
     [
       'lunar',
       `Because of how different your design is from others, we strongly 
       recommended that you have a reading with a qualified professional to begin
       to understand what makes you so unique. I offer half off for all
-      Evaluators, please reach out for details`,
+      Evaluators, please reach out for details.`,
     ],
   ])
 
