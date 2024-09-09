@@ -22,7 +22,7 @@ export function Footer() {
             href={`https://no-ai-icon.com/statement/?url=https://${process.env.HOST}`}
             target="_blank"
           >
-            <Image src={noAi} alt="No-AI logo" height={100} />
+            <Image src={noAi} alt="No-AI logo" height={60} />
           </Link>
         </div>
         <div className="flex flex-col items-center border-t border-slate-400/10 py-10 sm:flex-row-reverse sm:justify-between">
