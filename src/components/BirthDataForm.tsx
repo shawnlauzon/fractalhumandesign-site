@@ -199,8 +199,8 @@ export function BirthDataForm({
           </div>
         </div>
         <p className="mt-12">
-          Just fill out the info on this page to receive the secret to less
-          frustration and more calm.
+          Just fill out the info on this page and we'll send you the secret to
+          less frustration and more calm.
         </p>
 
         <form onSubmit={handleSubmit(onSubmit)}>
