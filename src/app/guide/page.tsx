@@ -6,6 +6,7 @@ import { createChart } from './create-chart'
 
 import type { Metadata } from 'next'
 
+// Only set this here to override the URL
 export const metadata: Metadata = {
   openGraph: {
     title: 'Get your free personal guide to flow',

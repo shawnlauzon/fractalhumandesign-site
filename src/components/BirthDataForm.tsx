@@ -15,9 +15,9 @@ import {
   Select,
 } from '@headlessui/react'
 import {
+  BackspaceIcon,
   CheckIcon,
   ChevronUpDownIcon,
-  XMarkIcon,
 } from '@heroicons/react/20/solid'
 import { yupResolver } from '@hookform/resolvers/yup'
 import _ from 'lodash'
@@ -413,9 +413,9 @@ export function BirthDataForm({
                                   className="absolute inset-y-0 right-5 flex items-center pr-3"
                                   onClick={resetCities}
                                 >
-                                  <XMarkIcon
+                                  <BackspaceIcon
                                     aria-hidden="true"
-                                    className="h-5 w-5 text-red-500"
+                                    className="h-5 w-5"
                                   />
                                 </button>
                               )}
