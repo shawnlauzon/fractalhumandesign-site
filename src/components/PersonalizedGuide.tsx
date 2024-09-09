@@ -53,10 +53,12 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
     ],
     [
       'Reflector',
-      `You are so unique: 1% of the population, imagine that! Your gift is to reflect what is
-    happening with others and then share it back with them. Patience and allowing are the
-    key words to remember when deciding what to do. Then reflect and discuss what you
-    perceive.`,
+      `You have a very special purpose in the world: to take the pulse of everything
+      going on and understand the health of the system. You might think of
+      your talent as being like a canary in a coal mine: you can literally feel it
+      in your body when things are harmonious and when they are discordant. Although
+      you can feel everything that's going on, it tends not to affect you as much
+      as it does other people; you have what is called "a teflon aura".`,
     ],
   ])
 
@@ -94,9 +96,9 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
     [
       'Reflector',
       `I'm always glad when Reflectors come into human design, because it's sort of 
-      like Neo and matrix. You know, the Reflector says, Oh, we can pull this one 
+      like Neo and the Matrix. You know, the Reflector says, "Oh, we can pull this one 
       out, because this one's really weird and different. It doesn't follow the 
-      rules. Maybe they'll be okay here.`,
+      rules. Maybe they'll be okay here."`,
     ],
   ])
   const careerNotSelfWriteups: Map<string, string> = new Map([
@@ -139,10 +141,13 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
     ],
     [
       'Reflector',
-      `First, realize how unique you are. Your gift is to reflect what is
-    happening with others and then share it back with them. Patience and allowing are the
-    key words to remember when deciding what to do. Then reflect and discuss what you
-    perceive.`,
+      `Evaluators can feel like they are somehow different from everyone else.
+      And at only 1% of the population, this is accurate! When not understanding
+      their unique nature, you might continually try to fit in, or judge yourself
+      because of a feeling of being invisible, but no matter
+      what, always feel a bit separate. You might also sometimes feel like a victim,
+      with so many different things happening to you. The trick is acceptance of 
+      your unique nature.`,
     ],
   ])
 
@@ -188,10 +193,11 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
     ],
     [
       'Reflector',
-      `First, realize how unique you are. Your gift is to reflect what is
-    happening with others and then share it back with them. Patience and allowing are the
-    key words to remember when deciding what to do. Then reflect and discuss what you
-    perceive.`,
+      `Your ideal career situation is to work in medium to large companies where 
+      you can get the vibe of the whole place. The phrase "variety is the spice 
+      of life" applies to you more than anyone else. Your accepting nature is a
+      joy for others to be around, and so it's important to stay neutral and
+      remain unattached when evaluating the group.`,
     ],
   ])
 
@@ -225,10 +231,10 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
     ],
     [
       'wait a 28 day cycle to reflect and assess',
-      `First, realize how unique you are. Your gift is to reflect what is
-    happening with others and then share it back with them. Patience and allowing are the
-    key words to remember when deciding what to do. Then reflect and discuss what you
-    perceive.`,
+      `Yes you read that right, 28 days! During this waiting period, every day you
+      will perceive possibilities from different angles, and so it's important to
+      really slow down and recognize how your perspective is continually shifting.
+      `,
     ],
   ])
 
@@ -290,12 +296,11 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
     ],
     [
       'lunar',
-      `Yours is the slowest process to make decisions. For major decisions, it is best
-    for you to wait for an entire lunar cycle: 28 days. After taking this time, you
-    should have much more clarity on what is right for you and what is not. During this
-    time, discuss with other people, not for their advice, but to get a sense of how you
-    personally feel throughout this time. Eventually you should suddenly have clarity on
-    what is the correct decision for you.`,
+      `During this extended waiting period, discuss it with other people who you
+      can trust: not for their advice, but to get a sense of how you
+    personally feel throughout this time. They act as sounding boards for you to
+    feel into what is correct for you. Eventually you will have a sudden clarity on
+    and deeping knowing of the big picture and what is the correct decision.`,
     ],
   ])
 
@@ -335,7 +340,13 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
     ['ego', ``],
     ['self projected', ``],
     ['outer', ``],
-    ['lunar', ``],
+    [
+      'lunar',
+      `Because of how different your design is from others, we strongly 
+      recommended that you have a reading with a qualified professional to begin
+      to understand what makes you so unique. I offer half off for all
+      Evaluators, please reach out for details`,
+    ],
   ])
 
   const shadows: Map<string, string> = new Map([
@@ -608,9 +619,9 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
           />
           <span>
             <strong className="font-semibold text-gray-900">
-              Negative key indicator.{' '}
+              Resistance indicator.{' '}
             </strong>
-            Your sign of resistance is{' '}
+            You're off-track when feeling{' '}
             <b>
               <em>{hd.notSelfTheme()}</em>
             </b>
@@ -648,9 +659,9 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
           />
           <span>
             <strong className="font-semibold text-gray-900">
-              Positive Key indicator.{' '}
+              Flow indicator.{' '}
             </strong>
-            You are on-track if you have a feeling of{' '}
+            You're on-track when feeling{' '}
             <b>
               <em>{hd.signatureTheme()}</em>
             </b>
