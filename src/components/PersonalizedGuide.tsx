@@ -328,7 +328,7 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
     ],
     [
       'splenic',
-      `The instinct / intuition is attunded for keeping you out of danger, and so you
+      `Your instinct / intuition is attunded for keeping you out of danger, and so you
       might not even notice it unless there is something that you should avoid. And
       in those cases, it's EXTREMELY important to trust it. In general, it
       speaks only once and then be quiet. Subtle.
@@ -439,9 +439,9 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
           </span>
         </li>
       </ul>
-      <p className="mt-6">{careerWriteups.get(hd.type())}</p>
+      <p className="mt-8">{careerWriteups.get(hd.type())}</p>
       <RaQuote>{raQuotes.get(hd.type())}</RaQuote>
-      <p className="mt-6">{careerNotSelfWriteups.get(hd.type())}</p>
+      <p className="mt-8">{careerNotSelfWriteups.get(hd.type())}</p>
       <p className="mt-6">{careerTips.get(hd.type())}</p>
 
       {hd.type() === 'Manifesting Generator' && (
@@ -457,7 +457,7 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
             The power of the Manifesting Generator is the quality of energy that
             they can put to any task.
           </RaQuote>
-          <p className="mt-6">
+          <p className="mt-8">
             The biggest difference in practice is that when building, Express
             Builders tend to skip steps while Classic Builders are more
             methodical.
@@ -492,7 +492,7 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
           </span>
         </li>
       </ul>
-      <p className="mt-6">{strategyWriteups.get(hd.strategy())}</p>
+      <p className="mt-8">{strategyWriteups.get(hd.strategy())}</p>
 
       {hd.type() !== 'Manifestor' && (
         <>
@@ -519,7 +519,7 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
           </RaQuote>
         </>
       )}
-      <p className="mt-6">{strategyWriteups.get(hd.strategy())}</p>
+      <p className="mt-8">{strategyWriteups.get(hd.strategy())}</p>
 
       <p className="mt-6">
         After you {hd.strategy()}, you still need to determine if this is
@@ -557,7 +557,7 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
           </span>
         </li>
       </ul>
-      <p className="mt-6">{authorityWriteups.get(hd.authority())}</p>
+      <p className="mt-8">{authorityWriteups.get(hd.authority())}</p>
       <p className="mt-6">{authorityTips.get(hd.authority())}</p>
 
       <figure className="mt-16">
@@ -601,12 +601,12 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
       <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
         Success Code 4: Your Key Indicators
       </h2>
-      <p className="mt-6">
+      <p className="mt-8">
         For many people, all this talk about decision making process can feel a
         bit ungrounded. How do you see progress? How do you know if these
         changes that you're making have an impact?
       </p>
-      <p className="mt-8">
+      <p className="mt-6">
         Thankfully, there's a simple way of knowing whether you are on-track or
         off-track. Look back at your day and notice if you have more{' '}
         {hd.notSelfTheme()} than {hd.signatureTheme()}.
@@ -629,21 +629,21 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
           </span>
         </li>
       </ul>
-      <p className="mt-6">
+      <p className="mt-8">
         You might have had a lot of {hd.notSelfTheme()} in your life. This is a
         sign that you are attempting to do something that{' '}
         <b>doesn't align with your core nature</b>. When you consistently do
         things that make you {hd.notSelfThemeAdjective()}, you will find
         yourself increasingly drained of energy.
       </p>
-      <p className="mt-8">
+      <p className="mt-6">
         When you find yourself {hd.notSelfThemeAdjective()}, think about how you
         decided to do this activity: is it something that you thought you{' '}
         <i>should do</i>? Or is it something you actually wanted to do?
         Remember, making decisions from the head (typically "I should" language)
         is never the right way.
       </p>
-      <p className="mt-8">
+      <p className="mt-6">
         Interestingly, actively attempting to avoid being{' '}
         {hd.notSelfThemeAdjective()} can itself cause it! When you think to
         yourself "oh, I don't want to feel {hd.notSelfThemeAdjective()}" and so

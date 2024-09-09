@@ -91,7 +91,7 @@ export default async function ChartGuide({ chartId }: ChartGuideProps) {
           do and relax into your body's wisdom.
         </p>
 
-        <div className="mt-10">
+        <div className="mt-8">
           <PersonalizedGuide chart={chart} />
         </div>
 
