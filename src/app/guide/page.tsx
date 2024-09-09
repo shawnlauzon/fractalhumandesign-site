@@ -6,7 +6,6 @@ import { createChart } from './create-chart'
 
 import type { Metadata } from 'next'
 
-// FIXME This isn't being picked up
 export const metadata: Metadata = {
   openGraph: {
     title: 'Get your free personal guide to flow',
@@ -16,7 +15,7 @@ export const metadata: Metadata = {
     siteName: 'Fractal Human Design',
     images: [
       {
-        url: 'https://fractalhumandesign.com/opengraph-image.jpg',
+        url: 'https://fractalhumandesign.com/man-relaxing-on-beach.jpg',
         width: 1200,
         height: 620,
       },
