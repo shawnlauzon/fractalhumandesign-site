@@ -1,3 +1,5 @@
+import noAi from '@/images/logos/no-ai-icon-08.svg'
+import Image from 'next/image'
 import Link from 'next/link'
 
 import { Container } from '@/components/Container'
@@ -7,7 +9,7 @@ export function Footer() {
   return (
     <footer className="bg-slate-50">
       <Container>
-        <div className="py-16">
+        <div className="flex flex-row items-center py-16">
           <Logo className="mx-auto h-10 w-auto" />
           {/* <nav className="mt-10 text-sm" aria-label="quick links">
             <div className="-my-1 flex justify-center gap-x-6">
@@ -16,6 +18,12 @@ export function Footer() {
               <NavLink href="#pricing">Pricing</NavLink>
             </div>
           </nav> */}
+          <Link
+            href={`https://no-ai-icon.com/statement/?url=https://${process.env.HOST}`}
+            target="_blank"
+          >
+            <Image src={noAi} alt="No-AI logo" height={100} />
+          </Link>
         </div>
         <div className="flex flex-col items-center border-t border-slate-400/10 py-10 sm:flex-row-reverse sm:justify-between">
           <div className="flex gap-x-6">
