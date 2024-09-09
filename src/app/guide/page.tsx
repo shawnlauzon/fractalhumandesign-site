@@ -7,10 +7,12 @@ import { createChart } from './create-chart'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Get your free personal guide to flow',
-  description:
-    'Discover the secret to living in less frustration and more calm.',
-  metadataBase: new URL('https://freeguidetoflow.com'),
+  openGraph: {
+    title: 'Get your free personal guide to flow',
+    description:
+      'Discover the secret to living in less frustration and more calm.',
+    url: 'https://freeguidetoflow.com',
+  },
 }
 
 export default function Home() {
