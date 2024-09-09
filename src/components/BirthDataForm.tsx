@@ -198,6 +198,10 @@ export function BirthDataForm({
             </p>
           </div>
         </div>
+        <p className="mt-12">
+          Just fill out the info on this page to receive the secret to less
+          frustration and more calm.
+        </p>
 
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mt-12 space-y-12">
@@ -287,7 +291,9 @@ export function BirthDataForm({
                 Birth Information
               </h2>
               <p className="mt-1 text-sm leading-6 text-gray-600">
-                Next we need to know when and where you were born.
+                We use your birth date, time, and place to craft your personal
+                guide. Please be as accurate as possible; it's worth calling
+                your mom ☎️
               </p>
 
               <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
