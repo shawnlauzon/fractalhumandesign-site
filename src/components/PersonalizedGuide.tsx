@@ -37,69 +37,23 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
     [
       'Projector',
       `You are designed to help others to be successful. Your unique gift is to literally
-      feel what the other person is feeling and then to advise them on the best ways to
+      feel what the other person is feeling and then from that recognition, to advise
+      them on the best ways to
       achieve their goals. Your design is made to do this on a one-on-one basis; if you
       find yourself attempting to advise groups, then the ideal interaction is still 
       on a one-on-one basis.`,
     ],
     [
       'Manifestor',
-      `Because of your strong desire to have an impact, it can be tempting to
-    simply DO without telling anyone. This can create disharmony between yourself and
-    others who you interact with. Your strategy then is to INFORM people of what you are
-    planning to do, before you do it. Informing others will create more harmony with
-    so that they are not so challenged the change you want to make happen.`,
+      `You are designed to be the launch pad for anything that you desire. Most 
+      entrepreneur books have you in mind for their ideal client: someone who can 
+      start with only an idea, find the people you need to make it happen, and
+      then to go out and just get it started. Without you, we'd all be sitting
+      around, waiting for someone to show up and tell us what to do.`,
     ],
     [
       'Reflector',
-      `First, realize how unique you are. Your gift is to reflect what is
-    happening with others and then share it back with them. Patience and allowing are the
-    key words to remember when deciding what to do. Then reflect and discuss what you
-    perceive.`,
-    ],
-  ])
-
-  const careerTips: Map<string, string> = new Map([
-    [
-      'Generator',
-      `Doing what you love is super important. The world is full of burnt out Builders,
-      slaving away doing what other people want them to do. Your energy is attractive
-      to both people who want to utilize it for good or to take advantage of it for
-      their own purposes. If you're doing what you love, amazing! If not, then start
-      taking time to do what you love. Even if you're working a lot in a job you
-      dislike, you might find that doing something as a side hustle can bring you
-      even more energy rather than drain you even further!`,
-    ],
-    [
-      'Manifesting Generator',
-      `Doing what you love is super important. The world is full of burnt out Builders,
-      slaving away doing what other people want them to do. Your energy is attractive
-      to both people who want to utilize it for good or to take advantage of it for
-      their own purposes. If you're doing what you love, amazing! If not, then start
-      taking time to do what you love. Even if you're working a lot in a job you
-      dislike, you might find that doing something as a side hustle can bring you
-      even more energy rather than drain you even further!`,
-    ],
-    [
-      'Projector',
-      `Your path to success is to become an expert in a system. You might go to school 
-      to learn something you're interested in, or just play around with it for awhile
-      until you become that expert. Share all of that knowledge with anyone who might
-      be interested; social media is great for this. Eventually, the right people will
-      recognize you and invite you to guide them. But don't say yes right away! You
-      still need to follow your decision-making strategy, which we talk about next.`,
-    ],
-    [
-      'Manifestor',
-      `Because of your strong desire to have an impact, it can be tempting to
-    simply DO without telling anyone. This can create disharmony between yourself and
-    others who you interact with. Your strategy then is to INFORM people of what you are
-    planning to do, before you do it. Informing others will create more harmony with
-    so that they are not so challenged the change you want to make happen.`,
-    ],
-    [
-      'Reflector',
-      `First, realize how unique you are. Your gift is to reflect what is
+      `You are so unique: 1% of the population, imagine that! Your gift is to reflect what is
     happening with others and then share it back with them. Patience and allowing are the
     key words to remember when deciding what to do. Then reflect and discuss what you
     perceive.`,
@@ -166,20 +120,71 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
     ],
     [
       'Projector',
-      `You are designed to guide specific people. To do this, it is not for you
-    to try to make things happen. Your path to success is to become the expert in a
-    system, perhaps by experimentation, study, or some other way. The right people will
-    then recognize you and invite you to help them. Your mission is to wait for people
-    who you also recognize, wait for them to invite you, and then follow your authority
-    (described next) to decide if this invitation is right for you.`,
+      `Advisors who are not living according to their design are like exhausted
+      Builders, trying to keep up with people who have more energy than they do.
+      These people are especially at risk of working themselves to exhaustion,
+      until the point that their body just gives up on them. 
+      The phrase "not made to work" is meant for you, where "work" is the
+      typical 9-5 job. If instead you focus on guiding the people who are right
+      for you, you will be energized by each of them.`,
     ],
     [
       'Manifestor',
-      `Because of your strong desire to have an impact, it can be tempting to
-    simply DO without telling anyone. This can create disharmony between yourself and
-    others who you interact with. Your strategy then is to INFORM people of what you are
-    planning to do, before you do it. Informing others will create more harmony with
-    so that they are not so challenged the change you want to make happen.`,
+      `You would think that with slogans like "Just Do It", the world would be
+      perfect for someone like you. Well, not always. Because even though you
+      are here to get things started, you're not here to do all the work; the
+      Builders are here to do the work. Many Initiators get trapped in so much
+      of the DOING that they burn out and aren't able to do the initiation
+      that they're meant to do.`,
+    ],
+    [
+      'Reflector',
+      `First, realize how unique you are. Your gift is to reflect what is
+    happening with others and then share it back with them. Patience and allowing are the
+    key words to remember when deciding what to do. Then reflect and discuss what you
+    perceive.`,
+    ],
+  ])
+
+  const careerTips: Map<string, string> = new Map([
+    [
+      'Generator',
+      `Doing what you love is super important. The world is full of burnt out Builders,
+      slaving away doing what other people want them to do. Your energy is attractive
+      to both people who want to utilize it for good or to take advantage of it for
+      their own purposes. If you're doing what you love, amazing! If not, then start
+      taking time to do what you love. Even if you're working a lot in a job you
+      dislike, you might find that doing something as a side hustle can bring you
+      even more energy rather than drain you even further!`,
+    ],
+    [
+      'Manifesting Generator',
+      `Doing what you love is super important. The world is full of burnt out Builders,
+      slaving away doing what other people want them to do. Your energy is attractive
+      to both people who want to utilize it for good or to take advantage of it for
+      their own purposes. If you're doing what you love, amazing! If not, then start
+      taking time to do what you love. Even if you're working a lot in a job you
+      dislike, you might find that doing something as a side hustle can bring you
+      even more energy rather than drain you even further!`,
+    ],
+    [
+      'Projector',
+      `Your path to success is to become an expert in a system. You might go to school 
+      to learn something you're interested in, or just play around with it for awhile
+      until you become that expert. Share all of that knowledge with anyone who might
+      be interested; social media is great for this. Take feedback and use it to get
+      even better. The trick at the beginning stage is to worry less about making
+      a profit and more about becoming an expert.`,
+    ],
+    [
+      'Manifestor',
+      `The beauty of being an Initiator is that you get to go first. While all of
+      the other types are waiting: waiting for the moon, the others, the invitation;
+      you wait for nothing and just do it. The downside is that you have to deal 
+      with all the rejection. Don't take it personally. Just because you initiate, it 
+      doesn't mean it will be right for them. So don't wait for others to come to you;
+      be the one to invite others to things, and see how willing people are to be
+      initiated.`,
     ],
     [
       'Reflector',
@@ -200,21 +205,23 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
       be a good idea to at least work at a coffee shop sometimes.`,
     ],
     [
-      'inform before taking action',
-      `You are designed to guide specific people. To do this, it is not for you
-    to try to make things happen. Your path to success is to become the expert in a
-    system, perhaps by experimentation, study, or some other way. The right people will
-    then recognize you and invite you to help them. Your mission is to wait for people
-    who you also recognize, wait for them to invite you, and then follow your authority
-    (described next) to decide if this invitation is right for you.`,
+      'wait for recognition and invitation',
+      `You are designed to guide specific people. The great thing is that you
+      don't have to go out and look for them: you are designed to be found, when
+      you have mastered your craft! Eventually, the right people will
+      recognize you and invite you to guide them. Only when you truly feel seen
+      and recognized will you have the possibility of this being a good connection.`,
     ],
     [
-      'wait for recognition and invitation',
-      `Because of your strong desire to have an impact, it can be tempting to
-    simply DO without telling anyone. This can create disharmony between yourself and
+      'inform before taking action',
+      `Because of your strong desire to get things started and to have an impact, 
+      it can be tempting to simply DO without telling anyone.
+    This can create disharmony between yourself and
     others who you interact with. Your strategy then is to INFORM people of what you are
     planning to do, before you do it. Informing others will create more harmony with
-    so that they are not so challenged the change you want to make happen.`,
+    so that they are not so challenged the change you want to make happen. At worst, 
+    not informing can show up as manipulating people to get them to do what you want, 
+    and this is why informing is so important.`,
     ],
     [
       'wait a 28 day cycle to reflect and assess',
@@ -254,15 +261,13 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
     subtle, and because of this it can be easy for your mind to overrule it and make
     a "rational" decision. Beware of this! The ER is full of people like you who ignored
     this intuitive sense. How it works is quite unique for you, and so you'll
-    need to cultivate and learn about this sense.`,
+    need to cultivate and learn about this sense by being very calm and paying attention.`,
     ],
     [
       'ego',
       `This may sound completely heretical, but your way of making decisions is to BE
     SELFISH! What do YOU specifically want, what is in it for you? Ask yourself if your
-    heart is in it: if yes, then it's likely something good for you to do. If not,
-    then it can be quite unhealthy for you to say yes. Unlike Generators, you have a
-    limited supply of energy, so to use this resource wisely you need to follow your will.`,
+    heart is in it: if yes, then it's likely something good for you to do.`,
     ],
     [
       'self projected',
@@ -297,7 +302,7 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
   const authorityTips: Map<string, string> = new Map([
     [
       'sacral',
-      `How following your gut works for you is only something to know by experimenting. In my
+      `How this works for you is only something to know by experimenting. In my
     Living Your Design workshop, we practice this by asking Yes-No questions and feeling
     how the body responds. There is often a gutteral "uh-huh" for yes or "uh-uh" for no,
     but for many people this sound has been suppressed. For others there can be an energy
@@ -318,49 +323,19 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
     ],
     [
       'splenic',
-      `Your way of making decisions is almost magical: an instinctive or
-    intuitive knowing of what is the most healthy for you. This knowing can be quite
-    subtle, and because of this it can be easy for your mind to overrule it and make
-    a "rational" decision. Beware of this! The ER is full of people like you who ignored
-    this intuitive sense. How it works is quite unique for you, and so you'll
-    need to cultivate and learn about this sense.`,
+      `The instinct / intuition is attunded for keeping you out of danger, and so you
+      might not even notice it unless there is something that you should avoid. And
+      in those cases, it's EXTREMELY important to trust it. In general, it
+      speaks only once and then be quiet. Subtle.
+      Following through on your intuition can be especially challenging for Advisors who have been waiting
+      for something to happen, and when it finally does, you get a NO. This
+      is sometimes a test: the opportunity which is right for you appears
+      only after saying no to one that isn't.`,
     ],
-    [
-      'ego',
-      `This may sound completely heretical, but your way of making decisions is to BE
-    SELFISH! What do YOU specifically want, what is in it for you? Ask yourself if your
-    heart is in it: if yes, then it's likely something good for you to do. If not,
-    then it can be quite unhealthy for you to say yes. Unlike Generators, you have a
-    limited supply of energy, so to use this resource wisely you need to follow your will.`,
-    ],
-    [
-      'self projected',
-      `Do you remember the show House, M.D.? In order to decide on the best
-    course of action, he would need to talk to someone else in order to make a decision.
-    And he wasn't asking for advice; he simply needed someone to act as a sounding board.
-    This is you. In order to make decisions, you should talk to someone who you can trust
-    in order to listen to what YOU say. When you are speaking in a way that feels
-    authentic to you and makes you happy, this is a sign that you're on the right path.`,
-    ],
-    [
-      'outer',
-      `Do you remember the show House, M.D.? In order to decide the best
-    course of action, he would need to talk to someone else in order to make a decision.
-    And he wasn't asking for advice; he simply needed someone to act as a sounding board.
-    This is you. In order to make decisions, you should talk to multiple people who you
-    can trust, and then listen to what they say. Also pay attention to how you feel in that
-    environment while you are speaking. Notice if there are some consistencies in how you
-    feel when talking to different people, and find what makes you happy.`,
-    ],
-    [
-      'lunar',
-      `Yours is the slowest process to make decisions. For major decisions, it is best
-    for you to wait for an entire lunar cycle: 28 days. After taking this time, you
-    should have much more clarity on what is right for you and what is not. During this
-    time, discuss with other people, not for their advice, but to get a sense of how you
-    personally feel throughout this time. Eventually you should suddenly have clarity on
-    what is the correct decision for you.`,
-    ],
+    ['ego', ``],
+    ['self projected', ``],
+    ['outer', ``],
+    ['lunar', ``],
   ])
 
   const shadows: Map<string, string> = new Map([
@@ -533,11 +508,11 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
           </RaQuote>
         </>
       )}
-      <p className="mt-6">{strategyWriteups.get(hd.strategy())}.</p>
+      <p className="mt-6">{strategyWriteups.get(hd.strategy())}</p>
 
       <p className="mt-6">
-        After you {hd.strategy()}, you need to determine if this is something to
-        take action on. That's next.
+        After you {hd.strategy()}, you still need to determine if this is
+        something to take action on. That's next.
       </p>
       <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
         Success Code 3: Your Decision-Making Strategy
@@ -545,12 +520,12 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
       <p className="mt-8">
         We all have decisions to make: should I work with this person or not,
         should I date or marry this person. By following the{' '}
-        <em>decision-making strategy</em> which is described below, we let go of
-        the old patterns which have controlled us in the past, and move towards
-        a new way of being which is authentically ourselves. This is not an
-        instant fix; it can take years to completely let go of these destructive
-        patterns. But the payoff is worth it: a life without {hd.notSelfTheme()}{' '}
-        and a nearly effortless way of being.
+        <em>decision-making strategy</em>, we let go of the old patterns which
+        have controlled us in the past, and move towards a new way of being
+        which is authentically ourself. This is not an instant fix; it can take
+        years to completely let go of these destructive patterns. But the payoff
+        is worth it: a life without {hd.notSelfTheme()} and a nearly effortless
+        way of being.
       </p>
 
       <ul role="list" className="mt-8 max-w-xl space-y-8 text-gray-600">
@@ -565,7 +540,7 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
             </strong>
             Your way to make decisions is to{' '}
             <b>
-              <em>{hd.decisionMakingStrategy()}</em>
+              <em>{hd.authorityDescription()}</em>
             </b>
             .
           </span>
@@ -591,12 +566,25 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
       </figure>
 
       <p className="mt-8">
-        This brings us to a basic Human Design teaching: the mind is never the
-        best way to make decisions. It is great for taking in information and
-        considering different options. In fact, studies have shown that this is
-        the case: we all make emotional decisions and then attempt to justify it
-        rationally. So when it is time to make a decision, always first{' '}
-        {hd.authorityDescription()}.
+        This brings us to a core teaching of Human Design: the mind is never the
+        way to make decisions. It is a tool, and this tool is ideal for
+        processing information and considering different options. But not for
+        making decision. However, it will continually try to persuade you into
+        ignoring your body, complaining "you're not being logical". Just let it
+        go.{' '}
+      </p>
+      <p className="mt-6">
+        Remember, your mind is the result of decades of conditioning from
+        parents, teachers, coaches, society, advertising: everyone telling you
+        what <em>they think</em> you should do, when they don't even know you.
+        And aren't you just sick of it?!?
+      </p>
+      <p className="mt-6">
+        That's where Human Design fits in. This simple decision-making strategy,
+        to {hd.decisionMakingStrategy()}, you will let go of the mental chatter
+        and begin to hear your true nature. Because this is always a part of
+        you, your genetic birthright, it is something you can always depend on
+        begin to make <b>decisions you can trust</b>.
       </p>
 
       <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">
