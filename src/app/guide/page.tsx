@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     siteName: 'Fractal Human Design',
     images: [
       {
-        url: 'https://fractalhumandesign.com/man-relaxing-on-beach.jpg',
+        url: 'https://fractalhumandesign.com/og-man-relaxing-on-beach.jpg',
         width: 1200,
         height: 620,
       },
