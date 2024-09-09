@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     template: '%s - Fractal Human Design',
     default: 'Fractal Human Design - Owners Manual for Being in the Flow',
   },
-  description: 'Discover how to create less frustration and more joy.',
+  description: 'Discover the secret to less frustration and more calm.',
 }
 
 const inter = Inter({
