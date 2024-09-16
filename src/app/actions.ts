@@ -3,6 +3,7 @@
 import { ChartData } from '@/types/ChartData'
 import { SimpleChartData } from '@/types/SimpleChart'
 import { User } from '@/types/User'
+import { revalidatePath } from 'next/cache'
 
 export async function sendChart(data: ChartData, user: User) {
   if (data) {
@@ -36,6 +37,9 @@ export async function sendChart(data: ChartData, user: User) {
 
     const newChart = (await storeChartResp.json()) as SimpleChartData
     console.log('Chart stored', newChart)
+
+    // Get fresh data next time looking at /admin view
+    revalidatePath('/admin')
 
     // Now send it
     await fetch(`https://${process.env.HOST}/api/email-chart`, {
