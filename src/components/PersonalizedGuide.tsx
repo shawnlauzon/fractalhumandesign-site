@@ -422,7 +422,7 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
       </div>
       <p className="mt-8">
         Each career type has positive and negative aspects, based on their
-        individual nonverbal energy. Since it is based on what is intrinsicly
+        individual nonverbal energy. Since it is based on what is intrinsically
         you, rather than personal skills or preferences, it's more integral than
         the "career guidance" you might have received in high school. When
         working in alignment with your broad career type, you're more likely to
