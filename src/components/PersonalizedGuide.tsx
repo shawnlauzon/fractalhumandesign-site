@@ -468,7 +468,7 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
         <>
           <p className="mt-6">
             BTW, many people are confused by what exactly is a "Manifesting
-            Generator", which is why we use the them "Expres Builder" instead.
+            Generator", which is why we use the them "Express Builder" instead.
             Just to be clear:
           </p>
           <RaQuote>
