@@ -144,7 +144,7 @@ export default async function ChartGuide({ chartId }: ChartGuideProps) {
           <p className="mt-8">
             People study the system for years and only begin to understand all
             the nuances. Even this chart, which is quite detailed, leaves out
-            much of the more detailed information. You now have the informaetion
+            much of the more detailed information. You now have the information
             you need to go down the rabbit hole yourself. Or if you'd like to
             save some time, tap the button below and let's connect: I'd love to
             hear from you.

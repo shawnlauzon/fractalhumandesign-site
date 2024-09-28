@@ -246,7 +246,7 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
       `Many suggest to follow your gut, and for you this is great advice.
     How this works for you is only something you can know by experimenting. In my
     Living Your Design workshop, we practice this by asking Yes-No questions and feeling
-    how the body responds. There is often a gutteral "uh-huh" for yes or "uh-uh" for no,
+    how the body responds. There is often a guttural "uh-huh" for yes or "uh-uh" for no,
     but for many people this sound has been suppressed. For others there can be an energy
     which is rising or falling. Finding someone you trust and with whom you can be 100%
     truthful can help you understand your personal response mechanism. Regardless of how
@@ -304,7 +304,7 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
       can trust: not for their advice, but to get a sense of how you
     personally feel throughout this time. They act as sounding boards for you to
     feel into what is correct for you. Eventually you will have a sudden clarity on
-    and deeping knowing of the big picture and what is the correct decision.`,
+    and deepening knowing of the big picture and what is the correct decision.`,
     ],
   ])
 
@@ -313,7 +313,7 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
       'sacral',
       `How this works for you is only something to know by experimenting. In my
     Living Your Design workshop, we practice this by asking Yes-No questions and feeling
-    how the body responds. There is often a gutteral "uh-huh" for yes or "uh-uh" for no,
+    how the body responds. There is often a guttural "uh-huh" for yes or "uh-uh" for no,
     but for many people this sound has been suppressed. For others there can be an energy
     which is rising or falling. Finding someone you trust and with whom you can be 100%
     truthful can help you understand your personal response mechanism. Regardless of how
@@ -332,7 +332,7 @@ const ChartDetail: React.FC<ChartDetailProps> = ({ chart }) => {
     ],
     [
       'splenic',
-      `Your instinct / intuition is attunded for keeping you out of danger, and so you
+      `Your instinct / intuition is attuned for keeping you out of danger, and so you
       might not even notice it unless there is something that you should avoid. And
       in those cases, it's EXTREMELY important to trust it. In general, it
       speaks only once and then be quiet. Subtle.

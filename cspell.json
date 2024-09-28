@@ -1,0 +1,26 @@
+{
+    "version": "0.2",
+    "ignorePaths": [],
+    "dictionaryDefinitions": [],
+    "dictionaries": [],
+    "words": [
+        "clsx",
+        "headlessui",
+        "headshot",
+        "heroicons",
+        "Laravel",
+        "Lauzon",
+        "Mandalorian",
+        "Manifestors",
+        "Statamic",
+        "unoptimized",
+        "webp",
+        "Writeups"
+    ],
+    "ignoreWords": [
+        "ajna",
+        "gcenter",
+        "solarplexus"
+    ],
+    "import": []
+}
