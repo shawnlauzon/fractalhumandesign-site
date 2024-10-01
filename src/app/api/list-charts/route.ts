@@ -1,4 +1,4 @@
-// export const dynamic = 'force-dynamic' // static by default, unless reading the request
+export const dynamic = 'force-dynamic' // static by default, unless reading the request
 
 import { SimpleChart } from '@/types/SimpleChart'
 import { Client, fql, QuerySuccess } from 'fauna'
