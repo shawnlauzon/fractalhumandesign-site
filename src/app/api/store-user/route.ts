@@ -1,7 +1,9 @@
 export const dynamic = 'force-dynamic' // static by default, unless reading the request
 
 import { User } from '@/types/User'
+import activecampaign from '@api/activecampaign'
 import { Client, fql, QuerySuccess } from 'fauna'
+import { ACTIVE_CAMPAIGN_CUSTOM_FIELD_FAUNA_USER_ID } from '../constants'
 
 export async function POST(req: Request) {
   let httpResponse: Response
@@ -32,9 +34,27 @@ export async function POST(req: Request) {
     const userDoc: User = queryResponse.data
     console.log(params.id ? 'Update user' : 'Created user', userDoc)
 
-    httpResponse = new Response(JSON.stringify(userDoc), {
-      status: params.id ? 200 : 201,
-    })
+    let activeCampaignId = undefined
+    try {
+      const newContact = await pushToActiveCampaign(
+        params,
+        queryResponse.data.id,
+      )
+      console.log('ActiveCampaign Contact created', newContact)
+      activeCampaignId = newContact.contact?.id
+    } catch (e) {
+      console.error('Failed to create contact in ActiveCampaign', e)
+    }
+
+    httpResponse = new Response(
+      JSON.stringify({
+        ...userDoc,
+        activeCampaignId,
+      }),
+      {
+        status: params.id ? 200 : 201,
+      },
+    )
   } catch (error) {
     httpResponse = new Response(JSON.stringify(error), { status: 500 })
   } finally {
@@ -43,4 +63,22 @@ export async function POST(req: Request) {
   }
 
   return httpResponse
+}
+
+async function pushToActiveCampaign(user: User, faunaUserId: string) {
+  const contact = {
+    contact: {
+      email: user.email,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      phone: user.phoneNumber,
+      fieldValues: [
+        {
+          field: ACTIVE_CAMPAIGN_CUSTOM_FIELD_FAUNA_USER_ID,
+          value: faunaUserId,
+        },
+      ],
+    },
+  }
+  return (await activecampaign.createANewContact(contact)).data
 }

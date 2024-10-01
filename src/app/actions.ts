@@ -29,6 +29,7 @@ export async function sendChart(data: ChartData, user: User) {
         headers: localHeaders,
         body: JSON.stringify({
           userId: newUser.id,
+          activeCampaignUserId: newUser.activeCampaignId,
           chart: data.chart,
           meta: data.meta,
         }),

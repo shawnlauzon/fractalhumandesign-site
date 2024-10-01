@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+  "apis": [
+    {
+      "identifier": "activecampaign",
+      "source": "@activecampaign/v3#56eub1pm1i85gyf",
+      "integrity": "sha512-T7GmAFJOnEmMCDt41SNRrJTiEfPmfuc4TbTTAW9yLsiLMNnrNPLw02IbausexG6P6o1rA++aDDZltx5S7wg6Gw==",
+      "installerVersion": "6.1.2"
+    }
+  ]
+}

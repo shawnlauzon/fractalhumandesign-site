@@ -1,4 +1,5 @@
 export type Chart = {
+  id: string
   planets: Planet[]
   gates: Gate[]
   channels: number[]
