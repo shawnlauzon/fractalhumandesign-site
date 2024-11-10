@@ -26,6 +26,7 @@ import _ from 'lodash'
 import { useRouter } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
+import { v4 as uuidv4 } from 'uuid'
 import * as yup from 'yup'
 
 interface BirthDataFormProps {
@@ -185,6 +186,8 @@ export function BirthDataForm({
         lastName: guideProps.lastName,
         email: guideProps.email,
         emailOptIn: guideProps.emailOptIn,
+        isEmailVerified: false,
+        emailToken: uuidv4(),
       })
 
       const chart = await storeChartAction({
@@ -193,12 +196,9 @@ export function BirthDataForm({
         meta: mmiResponse.meta,
       })
 
-      await sendWelcomeEmailAction({
-        user,
-        chartId: chart.id,
-      })
-      console.log('Chart sent.')
-      router.push('/guide/success')
+      await sendWelcomeEmailAction({ user, chartId: chart.id })
+      console.log('Welcome email sent.')
+      router.push(`/chart/${chart.id}`)
     } catch (e) {
       console.error('Failure creating chart', e)
     } finally {

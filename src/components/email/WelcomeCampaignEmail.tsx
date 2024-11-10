@@ -255,11 +255,12 @@ export const WelcomeCampaignEmail3: React.FC<WelcomeCampaignEmailProps> = ({
             <Img
               alt="Star Wars Mandalorian - This is the way"
               src="https://fractalhumandesign.s3.amazonaws.com/site/images/this-is-the-way.jpg"
+              width={600}
               className="aspect-video rounded-xl bg-gray-50 object-cover"
             />
             <figcaption className="mt-4 flex gap-x-2 text-sm leading-6 text-gray-500">
-              👉 Your decision-making strategy, to {hd.decisionMakingStrategy()}
-              , is your way.
+              Your decision-making strategy, to {hd.decisionMakingStrategy()},
+              is your way.
             </figcaption>
           </figure>
 

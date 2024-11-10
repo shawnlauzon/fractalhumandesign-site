@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
 }
 
-export default function CreateGuidePage() {
+export default function Home() {
   return (
     <>
       <Header />

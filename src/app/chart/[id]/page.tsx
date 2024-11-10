@@ -1,13 +1,13 @@
+import AnnotatedChart from '@/components/AnnotatedChart'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
-import { Hero } from '@/components/Hero'
 
-export default function Home() {
+export default function ChartPage({ params }: { params: { id: string } }) {
   return (
     <>
       <Header />
       <main>
-        <Hero />
+        <AnnotatedChart chartId={params.id} />
       </main>
       <Footer />
     </>

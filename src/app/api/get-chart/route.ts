@@ -18,7 +18,7 @@ export async function GET(req: Request) {
   try {
     // query using your app's local variables
     const query = fql`Chart.byId(${id}) \
-      { id, user, chart { type, authority, gates, definition, centers, profile }, meta { birthData { time { utc } } } }
+      { id, user, chart, meta }
     `
     // execute the query
     const queryResponse: QuerySuccess<Chart> = await client.query<Chart>(query)
@@ -26,6 +26,7 @@ export async function GET(req: Request) {
     const chartDoc: Chart = queryResponse.data
     if (chartDoc) {
       console.log('Found Chart', chartDoc)
+      console.log('group', chartDoc.chart.group)
     }
 
     httpResponse = new Response(JSON.stringify(chartDoc), {

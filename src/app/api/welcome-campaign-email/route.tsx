@@ -37,7 +37,8 @@ export async function GET() {
 
   try {
     // query using your app's local variables
-    const query = fql`Chart.all().where(c => c.user.email == 'shawn.lauzon@gmail.com') { id, user, chart { type, authority, profile } }
+    const query = fql`Chart.all().where(.user.isEmailVerified == true) \
+      { id, user, chart { type, authority, profile } }
     `
     // execute the query
     const queryResponse: QuerySuccess<Page> = await client.query<Page>(query)

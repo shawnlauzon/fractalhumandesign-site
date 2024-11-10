@@ -3,6 +3,7 @@ import React from 'react'
 
 interface ChartImageProps {
   birthTime: string
+  className?: string
 }
 
 // Utility function to generate the chart URL
@@ -12,7 +13,7 @@ const generateChartUrl = (birthTime: string): string => {
   return `https://cdn.jovianarchive.com/RaveChartGenerator.php?Time=${timeId}`
 }
 
-const ChartImage: React.FC<ChartImageProps> = ({ birthTime }) => {
+const ChartImage: React.FC<ChartImageProps> = ({ birthTime, className }) => {
   const chartUrl = birthTime ? generateChartUrl(birthTime) : null
 
   if (!chartUrl) {
@@ -25,7 +26,7 @@ const ChartImage: React.FC<ChartImageProps> = ({ birthTime }) => {
       width={727}
       height={488}
       alt="Human Design Chart"
-      className="aspect-auto rounded-xl object-cover"
+      className={className || 'aspect-auto rounded-xl object-cover'}
     />
   )
 }

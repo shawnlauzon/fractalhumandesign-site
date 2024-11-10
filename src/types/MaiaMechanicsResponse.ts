@@ -1,7 +1,7 @@
-import { ChartData } from '@/types/ChartData'
+import { ChartContent } from '@/types/ChartContent'
 import { Meta } from '@/types/Meta'
 
 export type MaiaMechanicsResponse = {
-  chart: ChartData
+  chart: ChartContent
   meta: Meta
 }

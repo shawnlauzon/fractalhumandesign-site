@@ -19,7 +19,7 @@ export function Footer() {
             </div>
           </nav> */}
           <Link
-            href={`https://no-ai-icon.com/statement/?url=https://${process.env.HOST}`}
+            href={`https://no-ai-icon.com/statement/?url=${process.env.SERVER_URL}`}
             target="_blank"
           >
             <Image src={noAi} alt="No-AI logo" height={60} />

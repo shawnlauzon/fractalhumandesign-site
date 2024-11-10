@@ -1,13 +1,13 @@
 export const dynamic = 'force-dynamic' // static by default, unless reading the request
 
+import { Client, fql } from 'fauna'
 import * as postmark from 'postmark'
 
 export async function POST(req: Request) {
   let httpResponse
-  const { chartId, email, firstName } = await req.json()
+  const { chartId, user } = await req.json()
 
   try {
-    // Send an email:
     const postmarkClient = new postmark.ServerClient(
       process.env.POSTMARK_API_KEY || '',
     )
@@ -18,13 +18,13 @@ export async function POST(req: Request) {
 
     const emailData = {
       From: 'shawn@fractalhumandesign.com',
-      To: email,
-      TemplateAlias: 'free-chart',
+      To: user.email,
+      TemplateAlias: 'welcome',
       TemplateModel: {
         product_url: 'https://fractalhumandesign.com',
         host_url: thisUrl,
         product_name: 'Fractal Human Design',
-        name: firstName,
+        name: user.firstName,
         action_url: actionUrl,
         support_email: 'help@fractalhumandesign.com',
         sender_name: 'Shawn Lauzon',
@@ -36,6 +36,16 @@ export async function POST(req: Request) {
 
     const emailResponse = await postmarkClient.sendEmailWithTemplate(emailData)
     console.log('emailResponse', emailResponse)
+    if (emailResponse.Message === 'OK') {
+      const client = new Client({ secret: process.env.FAUNADB_SERVER_SECRET })
+      try {
+        await client.query(
+          fql`User.byId(${user.id})!.update({ welcomeEmailStepSent: 0 })`,
+        )
+      } finally {
+        client.close()
+      }
+    }
 
     httpResponse = new Response('', {
       status: 201,

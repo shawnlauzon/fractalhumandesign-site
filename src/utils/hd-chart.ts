@@ -89,6 +89,14 @@ export const definitions = [
   'quadruple split',
 ]
 
+export const assimilationStyles = [
+  'objective',
+  'independent',
+  'collaborative',
+  'synthesizing',
+  'subjective',
+]
+
 export const pentaRoleStrengths = [
   ['31', '7'],
   ['8', '1'],
@@ -126,6 +134,7 @@ export default function (chart: SimpleChart) {
   const notSelfTheme = () => notSelfThemes[chart.type]
   const signatureThemeAdjective = () => signatureThemesAdjectives[chart.type]
   const notSelfThemeAdjective = () => notSelfThemesAdjectives[chart.type]
+  const assimilationStyle = () => assimilationStyles[chart.definition]
   const decisionMakingStrategy = () =>
     chart.type === 2
       ? `${authorityDescriptions[chart.type]}, and then ${
@@ -216,6 +225,7 @@ export default function (chart: SimpleChart) {
     strategy,
     authority,
     definition,
+    assimilationStyle,
     profile,
     toString,
     signatureTheme,

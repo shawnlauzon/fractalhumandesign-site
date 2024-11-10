@@ -6,6 +6,8 @@ export type User = {
   lastName: string
   phoneNumber?: string
   email: string
-  emailOptIn: boolean
+  emailOptIn: boolean // Set this to false if user unsubscribes
+  isEmailVerified: boolean
+  emailToken: string
   welcomeEmailStepSent?: number
 }

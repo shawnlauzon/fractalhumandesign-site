@@ -1,4 +1,4 @@
-export type ChartData = {
+export type ChartContent = {
   planets: Planet[]
   gates: Gate[]
   channels: number[]
