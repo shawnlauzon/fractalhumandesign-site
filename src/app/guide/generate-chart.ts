@@ -1,12 +1,12 @@
 'use client'
 
-import { ChartData } from '@/types/ChartData'
 import { GuideProps } from '@/types/GuideProps'
+import { MaiaMechanicsResponse } from '@/types/MaiaMechanicsResponse'
 import { countries } from '@/utils/countries'
 
 // Note that normally this would be a server function, but MMI requires that
 // it is called from the client
-export async function createChart(data: GuideProps) {
+export async function generateChart(data: GuideProps) {
   //   setSubmitting(true)
 
   const maiaHeaders = new Headers()
@@ -61,7 +61,7 @@ export async function createChart(data: GuideProps) {
       )
     }
 
-    const respData = (await response.json()) as ChartData
+    const respData = (await response.json()) as MaiaMechanicsResponse
 
     return respData
   } catch (error) {

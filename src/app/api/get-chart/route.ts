@@ -1,6 +1,6 @@
 export const dynamic = 'force-dynamic' // static by default, unless reading the request
 
-import { Chart } from '@/types/Chart'
+import { Chart } from '@/types/ChartData'
 import { Client, fql, QuerySuccess } from 'fauna'
 
 export async function GET(req: Request) {

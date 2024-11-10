@@ -11,11 +11,11 @@ export default function (chart: SimpleChart) {
     'Reflector',
   ]
   const careerDesigns = [
-    'Classic Builder',
-    'Express Builder',
-    'Initiator',
-    'Advisor',
-    'Evaluator',
+    '🖌️ Classic Builder',
+    '🖌️ Express Builder',
+    '💡 Initiator',
+    '🔑 Advisor',
+    '🔍 Evaluator',
   ]
   const centers = [
     'root',

@@ -1,57 +1,75 @@
 'use server'
 
+import { Chart } from '@/types/Chart'
 import { ChartData } from '@/types/ChartData'
-import { SimpleChartData } from '@/types/SimpleChart'
-import { User } from '@/types/User'
+import { Meta } from '@/types/Meta'
+import { User, UserData } from '@/types/User'
 import { revalidatePath } from 'next/cache'
 
-export async function sendChart(data: ChartData, user: User) {
-  if (data) {
-    const localHeaders = new Headers()
-    localHeaders.append('Content-Type', 'application/json')
+export type StoreChartProps = {
+  userId: string
+  chart: ChartData
+  meta: Meta
+}
 
-    // Store user and chart
-    const storeUserResp = await fetch(
-      `https://${process.env.HOST}/api/store-user`,
-      {
-        method: 'POST',
-        headers: localHeaders,
-        body: JSON.stringify(Object.assign({}, user)),
-      },
-    )
-    const newUser = await storeUserResp.json()
-    console.log('newUser', newUser)
+export type SendWelcomeEmailProps = {
+  user: User
+  chartId: string
+}
 
-    const storeChartResp = await fetch(
-      `https://${process.env.HOST}/api/store-chart`,
-      {
-        method: 'POST',
-        headers: localHeaders,
-        body: JSON.stringify({
-          userId: newUser.id,
-          activeCampaignUserId: newUser.activeCampaignId,
-          chart: data.chart,
-          meta: data.meta,
-        }),
-      },
-    )
+const headers = new Headers()
+headers.append('Content-Type', 'application/json')
 
-    const newChart = (await storeChartResp.json()) as SimpleChartData
-    console.log('Chart stored', newChart)
-
-    // Get fresh data next time looking at /admin view
-    revalidatePath('/admin')
-
-    // Now send it
-    await fetch(`https://${process.env.HOST}/api/email-chart`, {
+export async function storeUser(user: UserData) {
+  // Store user and chart
+  const storeUserResp = await fetch(
+    `https://${process.env.HOST}/api/store-user`,
+    {
       method: 'POST',
-      headers: localHeaders,
+      headers,
+      body: JSON.stringify(Object.assign({}, user)),
+    },
+  )
+  const newUser = (await storeUserResp.json()) as User
+  console.log('newUser', newUser)
+  return newUser
+}
+
+export async function storeChart({ userId, chart, meta }: StoreChartProps) {
+  const storeChartResp = await fetch(
+    `https://${process.env.HOST}/api/store-chart`,
+    {
+      method: 'POST',
+      headers,
       body: JSON.stringify({
-        chartId: newChart.id,
-        email: user.email,
-        firstName: user.firstName,
+        userId,
+        chart,
+        meta,
       }),
-    })
-    console.log('Chart sent')
-  }
+    },
+  )
+
+  const newChart = (await storeChartResp.json()) as Chart
+  console.log('Chart stored', newChart)
+
+  // Get fresh data next time looking at /admin view
+  revalidatePath('/admin')
+
+  return newChart
+}
+
+export async function sendWelcomeEmail({
+  user,
+  chartId,
+}: SendWelcomeEmailProps) {
+  await fetch(`https://${process.env.HOST}/api/email-chart`, {
+    method: 'POST',
+    headers,
+    body: JSON.stringify({
+      chartId,
+      email: user.email,
+      firstName: user.firstName,
+    }),
+  })
+  console.log('Chart sent')
 }

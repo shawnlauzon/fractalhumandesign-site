@@ -1,8 +1,8 @@
 import { BirthDataForm } from '@/components/BirthDataForm'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
-import { sendChart } from '../actions'
-import { createChart } from './create-chart'
+import { sendWelcomeEmail, storeChart, storeUser } from '../actions'
+import { generateChart } from './generate-chart'
 
 import type { Metadata } from 'next'
 
@@ -30,8 +30,10 @@ export default function Home() {
       <Header />
       <main>
         <BirthDataForm
-          createChartAction={createChart}
-          sendChartAction={sendChart}
+          generateChartAction={generateChart}
+          storeUserAction={storeUser}
+          storeChartAction={storeChart}
+          sendWelcomeEmailAction={sendWelcomeEmail}
         />
       </main>
       <Footer />

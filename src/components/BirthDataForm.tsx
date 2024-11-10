@@ -1,10 +1,12 @@
 'use client'
 
+import { SendWelcomeEmailProps, StoreChartProps } from '@/app/actions'
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
-import { ChartData } from '@/types/ChartData'
+import { Chart } from '@/types/Chart'
 import { GuideProps } from '@/types/GuideProps'
-import { User } from '@/types/User'
+import { MaiaMechanicsResponse } from '@/types/MaiaMechanicsResponse'
+import { User, UserData } from '@/types/User'
 import { countries } from '@/utils/countries'
 import {
   Combobox,
@@ -26,13 +28,21 @@ import { useEffect, useRef, useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import * as yup from 'yup'
 
+interface BirthDataFormProps {
+  generateChartAction: (
+    guideProps: GuideProps,
+  ) => Promise<MaiaMechanicsResponse>
+  storeUserAction: (user: UserData) => Promise<User>
+  storeChartAction: ({ userId, chart, meta }: StoreChartProps) => Promise<Chart>
+  sendWelcomeEmailAction: ({ user, chartId }: SendWelcomeEmailProps) => void
+}
+
 export function BirthDataForm({
-  createChartAction,
-  sendChartAction,
-}: {
-  createChartAction: (guideProps: GuideProps) => Promise<ChartData>
-  sendChartAction: (chartData: ChartData, userData: User) => void
-}) {
+  generateChartAction,
+  storeUserAction,
+  storeChartAction,
+  sendWelcomeEmailAction,
+}: BirthDataFormProps) {
   const [cityQuery, setCityQuery] = useState('')
   const [cities, setCities] = useState<string[]>([])
   const [timeZoneCities, setTimeZoneCities] = useState<TimeZones>()
@@ -46,13 +56,13 @@ export function BirthDataForm({
 
   const schema = yup
     .object({
-      firstName: yup.string().required(),
-      lastName: yup.string().required(),
-      email: yup.string().email().required(),
+      firstName: yup.string().required().trim(),
+      lastName: yup.string().required().trim(),
+      email: yup.string().email().required().trim(),
       date: yup.string().required(),
       time: yup.string().required(),
       countryAbbr: yup.string().length(2).required(),
-      city: yup.string().required(),
+      city: yup.string().required().trim(),
       timezone: yup.string().required(),
       emailOptIn: yup
         .bool()
@@ -168,9 +178,9 @@ export function BirthDataForm({
     console.log('submitting props', guideProps)
     setSubmitting(true)
     try {
-      const chart = await createChartAction(guideProps)
-      console.log('Chart created ... now sending')
-      await sendChartAction(chart, {
+      const chart = await generateChartAction(guideProps)
+      console.log('Chart generated ... now sending')
+      const user = await storeUserAction({
         firstName: guideProps.firstName,
         lastName: guideProps.lastName,
         email: guideProps.email,
