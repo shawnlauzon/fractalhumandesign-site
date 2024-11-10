@@ -2,11 +2,10 @@ import { WelcomeCampaignEmail1 } from '@/components/email/WelcomeCampaignEmail'
 import { Chart } from '@/types/Chart'
 import hdChart from '@/utils/hd-chart'
 import { render } from '@react-email/components'
-import { VercelRequest, VercelResponse } from '@vercel/node'
 import { Client, fql, QuerySuccess } from 'fauna'
 import * as postmark from 'postmark'
 
-export async function GET(request: VercelRequest, response: VercelResponse) {
+export async function GET() {
   let httpResponse
 
   const postmarkClient = new postmark.ServerClient(
