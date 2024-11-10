@@ -60,7 +60,7 @@ export function CareerTypeTable() {
                 className="mt-1 h-10 w-10 flex-none text-sky-600"
               />*/}
               <p className="text-sm font-semibold leading-6 text-gray-900">
-                🖌️ Builder
+                🛠️ Builder
               </p>
             </div>
           </td>

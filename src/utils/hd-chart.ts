@@ -1,114 +1,114 @@
 import { SimpleChart } from '@/types/SimpleChart'
 import _ from 'lodash'
 
+// type
+export const types = [
+  'Generator',
+  'Manifesting Generator',
+  'Manifestor',
+  'Projector',
+  'Reflector',
+]
+export const careerDesigns = [
+  '🛠️ Classic Builder',
+  '🛠️ Express Builder',
+  '💡 Initiator',
+  '🔑 Advisor',
+  '🔍 Evaluator',
+]
+export const centers = [
+  'root',
+  'sacral',
+  'splenic',
+  'solarplexus',
+  'ego',
+  'gcenter',
+  'throat',
+  'ajna',
+  'head',
+]
+
+export const authorityTypes = [
+  'emotional',
+  'sacral',
+  'splenic',
+  'outer',
+  'self projected',
+  'ego',
+  'lunar',
+]
+export const signatureThemes = [
+  'satisfaction',
+  'satisfaction',
+  'peace',
+  'success',
+  'surprise',
+]
+export const signatureThemesAdjectives = [
+  'satisfied',
+  'satisfied',
+  'peaceful',
+  'successful',
+  'surprised',
+]
+export const notSelfThemes = [
+  'frustration',
+  'frustration',
+  'anger',
+  'bitterness',
+  'disappointment',
+]
+export const notSelfThemesAdjectives = [
+  'frustrated',
+  'frustrated',
+  'angry',
+  'bitter',
+  'disappointed',
+]
+export const strategies = [
+  'wait to respond before engaging',
+  'wait to respond before engaging',
+  'inform before taking action',
+  'wait for recognition and invitation',
+  'wait a 28 day cycle to reflect and assess',
+]
+export const authorityDescriptions = [
+  'wait for clarity',
+  'follow your gut',
+  'follow your instincts',
+  'follow your willful determination',
+  'listen to what you say',
+  'listen to what you say',
+  'discuss with others',
+]
+export const definitions = [
+  'none',
+  'single',
+  'split',
+  'triple split',
+  'quadruple split',
+]
+
+export const pentaRoleStrengths = [
+  ['31', '7'],
+  ['8', '1'],
+  ['33', '13'],
+]
+export const pentaManagedStrengths = [
+  ['15', '5'],
+  ['2', '14'],
+  ['46', '29'],
+]
+export const oc16Strengths = [
+  ['50', '27'],
+  ['59', '6'],
+  ['60', '3'],
+  ['14', '2'],
+  ['25', '51'],
+  ['21', '45'],
+]
+
 export default function (chart: SimpleChart) {
-  // type
-  const types = [
-    'Generator',
-    'Manifesting Generator',
-    'Manifestor',
-    'Projector',
-    'Reflector',
-  ]
-  const careerDesigns = [
-    '🖌️ Classic Builder',
-    '🖌️ Express Builder',
-    '💡 Initiator',
-    '🔑 Advisor',
-    '🔍 Evaluator',
-  ]
-  const centers = [
-    'root',
-    'sacral',
-    'splenic',
-    'solarplexus',
-    'ego',
-    'gcenter',
-    'throat',
-    'ajna',
-    'head',
-  ]
-
-  const authorityTypes = [
-    'emotional',
-    'sacral',
-    'splenic',
-    'outer',
-    'self projected',
-    'ego',
-    'lunar',
-  ]
-  const signatureThemes = [
-    'satisfaction',
-    'satisfaction',
-    'peace',
-    'success',
-    'surprise',
-  ]
-  const signatureThemesAdjectives = [
-    'satisfied',
-    'satisfied',
-    'peaceful',
-    'successful',
-    'surprised',
-  ]
-  const notSelfThemes = [
-    'frustration',
-    'frustration',
-    'anger',
-    'bitterness',
-    'disappointment',
-  ]
-  const notSelfThemesAdjectives = [
-    'frustrated',
-    'frustrated',
-    'angry',
-    'bitter',
-    'disappointed',
-  ]
-  const strategies = [
-    'wait to respond before engaging',
-    'wait to respond before engaging',
-    'inform before taking action',
-    'wait for recognition and invitation',
-    'wait a 28 day cycle to reflect and assess',
-  ]
-  const authorityDescriptions = [
-    'wait for clarity',
-    'follow your gut',
-    'follow your instincts',
-    'follow your willful determination',
-    'listen to what you say',
-    'listen to what you say',
-    'discuss with others',
-  ]
-  const definitions = [
-    'none',
-    'single',
-    'split',
-    'triple split',
-    'quadruple split',
-  ]
-
-  const pentaRoleStrengths = [
-    ['31', '7'],
-    ['8', '1'],
-    ['33', '13'],
-  ]
-  const pentaManagedStrengths = [
-    ['15', '5'],
-    ['2', '14'],
-    ['46', '29'],
-  ]
-  const oc16Strengths = [
-    ['50', '27'],
-    ['59', '6'],
-    ['60', '3'],
-    ['14', '2'],
-    ['25', '51'],
-    ['21', '45'],
-  ]
-
   const type = () => types[chart.type]
   const strategy = () => strategies[chart.type]
   const authority = () => authorityTypes[chart.authority]

@@ -1,4 +1,10 @@
-import { WelcomeCampaignEmail1 } from '@/components/email/WelcomeCampaignEmail'
+import {
+  WelcomeCampaignEmail1,
+  WelcomeCampaignEmail2,
+  WelcomeCampaignEmail3,
+  WelcomeCampaignEmail4,
+  WelcomeCampaignEmail5,
+} from '@/components/email/WelcomeCampaignEmail'
 import { Chart } from '@/types/Chart'
 import hdChart from '@/utils/hd-chart'
 import { render } from '@react-email/components'
@@ -48,7 +54,15 @@ export async function GET() {
 
       const hd = hdChart(chart.chart)
 
-      const htmlBody = await render(<WelcomeCampaignEmail1 chart={chart} />)
+      const htmlBody = await render(
+        <>
+          <WelcomeCampaignEmail1 chart={chart} />
+          <WelcomeCampaignEmail2 chart={chart} />
+          <WelcomeCampaignEmail3 chart={chart} />
+          <WelcomeCampaignEmail4 chart={chart} />
+          <WelcomeCampaignEmail5 chart={chart} />
+        </>,
+      )
 
       const emailData = {
         From: 'shawn@fractalhumandesign.com',
