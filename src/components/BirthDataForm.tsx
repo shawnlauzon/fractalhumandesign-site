@@ -178,13 +178,24 @@ export function BirthDataForm({
     console.log('submitting props', guideProps)
     setSubmitting(true)
     try {
-      const chart = await generateChartAction(guideProps)
+      const mmiResponse = await generateChartAction(guideProps)
       console.log('Chart generated ... now sending')
       const user = await storeUserAction({
         firstName: guideProps.firstName,
         lastName: guideProps.lastName,
         email: guideProps.email,
         emailOptIn: guideProps.emailOptIn,
+      })
+
+      const chart = await storeChartAction({
+        userId: user.id,
+        chart: mmiResponse.chart,
+        meta: mmiResponse.meta,
+      })
+
+      await sendWelcomeEmailAction({
+        user,
+        chartId: chart.id,
       })
       console.log('Chart sent.')
       router.push('/guide/success')
