@@ -6,7 +6,8 @@ import * as postmark from 'postmark'
 
 export async function POST(req: Request) {
   let httpResponse
-  const { Recipient } = await req.json()
+  const requestJson = await req.json()
+  console.log('requestJson', requestJson)
 
   const client = new Client({
     secret: process.env.FAUNADB_SERVER_SECRET,
@@ -16,7 +17,7 @@ export async function POST(req: Request) {
     const thisUrl = 'https://' + req.headers.get('host')
 
     const user = await client.query<User>(
-      fql`User.firstWhere(.isEmailVerified == false && .email == ${Recipient})!.update({isEmailVerified: true }) { data }`,
+      fql`User.firstWhere(.isEmailVerified == false && .email == ${requestJson.Recipient})!.update({isEmailVerified: true }) { data }`,
     )
     console.log('updated user', user)
 
@@ -27,7 +28,7 @@ export async function POST(req: Request) {
 
       const emailData = {
         From: 'shawn@fractalhumandesign.com',
-        To: Recipient,
+        To: requestJson.Recipient,
         TemplateAlias: 'welcome',
         TemplateModel: {
           product_url: 'https://fractalhumandesign.com',
