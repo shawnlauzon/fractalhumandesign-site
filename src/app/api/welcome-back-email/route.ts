@@ -27,7 +27,7 @@ export async function POST(req: Request) {
   }
 
   try {
-    const query = fql`Chart.where(.user.welcomeEmailStepSent == null).pageSize(2) { id, user }`
+    const query = fql`Chart.where(.user.welcomeEmailStepSent == null && .user.email='shawn.lauzon@gmail.com').pageSize(2) { id, user }`
     const queryResponse: QuerySuccess<Page> = await client.query(query)
 
     const charts = queryResponse.data.data

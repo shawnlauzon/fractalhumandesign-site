@@ -1,23 +1,32 @@
-import { Img } from '@react-email/components'
+import { Heading, Img, Row, Section, Text } from '@react-email/components'
 import { ReactNode } from 'react'
 
 export function RaQuote({ children }: { children: ReactNode }) {
   return (
-    <figure className="mt-10 border-l border-sky-600 pl-9">
-      <blockquote className="font-semibold text-gray-900">
-        <p>"{children}"</p>
-      </blockquote>
-      <figcaption className="mt-6 flex gap-x-4">
-        <Img
-          alt="Ra Uru Hu headshot"
-          className="h-6 w-6 flex-none rounded-full bg-gray-50"
-          src="https://fractalhumandesign.s3.amazonaws.com/site/images/ra-uru-hu-headshot.jpg"
-        />
-        <div className="text-sm leading-6">
-          <strong className="font-semibold text-gray-900">Ra Uru Hu</strong> –
-          Human Design Founder
-        </div>
-      </figcaption>
-    </figure>
+    <Section className="w-[85%]">
+      <Section>
+        <Text className="font-semibold text-gray-900">"{children}"</Text>
+      </Section>
+      <Row>
+        <Section className="mt-[5px] inline-block max-h-[48px] max-w-[48px] text-left">
+          <Img
+            alt="Ra Uru Hu headshot"
+            className="block h-[48px] w-[48px] rounded-full object-cover object-center"
+            src="https://fractalhumandesign.s3.amazonaws.com/site/images/ra-uru-hu-headshot.jpg"
+          />
+        </Section>
+        <Section className="ml-[18px] inline-block max-w-[120px] text-left align-top">
+          <Heading
+            as="h3"
+            className="m-[0px] text-[14px] font-medium leading-[20px] text-gray-800"
+          >
+            Ra Uru Hu
+          </Heading>
+          <Text className="m-[0px] text-[12px] font-medium leading-[14px] text-gray-500">
+            Human Design Founder
+          </Text>
+        </Section>
+      </Row>
+    </Section>
   )
 }

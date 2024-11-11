@@ -1,3 +1,21 @@
+export enum HdType {
+  Generator = 0,
+  ManifestingGenerator,
+  Manifestor,
+  Projector,
+  Reflector,
+}
+
+export enum HdAuthority {
+  Emotional = 0,
+  Sacral,
+  Splenic,
+  Outer,
+  Self,
+  Ego,
+  Lunar,
+}
+
 export type ChartContent = {
   planets: Planet[]
   gates: Gate[]

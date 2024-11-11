@@ -31,7 +31,7 @@ export async function POST() {
 
   try {
     // query using your app's local variables
-    const query = fql`Chart.all().where(.user.isEmailVerified == true && .user.welcomeEmailStepSent != null && .user.email == 'shawn.lauzon@gmail.com') \
+    const query = fql`Chart.all().where(.user.isEmailVerified == true && .user.welcomeEmailStepSent != null) \
       { id, user, chart }
     `
 
@@ -42,8 +42,6 @@ export async function POST() {
     if (page) {
       console.log('Found', page)
     }
-
-    const subjects = []
 
     const emails = await Promise.all(
       page.data.map(async (chart) => {
@@ -56,7 +54,7 @@ export async function POST() {
 
         const htmlBody = await render(
           <WelcomeCampaignEmailChooser
-            chart={chart}
+            chart={chart.chart}
             emailIndex={welcomeEmailStep}
           />,
         )
@@ -64,38 +62,42 @@ export async function POST() {
         let subject
         switch (welcomeEmailStep) {
           case 1:
-            subject = `${firstName}, you are designed to be a ${hd.careerDesign()}.`
+            subject = `[FHD Day 1] ${firstName}, you are designed to be a ${hd.careerDesign()}.`
             break
           case 2:
-            subject = `Your way of being is designed to ${hd.strategy()}.`
+            subject = `[FHD Day 2] You are designed to ${hd.strategy()}.`
             break
           case 3:
-            subject = `To make decisions you can trust, ${hd.authorityDescription()}.`
+            subject = `[FHD Day 3] To make decisions you can trust, ${hd.authorityDescription()}.`
             break
           case 4:
-            subject = `Follow this advice for less ${hd.notSelfTheme()} and more ${hd.signatureTheme()}.`
+            subject = `[FHD Day 4] Follow this advice for less ${hd.notSelfTheme()} and more ${hd.signatureTheme()}.`
             break
           case 5:
-            subject = `Congratulations ${firstName} on learning about being a ${hd.careerDesign()}`
+            subject = `[FHD Day 5] Congratulations ${firstName} on entering your life of flow.`
             break
           default:
-            subject = `${firstName}, you are designed to be a ${hd.careerDesign()}.`
+            subject = undefined
             break
         }
 
-        return {
-          From: 'Shawn at Fractal Human Design <shawn@fractalhumandesign.com>',
-          To: email,
-          Subject: subject,
-          HtmlBody: htmlBody,
-          MessageStream: 'broadcast',
+        if (subject) {
+          return {
+            From: 'Shawn at Fractal Human Design <shawn@fractalhumandesign.com>',
+            To: email,
+            Subject: subject,
+            HtmlBody: htmlBody,
+            MessageStream: 'broadcast',
+          }
         }
       }),
     )
 
     console.log('Sending', emails)
 
-    emailResponses = await postmarkClient.sendEmailBatch(emails)
+    emailResponses = await postmarkClient.sendEmailBatch(
+      emails.filter((e) => e !== undefined),
+    )
     console.log('emailResponses', emailResponses)
 
     for (let i = 0; i < emailResponses.length; i++) {

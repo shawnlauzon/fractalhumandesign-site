@@ -1,124 +1,113 @@
+import { Column, Hr, Img, Row, Section, Text } from '@react-email/components'
+
 export function CareerTypeTable() {
   return (
-    <table className="divide-y divide-gray-300">
-      <thead>
-        <tr>
-          <th
-            scope="col"
-            className="py-3.5 pl-4 pr-3 text-sm font-semibold text-gray-900 sm:pl-0"
-          >
-            Career Type
-          </th>
-          <th
-            scope="col"
-            className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
-          >
-            Purpose
-          </th>
-          {/* <th
-            scope="col"
-            className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
-          >
-            Freq.
-          </th> */}
-          {/* <th
-            scope="col"
-            className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
-          >
-            Tony Robbins Gift
-          </th> */}
-        </tr>
-      </thead>
-      <tbody className="divide-y divide-gray-200">
-        <tr>
-          <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
-            <div className="flex flex-col">
-              {/* <LightBulbIcon
-                aria-hidden="true"
-                className="mt-1 h-10 w-10 flex-none text-sky-600"
-              /> */}
-              <p className="text-sm font-semibold leading-6 text-gray-900">
-                💡 Initiator
-              </p>
-            </div>
-          </td>
-          <td className="px-3 py-4 text-sm text-gray-500">
-            Get things started
-          </td>
-          {/* <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            10%
-          </td> */}
-          {/* <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            Entrepreneur
-          </td> */}
-        </tr>
-        <tr>
-          <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
-            <div className="flex flex-col">
-              {/* <PaintBrushIcon
-                aria-hidden="true"
-                className="mt-1 h-10 w-10 flex-none text-sky-600"
-              />*/}
-              <p className="text-sm font-semibold leading-6 text-gray-900">
-                🛠️ Builder
-              </p>
-            </div>
-          </td>
-          <td className="px-3 py-4 text-sm text-gray-500">
-            Do the work you love to do
-          </td>
-          {/* <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            66%
-          </td> */}
-          {/* <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            Artist / Skilled worker
-          </td> */}
-        </tr>
-        <tr>
-          <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
-            <div className="flex flex-col">
-              {/* <KeyIcon
-                aria-hidden="true"
-                className="mt-1 h-10 w-10 flex-none text-sky-600"
-              /> */}
-              <p className="text-sm font-semibold leading-6 text-gray-900">
-                🔑 Advisor
-              </p>
-            </div>
-          </td>
-          <td className="px-3 py-4 text-sm text-gray-500">
-            Guide others to peak performance
-          </td>
-          {/* <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            23%
-          </td> */}
-          {/* <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            Manager / Leader
-          </td> */}
-        </tr>
-        <tr>
-          <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
-            <div className="flex flex-col">
-              {/* <MagnifyingGlassIcon
-                aria-hidden="true"
-                className="mt-1 h-10 w-10 flex-none text-sky-600"
-              /> */}
-              <p className="text-sm font-semibold leading-6 text-gray-900">
-                🔍 Evaluator
-              </p>
-            </div>
-          </td>
-          <td className="px-3 py-4 text-sm text-gray-500">
-            Share how things are going
-          </td>
-          {/* <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            1%
-          </td>
-          <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-            N/A
-          </td> */}
-        </tr>
-      </tbody>
-    </table>
+    <Section className="my-[16px] w-[80%]">
+      <Hr className="mx-0 my-[32px] w-full border border-solid !border-gray-300" />
+      <Section>
+        <Row>
+          <Text className="m-0 text-[24px] font-semibold leading-[32px] text-gray-900">
+            Human Design for Business Career Types
+          </Text>
+          <Text className="mt-[8px] text-[16px] leading-[24px] text-gray-500">
+            Combine practicality and style effortlessly with our furniture,
+            offering functional designs that enhance your living space.
+          </Text>
+        </Row>
+      </Section>
+      <Section>
+        <Section>
+          <Row>
+            <Column className="align-baseline">
+              <Img
+                alt="heart icon"
+                height="48"
+                src="https://react.email/static/heart-icon.png"
+                width="48"
+              />
+            </Column>
+            <Column className="w-[85%]">
+              <Text className="m-0 text-[20px] font-semibold leading-[28px] text-gray-900">
+                Initiator
+              </Text>
+              <Text className="m-0 mt-[8px] text-[16px] leading-[24px] text-gray-500">
+                Gets things started
+              </Text>
+            </Column>
+          </Row>
+        </Section>
+      </Section>
+      <Section>
+        <Hr className="mx-0 my-[32px] w-full border border-solid !border-gray-300" />
+        <Section>
+          <Row>
+            <Column className="align-baseline">
+              <Img
+                alt="rocket icon"
+                height="48"
+                src="https://react.email/static/rocket-icon.png"
+                width="48"
+              />
+            </Column>
+            <Column className="w-[85%]">
+              <Text className="m-0 text-[20px] font-semibold leading-[28px] text-gray-900">
+                Builder
+              </Text>
+              <Text className="m-0 mt-[8px] text-[16px] leading-[24px] text-gray-500">
+                Creates what is needed
+              </Text>
+            </Column>
+          </Row>
+        </Section>
+      </Section>
+      <Section>
+        <Hr className="mx-0 my-[32px] w-full border border-solid !border-gray-300" />
+
+        <Section>
+          <Row>
+            <Column className="align-baseline">
+              <Img
+                alt="rocket icon"
+                height="48"
+                src="https://react.email/static/rocket-icon.png"
+                width="48"
+              />
+            </Column>
+            <Column className="w-[85%]">
+              <Text className="m-0 text-[20px] font-semibold leading-[28px] text-gray-900">
+                Advisor
+              </Text>
+              <Text className="m-0 mt-[8px] text-[16px] leading-[24px] text-gray-500">
+                Helps individuals reach peak performance
+              </Text>
+            </Column>
+          </Row>
+        </Section>
+      </Section>
+      <Section>
+        <Hr className="mx-0 my-[32px] w-full border border-solid !border-gray-300" />
+        <Section>
+          <Row>
+            <Column className="align-baseline">
+              <Img
+                alt="rocket icon"
+                height="48"
+                src="https://react.email/static/rocket-icon.png"
+                width="48"
+              />
+            </Column>
+            <Column className="w-[85%]">
+              <Text className="m-0 text-[20px] font-semibold leading-[28px] text-gray-900">
+                Evaluator
+              </Text>
+              <Text className="m-0 mt-[8px] text-[16px] leading-[24px] text-gray-500">
+                Ensures everything is running smoothly
+              </Text>
+            </Column>
+          </Row>
+        </Section>
+      </Section>
+      <Hr className="mx-0 my-[32px] w-full border border-solid !border-gray-300" />
+    </Section>
   )
 }
