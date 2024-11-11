@@ -10,6 +10,14 @@ export const types = [
   'Reflector',
 ]
 
+export const typeButtonGifs = [
+  'https://fractalhumandesign.s3.us-east-1.amazonaws.com/site/images/generator-button.gif',
+  'https://fractalhumandesign.s3.us-east-1.amazonaws.com/site/images/generator-button.gif',
+  'https://fractalhumandesign.s3.us-east-1.amazonaws.com/site/images/manifestor-button.gif',
+  'https://fractalhumandesign.s3.us-east-1.amazonaws.com/site/images/projector-button.gif',
+  'https://fractalhumandesign.s3.us-east-1.amazonaws.com/site/images/reflector-button.gif',
+]
+
 export const typeVideos = [
   'https://youtu.be/9PVgkBzpPqs',
   'https://youtu.be/9PVgkBzpPqs',
@@ -28,7 +36,7 @@ export const strategyVideos = [
 
 export const strategyVideoMG = 'https://youtu.be/OkRewoajREQ'
 export const sleepAloneProjectors = 'https://youtu.be/A1PBKKAJslo'
-export const projectorAuthority = 'https://youtu.be/JmMgm2KduZc'
+export const projectorEmotionalAuthority = 'https://youtu.be/JmMgm2KduZc'
 
 export const careerDesigns = [
   '🛠️ Classic Builder',
@@ -69,7 +77,7 @@ export const authorityVideos = [
   'https://youtu.be/Kv1Ris11EMs',
 ]
 
-export const signatureThemes = [
+export const signatureVideos = [
   'https://youtu.be/fHGRdJSyE34',
   'https://youtu.be/fHGRdJSyE34',
   'https://youtu.be/UfkIprGbdHw',
@@ -77,7 +85,7 @@ export const signatureThemes = [
   'https://youtu.be/ltxpSWRx5t4',
 ]
 
-export const signatureVideos = [
+export const signatureThemes = [
   'satisfaction',
   'satisfaction',
   'peace',
