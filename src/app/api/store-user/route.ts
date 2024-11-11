@@ -24,7 +24,7 @@ export async function POST(req: Request) {
   try {
     const query = params.id
       ? fql`User.byId(${params.id})?.update(${user}) { id, firstName, lastName, email, emailOptIn, phoneNumber }`
-      : fql`User.create(${user}) { id, firstName, lastName, email, emailOptIn, phoneNumber }`
+      : fql`User.create(${user}) { id, firstName, lastName, email, emailOptIn, phoneNumber, isEmailVerified }`
 
     // execute the query
     const queryResponse: QuerySuccess<User> = await client.query<User>(query)
