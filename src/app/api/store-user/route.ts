@@ -14,6 +14,7 @@ export async function POST(req: Request) {
     email: params.email,
     emailOptIn: params.emailOptIn,
     phoneNumber: params.phoneNumber,
+    isEmailVerified: false,
   }
 
   // configure your client
