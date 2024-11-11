@@ -4,6 +4,7 @@ import { Chart } from '@/types/Chart'
 import { ChartContent } from '@/types/ChartContent'
 import { Meta } from '@/types/Meta'
 import { User, UserData } from '@/types/User'
+import { Client, fql } from 'fauna'
 import { revalidatePath } from 'next/cache'
 import * as postmark from 'postmark'
 
@@ -89,4 +90,19 @@ export async function sendWelcomeEmail({
 
   const emailResponse = await postmarkClient.sendEmailWithTemplate(emailData)
   console.log('emailResponse', emailResponse)
+
+  if (emailResponse.ErrorCode === 0) {
+    const client = new Client({
+      secret: process.env.FAUNADB_SERVER_SECRET,
+    })
+    try {
+      await client.query(
+        fql`User.byId(${user.id})!.update({ welcomeEmailStepSent: 0 })`,
+      )
+    } finally {
+      client.close()
+    }
+  } else {
+    console.error('Error sending welcome email', emailResponse)
+  }
 }
