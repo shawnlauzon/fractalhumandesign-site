@@ -1,10 +1,4 @@
-import {
-  WelcomeCampaignEmail1,
-  WelcomeCampaignEmail2,
-  WelcomeCampaignEmail3,
-  WelcomeCampaignEmail4,
-  WelcomeCampaignEmail5,
-} from '@/components/email/WelcomeCampaignEmail'
+import { WelcomeCampaignEmail1 } from '@/components/email/WelcomeCampaignEmail'
 import { Chart } from '@/types/Chart'
 import hdChart from '@/utils/hd-chart'
 import { render } from '@react-email/components'
@@ -58,10 +52,6 @@ export async function POST() {
       const htmlBody = await render(
         <>
           <WelcomeCampaignEmail1 chart={chart} />
-          <WelcomeCampaignEmail2 chart={chart} />
-          <WelcomeCampaignEmail3 chart={chart} />
-          <WelcomeCampaignEmail4 chart={chart} />
-          <WelcomeCampaignEmail5 chart={chart} />
         </>,
       )
 
@@ -83,8 +73,8 @@ export async function POST() {
       console.log('Sending', emailData)
 
       try {
-        const emailResponse = await postmarkClient.sendEmail(emailData)
-        console.log('emailResponse', emailResponse)
+        // const emailResponse = await postmarkClient.sendEmail(emailData)
+        // console.log('emailResponse', emailResponse)
 
         // Update the user to indicate that the email has been sent
         const updateQuery = fql`Update(Chart, ${chart.id}, { welcomeEmailSent: true })`
