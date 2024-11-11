@@ -1,6 +1,6 @@
 export const dynamic = 'force-dynamic' // static by default, unless reading the request
 
-export async function GET(req: Request) {
+export async function POST(req: Request) {
   //   let httpResponse
 
   //   // configure your client

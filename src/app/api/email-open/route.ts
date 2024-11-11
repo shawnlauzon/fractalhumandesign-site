@@ -17,7 +17,7 @@ export async function POST(req: Request) {
     const thisUrl = 'https://' + req.headers.get('host')
 
     const user = await client.query<User>(
-      fql`User.firstWhere(.isEmailVerified == false && .email == ${requestJson.Recipient})!.update({isEmailVerified: true }) { data }`,
+      fql`User.firstWhere(.isEmailVerified == false && .email == ${requestJson.Recipient})?.update({isEmailVerified: true }) { data }`,
     )
     console.log('updated user', user)
 

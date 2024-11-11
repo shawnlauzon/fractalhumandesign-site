@@ -4,7 +4,7 @@ import { User } from '@/types/User'
 import { Client, fql, QuerySuccess } from 'fauna'
 import * as postmark from 'postmark'
 
-export async function GET(req: Request) {
+export async function POST(req: Request) {
   let httpResponse
 
   // configure your client

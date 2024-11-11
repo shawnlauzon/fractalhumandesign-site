@@ -11,7 +11,7 @@ import { render } from '@react-email/components'
 import { Client, fql, QuerySuccess } from 'fauna'
 import * as postmark from 'postmark'
 
-export async function GET() {
+export async function POST() {
   let httpResponse
 
   const postmarkClient = new postmark.ServerClient(
@@ -37,7 +37,7 @@ export async function GET() {
 
   try {
     // query using your app's local variables
-    const query = fql`Chart.all().where(.user.isEmailVerified == true) \
+    const query = fql`Chart.all().where(.user.isEmailVerified == true && .user.welcomeEmailStepSent != null) \
       { id, user, chart { type, authority, profile } }
     `
     // execute the query
