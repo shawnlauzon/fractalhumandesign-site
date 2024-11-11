@@ -22,8 +22,32 @@ import {
   strategyWriteups,
 } from './WelcomeCampaignText'
 
+interface WelcomeCampaignEmailChooserProps {
+  emailIndex: number
+  chart: SimpleChartData
+}
+
 interface WelcomeCampaignEmailProps {
   chart: SimpleChartData
+}
+
+export const WelcomeCampaignEmailChooser: React.FC<
+  WelcomeCampaignEmailChooserProps
+> = ({ emailIndex, chart }) => {
+  switch (emailIndex) {
+    case 1:
+      return <WelcomeCampaignEmail1 chart={chart} />
+    case 2:
+      return <WelcomeCampaignEmail2 chart={chart} />
+    case 3:
+      return <WelcomeCampaignEmail3 chart={chart} />
+    case 4:
+      return <WelcomeCampaignEmail4 chart={chart} />
+    case 5:
+      return <WelcomeCampaignEmail5 chart={chart} />
+    default:
+      return <WelcomeCampaignEmail1 chart={chart} />
+  }
 }
 
 export const WelcomeCampaignEmail1: React.FC<WelcomeCampaignEmailProps> = ({
@@ -192,6 +216,17 @@ export const WelcomeCampaignEmail2: React.FC<WelcomeCampaignEmailProps> = ({
             </>
           )}
           <p className="mt-8">{strategyWriteups.get(hd.strategy())}</p>
+
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/qvnRU2tdNXM?si=ohnOgZoKe48ehhqk"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
 
           <p className="mt-6">
             After you {hd.strategy()}, you still need to determine if this is

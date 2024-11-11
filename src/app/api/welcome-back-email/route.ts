@@ -33,7 +33,7 @@ export async function POST(req: Request) {
     const charts = queryResponse.data.data
 
     const emails = charts.map((chart) => ({
-      From: 'shawn@fractalhumandesign.com',
+      From: 'Shawn at Fractal Human Design <shawn@fractalhumandesign.com>',
       To: chart.user.email,
       MessageStream: 'broadcast',
       TemplateAlias: 'welcome-back',

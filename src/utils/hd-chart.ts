@@ -9,6 +9,27 @@ export const types = [
   'Projector',
   'Reflector',
 ]
+
+export const typeVideos = [
+  'https://youtu.be/9PVgkBzpPqs',
+  'https://youtu.be/9PVgkBzpPqs',
+  'https://youtu.be/qvnRU2tdNXM',
+  'https://youtu.be/Od8wVEL5b5w',
+  'https://youtu.be/bgdaZBB2wCo',
+]
+
+export const strategyVideos = [
+  'https://youtu.be/_g3cx77EeLs',
+  'https://youtu.be/_g3cx77EeLs',
+  'https://youtu.be/YTTm9Ziyi-8',
+  'https://youtu.be/vypbRJShWyM',
+  'https://youtu.be/924KXvH3mv4',
+]
+
+export const strategyVideoMG = 'https://youtu.be/OkRewoajREQ'
+export const sleepAloneProjectors = 'https://youtu.be/A1PBKKAJslo'
+export const projectorAuthority = 'https://youtu.be/JmMgm2KduZc'
+
 export const careerDesigns = [
   '🛠️ Classic Builder',
   '🛠️ Express Builder',
@@ -37,13 +58,33 @@ export const authorityTypes = [
   'ego',
   'lunar',
 ]
+
+export const authorityVideos = [
+  'https://youtu.be/e9g6q1pKJeo',
+  'https://youtu.be/0sUPwjp025M',
+  'https://youtu.be/7S552VXC1tk',
+  'https://youtu.be/OvSo9Aa2XCc',
+  'https://youtu.be/cF6CxUTGmfU',
+  'https://youtu.be/8Nu3WvcQ0jA',
+  'https://youtu.be/Kv1Ris11EMs',
+]
+
 export const signatureThemes = [
+  'https://youtu.be/fHGRdJSyE34',
+  'https://youtu.be/fHGRdJSyE34',
+  'https://youtu.be/UfkIprGbdHw',
+  'https://youtu.be/eHWeVZIMrTw',
+  'https://youtu.be/ltxpSWRx5t4',
+]
+
+export const signatureVideos = [
   'satisfaction',
   'satisfaction',
   'peace',
   'success',
   'surprise',
 ]
+
 export const signatureThemesAdjectives = [
   'satisfied',
   'satisfied',
@@ -51,6 +92,7 @@ export const signatureThemesAdjectives = [
   'successful',
   'surprised',
 ]
+
 export const notSelfThemes = [
   'frustration',
   'frustration',
@@ -72,6 +114,7 @@ export const strategies = [
   'wait for recognition and invitation',
   'wait a 28 day cycle to reflect and assess',
 ]
+
 export const authorityDescriptions = [
   'wait for clarity',
   'follow your gut',
@@ -81,6 +124,7 @@ export const authorityDescriptions = [
   'listen to what you say',
   'discuss with others',
 ]
+
 export const definitions = [
   'none',
   'single',
