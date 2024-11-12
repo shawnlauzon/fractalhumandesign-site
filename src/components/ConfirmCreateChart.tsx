@@ -108,8 +108,10 @@ export function ConfirmCreateChart({
                               </dt>
                               <dd className="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">
                                 {guideProps?.city
-                                  .replace(' (', ', ')
-                                  .replace(')', '')}
+                                  ? guideProps?.city
+                                      .replace(' (', ', ')
+                                      .replace(')', '')
+                                  : ''}
                                 {guideProps?.countryAbbr !== 'US'
                                   ? ', ' +
                                     countries.find(
