@@ -5,7 +5,7 @@ import { render } from '@react-email/components'
 import { Client, fql, QuerySuccess } from 'fauna'
 import * as postmark from 'postmark'
 
-export async function POST() {
+export async function GET() {
   let httpResponse
 
   const postmarkClient = new postmark.ServerClient(
