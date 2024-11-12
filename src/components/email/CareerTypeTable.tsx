@@ -1,4 +1,4 @@
-import { Column, Hr, Img, Row, Section, Text } from '@react-email/components'
+import { Column, Hr, Row, Section, Text } from '@react-email/components'
 
 export function CareerTypeTable() {
   return (
@@ -19,12 +19,14 @@ export function CareerTypeTable() {
         <Section>
           <Row>
             <Column className="align-baseline">
-              <Img
-                alt="heart icon"
-                height="48"
-                src="https://react.email/static/heart-icon.png"
-                width="48"
-              />
+              <table className="text-center">
+                <td
+                  align="center"
+                  className="h-[40px] w-[40px] rounded-full bg-sky-200 p-0"
+                >
+                  <Text className="m-0 font-semibold text-sky-600">💡</Text>
+                </td>
+              </table>
             </Column>
             <Column className="w-[85%]">
               <Text className="m-0 text-[20px] font-semibold leading-[28px] text-gray-900">
@@ -42,12 +44,14 @@ export function CareerTypeTable() {
         <Section>
           <Row>
             <Column className="align-baseline">
-              <Img
-                alt="rocket icon"
-                height="48"
-                src="https://react.email/static/rocket-icon.png"
-                width="48"
-              />
+              <table className="text-center">
+                <td
+                  align="center"
+                  className="h-[40px] w-[40px] rounded-full bg-sky-200 p-0"
+                >
+                  <Text className="m-0 font-semibold text-sky-600">🔥</Text>
+                </td>
+              </table>
             </Column>
             <Column className="w-[85%]">
               <Text className="m-0 text-[20px] font-semibold leading-[28px] text-gray-900">
@@ -66,12 +70,14 @@ export function CareerTypeTable() {
         <Section>
           <Row>
             <Column className="align-baseline">
-              <Img
-                alt="rocket icon"
-                height="48"
-                src="https://react.email/static/rocket-icon.png"
-                width="48"
-              />
+              <table className="text-center">
+                <td
+                  align="center"
+                  className="h-[40px] w-[40px] rounded-full bg-sky-200 p-0"
+                >
+                  <Text className="m-0 font-semibold text-sky-600">🔑</Text>
+                </td>
+              </table>
             </Column>
             <Column className="w-[85%]">
               <Text className="m-0 text-[20px] font-semibold leading-[28px] text-gray-900">
@@ -89,12 +95,14 @@ export function CareerTypeTable() {
         <Section>
           <Row>
             <Column className="align-baseline">
-              <Img
-                alt="rocket icon"
-                height="48"
-                src="https://react.email/static/rocket-icon.png"
-                width="48"
-              />
+              <table className="text-center">
+                <td
+                  align="center"
+                  className="h-[40px] w-[40px] rounded-full bg-sky-200 p-0"
+                >
+                  <Text className="m-0 font-semibold text-sky-600">🔍</Text>
+                </td>
+              </table>
             </Column>
             <Column className="w-[85%]">
               <Text className="m-0 text-[20px] font-semibold leading-[28px] text-gray-900">

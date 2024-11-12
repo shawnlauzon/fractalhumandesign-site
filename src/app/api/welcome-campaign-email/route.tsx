@@ -31,7 +31,8 @@ export async function POST() {
 
   try {
     // query using your app's local variables
-    const query = fql`Chart.all().where(.user.isEmailVerified == true && .user.welcomeEmailStepSent != null) \
+    // Note that this will only find users who have not yet sent their 5th in the series
+    const query = fql`Chart.all().where(.user.isEmailVerified == true && .user.welcomeEmailStepSent != null && .user.welcomeEmailStepSent < 5) \
       { id, user, chart }
     `
 

@@ -39,8 +39,8 @@ export const sleepAloneProjectors = 'https://youtu.be/A1PBKKAJslo'
 export const projectorEmotionalAuthority = 'https://youtu.be/JmMgm2KduZc'
 
 export const careerDesigns = [
-  '🛠️ Classic Builder',
-  '🛠️ Express Builder',
+  '🔥 Classic Builder',
+  '🔥 Express Builder',
   '💡 Initiator',
   '🔑 Advisor',
   '🔍 Evaluator',

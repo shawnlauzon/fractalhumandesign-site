@@ -683,7 +683,7 @@ const Signature = () => (
         width={48}
       />
     </Section>
-    <Section className="ml-[18px] inline-block max-w-[120px] text-left align-top">
+    <Section className="ml-[18px] inline-block max-w-[360px] text-left align-top">
       <Heading
         as="h3"
         className="m-[0px] text-[14px] font-medium leading-[20px] text-gray-800"
@@ -691,7 +691,7 @@ const Signature = () => (
         Shawn Lauzon
       </Heading>
       <Text className="m-[0px] text-[12px] font-medium leading-[14px]">
-        Founder & CEO
+        Founder - Certified BG5 Career & Business Consultant
       </Text>
       <Section className="mt-[4px]">
         <Link
@@ -712,6 +712,26 @@ const Signature = () => (
             alt="LinkedIn"
             src="https://react.email/static/in-icon.png"
             style={{ height: '12px', width: '12px' }}
+          />
+        </Link>
+        <Link
+          className="ml-[8px] inline-flex h-[12px] w-[12px]"
+          href="https://instagram.com/shawnlauzon"
+        >
+          <Img
+            alt="Instagram"
+            style={{ height: '12px', width: '12px' }}
+            src="https://react.email/static/instagram-logo.png"
+          />
+        </Link>
+        <Link
+          className="ml-[8px] inline-flex h-[12px] w-[12px]"
+          href="https://facebook.com/shawnlauzon"
+        >
+          <Img
+            alt="Facebook"
+            style={{ height: '12px', width: '12px' }}
+            src="https://react.email/static/facebook-logo.png"
           />
         </Link>
       </Section>
