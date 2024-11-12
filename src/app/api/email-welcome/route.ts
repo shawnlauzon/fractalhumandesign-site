@@ -17,7 +17,7 @@ export async function POST(req: Request) {
     const actionUrl = `${thisUrl}/guide/${chartId}`
 
     const emailData = {
-      From: 'shawn@fractalhumandesign.com',
+      From: 'Shawn at Fractal Human Design <shawn@fractalhumandesign.com>',
       To: user.email,
       TemplateAlias: 'welcome',
       TemplateModel: {

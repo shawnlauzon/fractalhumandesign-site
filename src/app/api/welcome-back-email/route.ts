@@ -4,7 +4,7 @@ import { User } from '@/types/User'
 import { Client, fql, QuerySuccess } from 'fauna'
 import * as postmark from 'postmark'
 
-export async function POST(req: Request) {
+export async function GET() {
   let httpResponse
 
   // configure your client
@@ -27,7 +27,7 @@ export async function POST(req: Request) {
   }
 
   try {
-    const query = fql`Chart.where(.user.welcomeEmailStepSent == null && .user.email='shawn.lauzon@gmail.com').pageSize(2) { id, user }`
+    const query = fql`Chart.where(.user.welcomeEmailStepSent == null).pageSize(5) { id, user }`
     const queryResponse: QuerySuccess<Page> = await client.query(query)
 
     const charts = queryResponse.data.data
@@ -43,7 +43,7 @@ export async function POST(req: Request) {
         action_url: `https://fractalhumandesign.com/chart/${chart.id}`,
         name: chart.user.firstName,
         support_email: 'help@fractalhumandesign.com',
-        sender_name: 'Shawn at Fractal Human Design',
+        sender_name: 'Shawn Lauzon',
         company_name: 'Quantum Connecting Technologies Inc',
         company_address: '1800 W 68th St. Suite 118, Hialeah, FL  33014',
       },
@@ -57,7 +57,7 @@ export async function POST(req: Request) {
       if (emailResponses[i].ErrorCode === 0) {
         try {
           await client.query(
-            fql`User.byId(users[i])!.update({ welcomeEmailStepSent: 0 })`,
+            fql`User.byId(${charts[i].user.id})!.update({ welcomeEmailStepSent: 0 })`,
           )
         } catch (e) {
           console.error('Failed setting email for ' + emailResponses[i].To)

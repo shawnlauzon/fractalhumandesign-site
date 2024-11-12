@@ -72,7 +72,7 @@ export async function sendWelcomeEmail({
   // which will then set the user's isEmailVerified to true and start the rest of the
   // welcome sequence
   const emailData = {
-    From: 'shawn@fractalhumandesign.com',
+    From: 'Shawn at Fractal Human Design <shawn@fractalhumandesign.com>',
     To: user.email,
     TemplateAlias: 'welcome',
     TemplateModel: {
@@ -81,7 +81,7 @@ export async function sendWelcomeEmail({
       action_url: `https://fractalhumandesign.com/chart/${chartId}`,
       name: user.firstName,
       support_email: 'help@fractalhumandesign.com',
-      sender_name: 'Shawn at Fractal Human Design',
+      sender_name: 'Shawn Lauzon',
       company_name: 'Quantum Connecting Technologies Inc',
       company_address: '1800 W 68th St. Suite 118, Hialeah, FL  33014',
     },
