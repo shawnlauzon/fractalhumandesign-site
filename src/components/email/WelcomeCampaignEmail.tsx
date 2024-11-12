@@ -691,7 +691,7 @@ const Signature = () => (
         Shawn Lauzon
       </Heading>
       <Text className="m-[0px] text-[12px] font-medium leading-[14px]">
-        Founder - Certified BG5 Career & Business Consultant
+        Certified Human Design for Business BG5 Career & Business Consultant
       </Text>
       <Section className="mt-[4px]">
         <Link
