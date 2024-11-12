@@ -347,7 +347,7 @@ export function BirthDataForm({
                     htmlFor="time"
                     className="block text-sm font-medium leading-6 text-gray-900"
                   >
-                    Time
+                    Birth time
                   </label>
                   <div className="mt-2">
                     <input
@@ -401,7 +401,7 @@ export function BirthDataForm({
                     htmlFor="city"
                     className="block text-sm font-medium leading-6 text-gray-900"
                   >
-                    City
+                    Birth city
                   </label>
                   <div className="mt-2">
                     <Controller
