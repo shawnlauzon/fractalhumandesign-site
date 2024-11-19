@@ -96,7 +96,10 @@ export async function GET() {
       }),
     )
 
-    console.log('Sending', emails)
+    console.log(
+      'Sending to',
+      emails.map((e) => e?.To),
+    )
 
     emailResponses = await postmarkClient.sendEmailBatch(
       emails.filter((e) => e !== undefined),
