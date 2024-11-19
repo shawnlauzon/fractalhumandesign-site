@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic' // static by default, unless reading the request
+
 import { WelcomeCampaignEmailChooser } from '@/components/email/WelcomeCampaignEmail'
 import { Chart } from '@/types/Chart'
 import hdChart from '@/utils/hd-chart'
