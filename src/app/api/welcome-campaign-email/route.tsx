@@ -32,7 +32,7 @@ export async function GET() {
   try {
     // query using your app's local variables
     // Note that this will only find users who have not yet sent their 5th in the series
-    const query = fql`Chart.all().where(.user.isEmailVerified == true && .user.welcomeEmailStepSent != null && .user.welcomeEmailStepSent < 5) \
+    const query = fql`Chart.all().pageSize(200).where(.user.isEmailVerified == true && .user.welcomeEmailStepSent != null && .user.welcomeEmailStepSent < 5) \
       { id, user, chart }
     `
 
@@ -94,24 +94,24 @@ export async function GET() {
       }),
     )
 
-    console.log('Sending', emails)
+    console.log('(Not) Sending', emails)
 
-    emailResponses = await postmarkClient.sendEmailBatch(
-      emails.filter((e) => e !== undefined),
-    )
-    console.log('emailResponses', emailResponses)
+    // emailResponses = await postmarkClient.sendEmailBatch(
+    //   emails.filter((e) => e !== undefined),
+    // )
+    // console.log('emailResponses', emailResponses)
 
-    for (let i = 0; i < emailResponses.length; i++) {
-      if (emailResponses[i].ErrorCode === 0) {
-        try {
-          await client.query(
-            fql`User.byId(${page.data[i].user.id})!.update({ welcomeEmailStepSent: ${page.data[i].user.welcomeEmailStepSent! + 1}})`,
-          )
-        } catch (e) {
-          console.error('Failed setting email for ' + emailResponses[i].To, e)
-        }
-      }
-    }
+    // for (let i = 0; i < emailResponses.length; i++) {
+    //   if (emailResponses[i].ErrorCode === 0) {
+    //     try {
+    //       await client.query(
+    //         fql`User.byId(${page.data[i].user.id})!.update({ welcomeEmailStepSent: ${page.data[i].user.welcomeEmailStepSent! + 1}})`,
+    //       )
+    //     } catch (e) {
+    //       console.error('Failed setting email for ' + emailResponses[i].To, e)
+    //     }
+    //   }
+    // }
   } catch (error) {
     console.log(error)
   } finally {
