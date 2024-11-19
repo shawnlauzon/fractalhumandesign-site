@@ -96,24 +96,24 @@ export async function GET() {
       }),
     )
 
-    console.log('(Not) Sending', emails)
+    console.log('Sending', emails)
 
-    // emailResponses = await postmarkClient.sendEmailBatch(
-    //   emails.filter((e) => e !== undefined),
-    // )
-    // console.log('emailResponses', emailResponses)
+    emailResponses = await postmarkClient.sendEmailBatch(
+      emails.filter((e) => e !== undefined),
+    )
+    console.log('emailResponses', emailResponses)
 
-    // for (let i = 0; i < emailResponses.length; i++) {
-    //   if (emailResponses[i].ErrorCode === 0) {
-    //     try {
-    //       await client.query(
-    //         fql`User.byId(${page.data[i].user.id})!.update({ welcomeEmailStepSent: ${page.data[i].user.welcomeEmailStepSent! + 1}})`,
-    //       )
-    //     } catch (e) {
-    //       console.error('Failed setting email for ' + emailResponses[i].To, e)
-    //     }
-    //   }
-    // }
+    for (let i = 0; i < emailResponses.length; i++) {
+      if (emailResponses[i].ErrorCode === 0) {
+        try {
+          await client.query(
+            fql`User.byId(${page.data[i].user.id})!.update({ welcomeEmailStepSent: ${page.data[i].user.welcomeEmailStepSent! + 1}})`,
+          )
+        } catch (e) {
+          console.error('Failed setting email for ' + emailResponses[i].To, e)
+        }
+      }
+    }
   } catch (error) {
     console.log(error)
   } finally {

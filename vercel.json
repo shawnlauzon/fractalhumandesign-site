@@ -2,7 +2,7 @@
   "crons": [
     {
       "path": "/api/welcome-campaign-email",
-      "schedule": "10 22 * * *"
+      "schedule": "0 14 * * *"
     }
   ]
 }
