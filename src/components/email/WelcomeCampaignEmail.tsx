@@ -291,7 +291,7 @@ export const WelcomeCampaignEmail2: React.FC<WelcomeCampaignEmailProps> = ({
       <Text className="mt-[8px] text-[16px] leading-[24px]">
         That'll do it for the first part of the decision-making strategy.
         Tomorrow we'll cover the second part, which is how to know if you should
-        take action On something. See you then!
+        take action on something. See you then!
       </Text>
     </>
   )
