@@ -27,7 +27,7 @@ export async function GET() {
   }
 
   try {
-    const query = fql`Chart.where(.user.welcomeEmailStepSent == null).pageSize(5) { id, user }`
+    const query = fql`Chart.where(.user.emailOptIn == true && .user.welcomeEmailStepSent == null).pageSize(10) { id, user }`
     const queryResponse: QuerySuccess<Page> = await client.query(query)
 
     const charts = queryResponse.data.data
