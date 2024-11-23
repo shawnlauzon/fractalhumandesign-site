@@ -6,7 +6,7 @@ export default function CtaSimple() {
           <h2 className="text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl">
             Take control of your life.
             <br />
-            Discover how incredible you really are.
+            Discover how incredible you truly are.
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-pretty text-lg/8 text-gray-300">
             Don't let another day go by without discovering your true self.

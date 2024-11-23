@@ -1,14 +1,38 @@
-import Link from 'next/link'
-
 import { Container } from '@/components/Container'
 import { Logo } from '@/components/Logo'
+import bg5Certified from '@/images/logos/bg5-certified.png'
+import ihdsCertified from '@/images/logos/ihds-certified.png'
+import Image from 'next/image'
+import Link from 'next/link'
 
 export function Footer() {
   return (
     <footer className="bg-slate-50">
       <Container>
         <div className="flex flex-row items-center py-16">
-          <Logo className="mx-auto h-10 w-auto" />
+          <Logo className="h-30 mx-auto w-auto" />
+          <Link
+            className="mx-auto"
+            href="https://ihdschool.com/professionals?id=3648b595-e80e-4b14-8fe8-77f03176712c#"
+            target="_blank"
+          >
+            <Image
+              className="h-20 w-auto"
+              src={ihdsCertified}
+              alt="IHDS Certified"
+            />
+          </Link>
+          <Link
+            className="mx-auto"
+            href="https://bg5businessinstitute.com/professionals?id=26016e66-f397-4154-b50f-71a587a7248d"
+            target="_blank"
+          >
+            <Image
+              className="h-20 w-auto"
+              src={bg5Certified}
+              alt="BG5 Certified"
+            />
+          </Link>
           {/* <nav className="mt-10 text-sm" aria-label="quick links">
             <div className="-my-1 flex justify-center gap-x-6">
               <NavLink href="#features">Features</NavLink>
