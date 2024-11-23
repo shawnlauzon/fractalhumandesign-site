@@ -1,5 +1,3 @@
-import { DateTime } from 'luxon'
-
 export type UserData = Omit<User, 'id'>
 
 export type User = {
@@ -13,5 +11,5 @@ export type User = {
   emailToken: string
   welcomeEmailStepSent?: number
   couponUrl?: string
-  couponExpirationDate?: DateTime
+  couponExpirationDate?: string
 }
