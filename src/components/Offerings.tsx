@@ -1,3 +1,9 @@
+import analysisGraphic from '@/images/analysis-4x3.png'
+import overviewGraphic from '@/images/overview-4x3.png'
+import partnershipGraphic from '@/images/partnership-4x3.png'
+import pentaGraphic from '@/images/penta-4x3.png'
+import Image from 'next/image'
+
 const products = [
   {
     id: 1,
@@ -6,10 +12,10 @@ const products = [
       'Learn how to stop depending on others and make decisions that are right for you.',
     href: '#',
     price: '$197',
-    imageSrc:
-      'https://tailwindui.com/plus/img/ecommerce-images/product-page-05-related-product-01.jpg',
-    imageAlt:
-      'Payment application dashboard screenshot with transaction table, financial highlights, and main clients on colorful purple background.',
+    image: overviewGraphic,
+    // imageSrc:
+    //   'https://tailwindui.com/plus/img/ecommerce-images/product-page-05-related-product-01.jpg',
+    imageAlt: 'BG5 Career Design Overview graphic',
   },
   {
     id: 2,
@@ -18,10 +24,10 @@ const products = [
       'Expand on the Overview to gain in-depth knowledge of your strengths, shadows, and your purpose in life.',
     href: '#',
     price: '$997',
-    imageSrc:
-      'https://tailwindui.com/plus/img/ecommerce-images/product-page-05-related-product-01.jpg',
-    imageAlt:
-      'Payment application dashboard screenshot with transaction table, financial highlights, and main clients on colorful purple background.',
+    image: analysisGraphic,
+    // imageSrc:
+    //   'https://tailwindui.com/plus/img/ecommerce-images/product-page-05-related-product-01.jpg',
+    imageAlt: 'BG5 Career Design Analysis graphic',
   },
   {
     id: 3,
@@ -29,23 +35,25 @@ const products = [
     category:
       'Whether for a business or personal relationship, learn how to work together and avoid unnecessary conflict.',
     href: '#',
-    price: '$997',
-    imageSrc:
-      'https://tailwindui.com/plus/img/ecommerce-images/product-page-05-related-product-01.jpg',
-    imageAlt:
-      'Payment application dashboard screenshot with transaction table, financial highlights, and main clients on colorful purple background.',
+    price: '$1297',
+    image: partnershipGraphic,
+
+    // imageSrc:
+    //   'https://tailwindui.com/plus/img/ecommerce-images/product-page-05-related-product-01.jpg',
+    imageAlt: 'BG5 Partnership Analysis graphic',
   },
   {
     id: 3,
-    name: 'Small Business Analysis',
+    name: 'Alpha One Business Leadership',
     category:
-      'Discover what is causing your business to struggle and what exactly you can do to have the success you desire.',
+      'Discover your core business challenges and what exactly you can do to have the success you desire.',
     href: '#',
     price: '$1997',
-    imageSrc:
-      'https://tailwindui.com/plus/img/ecommerce-images/product-page-05-related-product-01.jpg',
-    imageAlt:
-      'Payment application dashboard screenshot with transaction table, financial highlights, and main clients on colorful purple background.',
+    image: pentaGraphic,
+
+    // imageSrc:
+    //   'https://tailwindui.com/plus/img/ecommerce-images/product-page-05-related-product-01.jpg',
+    imageAlt: 'BG5 Alpha One Business Leadership graphic',
   },
 ]
 
@@ -69,11 +77,16 @@ export default function Example() {
           {products.map((product) => (
             <div key={product.id} className="group relative">
               <div className="relative">
-                <img
+                <Image
+                  alt={product.imageAlt}
+                  src={product.image}
+                  className="aspect-[4/3] w-full rounded-lg bg-gray-100 object-cover"
+                />
+                {/* <img
                   alt={product.imageAlt}
                   src={product.imageSrc}
                   className="aspect-[4/3] w-full rounded-lg bg-gray-100 object-cover"
-                />
+                /> */}
                 <div
                   aria-hidden="true"
                   className="absolute inset-0 flex items-end p-4 opacity-0 group-hover:opacity-100"
