@@ -28,7 +28,7 @@ export default async function AnnotatedChart({ chartId }: AnnotatedChartProps) {
   return (
     <>
       <div className="bg-white">
-        <div className="relative isolate overflow-hidden bg-gradient-to-b from-indigo-100/20 pt-14">
+        <div className="relative isolate overflow-hidden bg-gradient-to-b from-sky-100/20 pt-14">
           <div className="mx-auto max-w-7xl px-6 py-8 sm:py-10 lg:px-8">
             <h1 className="max-w-2xl text-balance text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl lg:col-span-2 xl:col-auto">
               Here's your chart!

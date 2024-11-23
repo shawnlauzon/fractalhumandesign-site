@@ -252,7 +252,7 @@ export function BirthDataForm({
                         type="text"
                         {...register('firstName')}
                         autoComplete="given-name"
-                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6"
                       />
                       {errors.firstName && (
                         <div className="mt-2 text-sm text-red-600">
@@ -275,7 +275,7 @@ export function BirthDataForm({
                         type="text"
                         {...register('lastName')}
                         autoComplete="family-name"
-                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6"
                       />
                       {errors.lastName && (
                         <div className="mt-2 text-sm text-red-600">
@@ -298,7 +298,7 @@ export function BirthDataForm({
                         type="email"
                         {...register('email')}
                         autoComplete="email"
-                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6"
                       />
                       {errors.email && (
                         <div className="mt-2 text-sm text-red-600">
@@ -334,7 +334,7 @@ export function BirthDataForm({
                         type="date"
                         max={new Date().toISOString().substring(0, 10)}
                         placeholder="Birth date"
-                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6"
                         {...register('date')}
                       />
                     </div>
@@ -357,7 +357,7 @@ export function BirthDataForm({
                         id="time"
                         type="time"
                         placeholder="Birth time"
-                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6"
                         {...register('time')}
                       />
                     </div>
@@ -380,7 +380,7 @@ export function BirthDataForm({
                         {...register('countryAbbr', {
                           onChange: () => resetCities(),
                         })}
-                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-sm sm:text-sm sm:leading-6"
+                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:max-w-sm sm:text-sm sm:leading-6"
                       >
                         <option key={''} value={''}></option>
                         {[
@@ -416,7 +416,7 @@ export function BirthDataForm({
                             <Combobox value={value} onChange={onChange}>
                               <div className="relative mt-2">
                                 <ComboboxInput
-                                  className="w-full rounded-md border-0 bg-white py-1.5 pl-3 pr-10 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                  className="w-full rounded-md border-0 bg-white py-1.5 pl-3 pr-10 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6"
                                   onBlur={onBlur}
                                   onChange={(event) =>
                                     setCityQuery(event.target.value)
@@ -452,12 +452,12 @@ export function BirthDataForm({
                                     <ComboboxOption
                                       key={index}
                                       value={city}
-                                      className="group relative cursor-default select-none py-2 pl-3 pr-9 text-gray-900 data-[focus]:bg-indigo-600 data-[focus]:text-white"
+                                      className="group relative cursor-default select-none py-2 pl-3 pr-9 text-gray-900 data-[focus]:bg-sky-600 data-[focus]:text-white"
                                     >
                                       <span className="block truncate group-data-[selected]:font-semibold">
                                         {city}
                                       </span>
-                                      <span className="absolute inset-y-0 right-0 hidden items-center pr-4 text-indigo-600 group-data-[selected]:flex group-data-[focus]:text-white">
+                                      <span className="absolute inset-y-0 right-0 hidden items-center pr-4 text-sky-600 group-data-[selected]:flex group-data-[focus]:text-white">
                                         <CheckIcon
                                           className="h-5 w-5"
                                           aria-hidden="true"
@@ -494,7 +494,7 @@ export function BirthDataForm({
                           id="emailOptIn"
                           type="checkbox"
                           {...register('emailOptIn')}
-                          className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                          className="h-4 w-4 rounded border-gray-300 text-sky-600 focus:ring-sky-600"
                         />
                       </div>
                       <div className="text-sm leading-6">
