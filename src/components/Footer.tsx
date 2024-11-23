@@ -1,5 +1,3 @@
-import noAi from '@/images/logos/no-ai-icon-08.svg'
-import Image from 'next/image'
 import Link from 'next/link'
 
 import { Container } from '@/components/Container'
@@ -18,12 +16,12 @@ export function Footer() {
               <NavLink href="#pricing">Pricing</NavLink>
             </div>
           </nav> */}
-          <Link
+          {/* <Link
             href={`https://no-ai-icon.com/statement/?url=${process.env.SERVER_URL}`}
             target="_blank"
           >
             <Image src={noAi} alt="No-AI logo" height={60} />
-          </Link>
+          </Link> */}
         </div>
         <div className="flex flex-col items-center border-t border-slate-400/10 py-10 sm:flex-row-reverse sm:justify-between">
           <div className="flex gap-x-6">
@@ -48,7 +46,7 @@ export function Footer() {
           </div>
           <p className="mt-6 text-sm text-slate-500 sm:mt-0">
             Copyright &copy; {new Date().getFullYear()} Quantum Connecting
-            Technologies. All rights reserved.
+            Technologies, Inc. All rights reserved.
           </p>
         </div>
       </Container>

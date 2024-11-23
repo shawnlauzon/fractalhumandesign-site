@@ -1,3 +1,5 @@
+import { DateTime } from 'luxon'
+
 export type UserData = Omit<User, 'id'>
 
 export type User = {
@@ -6,8 +8,10 @@ export type User = {
   lastName: string
   phoneNumber?: string
   email: string
-  emailOptIn: boolean // Set this to false if user unsubscribes
+  emailOptIn: boolean // TODO Auto set this to false if user unsubscribes
   isEmailVerified: boolean
   emailToken: string
   welcomeEmailStepSent?: number
+  couponUrl?: string
+  couponExpirationDate?: DateTime
 }

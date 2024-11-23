@@ -6,7 +6,7 @@ export function Hero() {
     <Container className="pb-16 pt-20 text-center lg:pt-32">
       <h1 className="mx-auto max-w-4xl font-display text-5xl font-medium tracking-tight text-slate-900 sm:text-7xl">
         <b>
-          Your personal{' '}
+          Discover your personal{' '}
           <span className="relative whitespace-nowrap text-cyan-600">
             <svg
               aria-hidden="true"
@@ -18,11 +18,11 @@ export function Hero() {
             </svg>
             <span className="relative">user's manual</span>
           </span>{' '}
-          for flow.
+          for life
         </b>
       </h1>
       <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">
-        Discover the secret to less frustration and more calm.
+        Break free from a life of frustration and into one of flow.
       </p>
       <div className="mt-10 flex justify-center gap-x-6">
         <Button href="/guide">Get your free guide</Button>
@@ -36,8 +36,8 @@ export function Hero() {
           <span className="ml-3">See the benefits</span>
         </Button>
       </div>
-      {/* <div className="mt-36 lg:mt-44">
-        <p className="font-display text-base text-slate-900">
+      <div className="mt-36 lg:mt-44">
+        {/* <p className="font-display text-base text-slate-900">
           Trusted by these six companies so far
         </p>
         <ul
@@ -69,8 +69,8 @@ export function Hero() {
               </ul>
             </li>
           ))}
-        </ul>
-      </div> */}
+        </ul> */}
+      </div>
     </Container>
   )
 }
