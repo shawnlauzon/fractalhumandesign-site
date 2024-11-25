@@ -6,7 +6,7 @@ export type Offering = {
   name: string
   description: string
   details: string
-  includes: string[]
+  successCodes?: string[]
   href: string
   paymentLink: EnvironmentData
   image: StaticImageData

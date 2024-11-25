@@ -98,24 +98,31 @@ export default async function OfferingDetails({
                   dangerouslySetInnerHTML={{ __html: offering.details }}
                   className="mt-4 space-y-4 text-sm/6 text-gray-500"
                 />
+                <h3 className="mt-10 text-sm font-medium text-gray-900">
+                  After payment
+                </h3>
+                <div className="mt-4 space-y-4 text-sm/6 text-gray-500">
+                  After your purchase, you will be sent a scheduling email.
+                  Please allow up to 24 hours to receive this.
+                </div>
               </div>
-              {offering.includes && (
+              {offering.successCodes && (
                 <div className="mt-8 border-t border-gray-200 pt-8">
                   <h2 className="text-sm font-medium text-gray-900">
-                    We discuss your:
+                    We cover the following Success Codes
                   </h2>
 
                   <div className="mt-4">
-                    <ul
+                    <ol
                       role="list"
-                      className="list-disc space-y-1 pl-5 text-sm/6 text-gray-500 marker:text-gray-300"
+                      className="list-decimal space-y-1 pl-5 text-sm/6 text-gray-500 marker:text-gray-300"
                     >
-                      {offering.includes.map((item) => (
+                      {offering.successCodes.map((item) => (
                         <li key={item} className="pl-2">
                           {item}
                         </li>
                       ))}
-                    </ul>
+                    </ol>
                   </div>
                 </div>
               )}

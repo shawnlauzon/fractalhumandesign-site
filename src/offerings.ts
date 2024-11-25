@@ -13,8 +13,10 @@ export default <Offering[]>[
     description:
       'Learn how to stop depending on others and make decisions that are right for you.',
     details: `
-    <p>Discover your unique career design and how to make decisions that are right for you.</p>`,
-    includes: [
+    <p>Discover your unique career design and how to make decisions that are right for you.</p>
+    <p>We will meet for 60-90 minutes to go over your overview and answer any questions you may have.</p>
+    <p>You will receive a recording of the session and a PDF of your overview.</p>`,
+    successCodes: [
       'Career type',
       'Personal interaction style',
       'Decision-making strategy',
@@ -42,8 +44,27 @@ export default <Offering[]>[
     description:
       'Expand on the Overview to gain in-depth knowledge of your strengths, shadows, and your purpose in life.',
     details: `
-    <p>Discover your unique career design and how to make decisions that are right for you.</p>`,
-
+    <p>Discover your unique career design and how to make decisions that are right for you.</p>
+    <p>We will meet a total of 3 times for 60-90 minutes each to go over your analysis and answer any questions you may have.</p>
+    <p>You will receive a recording of each session and a PDF of your analysis.</p>`,
+    successCodes: [
+      'Career type',
+      'Personal interaction style',
+      'Decision-making strategy',
+      'Key indicators',
+      'Assimilation style',
+      'Environmental style',
+      'Business Skills',
+      'Team & Business Attributes',
+      'Large Business Roles',
+      'Defined Functions',
+      'Distractions / Shadows',
+      'Public Role',
+      'Life Work',
+      'General Thematics',
+      'Strengths & Contributions',
+      'Traits & Qualities',
+    ],
     href: '/offerings/analysis',
     image: analysisGraphic,
     paymentLink: {
