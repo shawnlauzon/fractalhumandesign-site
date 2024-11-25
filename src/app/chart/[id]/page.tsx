@@ -2,12 +2,15 @@ import AnnotatedChart from '@/components/AnnotatedChart'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 
-export default function ChartPage({ params }: { params: { id: string } }) {
+type tParams = Promise<{ id: string }>
+
+export default async function ChartPage(props: { params: tParams }) {
+  const { id } = await props.params
   return (
     <>
       <Header />
       <main>
-        <AnnotatedChart chartId={params.id} />
+        <AnnotatedChart chartId={id} />
       </main>
       <Footer />
     </>
