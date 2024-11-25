@@ -20,15 +20,12 @@ import offerings from '@/offerings'
 //   },
 // }
 
-interface OfferingDetailPageParams {
-  params: {
-    id: string
-  }
-}
-
 export default async function OfferingDetailPage({
-  params: { id },
-}: OfferingDetailPageParams) {
+  params,
+}: {
+  params: Promise<{ id: string }>
+}) {
+  const id = (await params).id
   const offering = offerings.find((o) => o.id === id)!
   return (
     <>
