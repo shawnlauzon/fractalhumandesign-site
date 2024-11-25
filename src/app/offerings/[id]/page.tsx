@@ -2,6 +2,7 @@ import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 import OfferingDetails from '@/components/OfferingDetails'
 import offerings from '@/offerings'
+import { useParams } from 'next/navigation'
 
 // const offering = offerings.find((o) => o.id === 'partnership')!
 
@@ -20,13 +21,9 @@ import offerings from '@/offerings'
 //   },
 // }
 
-export default async function OfferingDetailPage({
-  params,
-}: {
-  params: Promise<{ id: string }>
-}) {
-  const id = (await params).id
-  const offering = offerings.find((o) => o.id === id)!
+export default async function OfferingDetailPage() {
+  const params = useParams<{ id: string }>()
+  const offering = offerings.find((o) => o.id === params.id)!
   return (
     <>
       <Header />
