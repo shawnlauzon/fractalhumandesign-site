@@ -12,10 +12,10 @@ To get started with this template, first install the npm dependencies:
 npm install
 ```
 
-Next, run the development server:
+Next, download environment variables and run the development server using Vercel so environment variables are set
 
 ```bash
-npm run dev
+vercel env pull && vercel dev
 ```
 
 Finally, open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
