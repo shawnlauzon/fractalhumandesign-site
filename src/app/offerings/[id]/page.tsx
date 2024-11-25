@@ -20,12 +20,10 @@ import offerings from '@/offerings'
 //   },
 // }
 
-export default async function OfferingDetailPage({
-  params,
-}: {
-  params: Promise<{ id: string }>
-}) {
-  const id = (await params).id
+type tParams = Promise<{ id: string }>
+
+export default async function OfferingDetailPage(props: { params: tParams }) {
+  const { id } = await props.params
   const offering = offerings.find((o) => o.id === id)!
   return (
     <>
