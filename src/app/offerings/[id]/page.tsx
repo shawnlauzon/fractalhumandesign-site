@@ -2,7 +2,6 @@ import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 import OfferingDetails from '@/components/OfferingDetails'
 import offerings from '@/offerings'
-import { useParams } from 'next/navigation'
 
 // const offering = offerings.find((o) => o.id === 'partnership')!
 
@@ -21,9 +20,16 @@ import { useParams } from 'next/navigation'
 //   },
 // }
 
-export default async function OfferingDetailPage() {
-  const params = useParams<{ id: string }>()
-  const offering = offerings.find((o) => o.id === params.id)!
+interface OfferingDetailPageParams {
+  params: {
+    id: string
+  }
+}
+
+export default async function OfferingDetailPage({
+  params: { id },
+}: OfferingDetailPageParams) {
+  const offering = offerings.find((o) => o.id === id)!
   return (
     <>
       <Header />
