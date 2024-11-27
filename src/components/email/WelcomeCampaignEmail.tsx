@@ -26,8 +26,10 @@ import {
   Text,
 } from '@react-email/components'
 import React from 'react'
+import { Footer } from '../Footer'
 import { CareerTypeTable } from './CareerTypeTable'
 import { RaQuote } from './RaQuote'
+import { Signature } from './Signature'
 import {
   authorityTips,
   authorityWriteups,
@@ -671,131 +673,3 @@ export const WelcomeCampaignEmail5: React.FC<WelcomeCampaignEmailProps> = ({
     </>
   )
 }
-
-const Signature = () => (
-  <Row>
-    <Section className="mt-[5px] inline-block max-h-[48px] max-w-[48px] text-left">
-      <Img
-        alt="Shawn Lauzon"
-        className="block h-[48px] w-[48px] rounded-full object-cover object-center"
-        height={48}
-        src="https://fractalhumandesign.s3.us-east-1.amazonaws.com/site/images/headshot-shawn.jpg"
-        width={48}
-      />
-    </Section>
-    <Section className="ml-[18px] inline-block max-w-[360px] text-left align-top">
-      <Heading
-        as="h3"
-        className="m-[0px] text-[14px] font-medium leading-[20px] text-gray-800"
-      >
-        Shawn Lauzon
-      </Heading>
-      <Text className="m-[0px] text-[12px] font-medium leading-[14px]">
-        Certified Human Design for Business BG5 Career & Business Consultant
-      </Text>
-      <Section className="mt-[4px]">
-        <Link
-          className="inline-flex h-[12px] w-[12px]"
-          href="https://x.com/shawnlauzon"
-        >
-          <Img
-            alt="X"
-            src="https://react.email/static/x-icon.png"
-            style={{ height: '12px', width: '12px' }}
-          />
-        </Link>
-        <Link
-          className="ml-[8px] inline-flex h-[12px] w-[12px]"
-          href="https://linkedin.com/in/shawnlauzon"
-        >
-          <Img
-            alt="LinkedIn"
-            src="https://react.email/static/in-icon.png"
-            style={{ height: '12px', width: '12px' }}
-          />
-        </Link>
-        <Link
-          className="ml-[8px] inline-flex h-[12px] w-[12px]"
-          href="https://instagram.com/shawnlauzon"
-        >
-          <Img
-            alt="Instagram"
-            style={{ height: '12px', width: '12px' }}
-            src="https://react.email/static/instagram-logo.png"
-          />
-        </Link>
-        <Link
-          className="ml-[8px] inline-flex h-[12px] w-[12px]"
-          href="https://facebook.com/shawnlauzon"
-        >
-          <Img
-            alt="Facebook"
-            style={{ height: '12px', width: '12px' }}
-            src="https://react.email/static/facebook-logo.png"
-          />
-        </Link>
-      </Section>
-    </Section>
-  </Row>
-)
-
-const Footer = () => (
-  <Row>
-    <Column colSpan={4}>
-      <Img
-        alt="Fractal Human Design logo"
-        height="42"
-        src="https://fractalhumandesign.s3.us-east-1.amazonaws.com/site/images/logo-icon-bg-light-150x150.png"
-      />
-      <Text className="my-[8px] text-[16px] font-semibold leading-[24px] text-gray-900">
-        Fractal Human Design
-      </Text>
-      <Text className="mb-[0px] mt-[4px] text-[16px] leading-[24px]">
-        Quantum Connecting Technologies, Inc.
-      </Text>
-    </Column>
-    <Column align="left" className="table-cell align-bottom">
-      <Row className="table-cell h-[44px] w-[56px] align-bottom">
-        {/* <Column className="pr-[8px]">
-          <Link href="#">
-            <Img
-              alt="Facebook"
-              height="36"
-              src="https://react.email/static/facebook-logo.png"
-              width="36"
-            />
-          </Link>
-        </Column> */}
-        <Column className="pr-[8px]">
-          <Link href="https://x.com/shawnlauzon" target="_blank">
-            <Img
-              alt="X"
-              height="36"
-              src="https://react.email/static/x-logo.png"
-              width="36"
-            />
-          </Link>
-        </Column>
-        <Column>
-          <Link href="https://instagram.com/shawnlauzon" target="_blank">
-            <Img
-              alt="Instagram"
-              height="36"
-              src="https://react.email/static/instagram-logo.png"
-              width="36"
-            />
-          </Link>
-        </Column>
-      </Row>
-      <Row>
-        <Text className="my-[8px] text-[16px] font-semibold leading-[24px]">
-          <Link href="{{{ pm:unsubscribe }}}">Unsubscribe</Link> | 1800 W 68th
-          St. Suite 118, Hialeah, FL 33014
-        </Text>
-        <Text className="mb-[0px] mt-[4px] text-[16px] font-semibold leading-[24px]">
-          help@fractalhumandesign.com | (512) 956-9624
-        </Text>
-      </Row>
-    </Column>
-  </Row>
-)

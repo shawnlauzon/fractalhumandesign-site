@@ -224,7 +224,9 @@ export function BirthDataForm({
           </div>
           <p className="mt-12">
             Fill out the info on this page and we'll send you the secret to less
-            frustration and more calm.
+            frustration and more calm. You'll receive an email every day for the
+            next 5 days, and at the end of it a special one-time bonus to
+            continue your journey. 🎉
           </p>
 
           <form onSubmit={handleSubmit(() => setConfirmationOpen(true))}>
@@ -505,8 +507,9 @@ export function BirthDataForm({
                           Emails
                         </label>
                         <p className="text-gray-500">
-                          I agree to receive emails, max a couple times a week.
-                          Cancel anytime.
+                          I agree to receive emails. After the welcome email
+                          sequence, we send out an email no more than a couple
+                          times a week. Cancel anytime.
                         </p>
                         {errors.emailOptIn && (
                           <div className="mt-2 text-sm text-red-600">

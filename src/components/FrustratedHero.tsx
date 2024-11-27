@@ -28,7 +28,7 @@ export default function FrustratedHero() {
                   it doesn't seem to fit for you.
                 </p>
                 <p className="mt-8 text-pretty text-lg font-medium text-gray-500 sm:text-xl/8">
-                  How to get unstuck?
+                  How can you get unstuck?
                 </p>
                 <div className="mt-10 flex items-center gap-x-6">
                   {/* <a

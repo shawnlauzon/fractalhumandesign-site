@@ -1,6 +1,6 @@
 export default function HeaderOfferings() {
   return (
-    <div className="bg-gray-900 px-6 py-24 sm:py-32 lg:px-8">
+    <div id="offerings" className="bg-gray-900 px-6 py-24 sm:py-32 lg:px-8">
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="text-5xl font-semibold tracking-tight text-white sm:text-7xl">
           Our Offerings

@@ -1,5 +1,7 @@
 import analysisGraphic from '@/images/analysis-4x3.png'
 import overviewGraphic from '@/images/overview-4x3.png'
+import partnershipGraphic from '@/images/partnership-4x3.png'
+import pentaGraphic from '@/images/penta-4x3.png'
 import { Offering } from './types/Offering'
 
 export default <Offering[]>[
@@ -44,9 +46,10 @@ export default <Offering[]>[
     description:
       'Expand on the Overview to gain in-depth knowledge of your strengths, shadows, and your purpose in life.',
     details: `
+    <p><i>Note: This includes everything in the Overview, and so you do not need to purchase both.</i></p>
     <p>Discover your unique career design and how to make decisions that are right for you.</p>
     <p>We will meet a total of 3 times for 60-90 minutes each to go over your analysis and answer any questions you may have.</p>
-    <p>You will receive a recording of each session and a PDF of your analysis.</p>`,
+      <p>You will receive a recording of all sessions and an accompanying PDF.</p>`,
     successCodes: [
       'Career type',
       'Personal interaction style',
@@ -76,44 +79,56 @@ export default <Offering[]>[
     //   'https://tailwindui.com/plus/img/ecommerce-images/product-page-05-related-product-01.jpg',
     imageAlt: 'BG5 Career Design Analysis graphic',
   },
-  // {
-  //   id: 'partnership',
-  //   productId: {
-  //     test: 'prod_RHLSodfWhaOO9W',
-  //     production: 'prod_RHK7W7CB1dCich',
-  //   },
-  //   name: 'Partnership Analysis',
-  //   description:
-  //     'Whether for a business or personal relationship, learn how to work together and avoid unnecessary conflict.',
-  //   href: '/offerings/partnership',
-  //   image: partnershipGraphic,
-  //   paymentLink: {
-  //     test: 'https://buy.stripe.com/test_4gw4j02hM39W2Xe5km',
-  //     production: 'https://buy.stripe.com/eVaaIogoz0gg5moeUW',
-  //   },
+  {
+    id: 'partnership',
+    productId: {
+      test: 'prod_RHLSodfWhaOO9W',
+      production: 'prod_RHK7W7CB1dCich',
+    },
+    name: 'Partnership Analysis',
+    description:
+      'Whether for a business or personal relationship, learn how to work together and avoid unnecessary conflict.',
+    details: `
+      <p><i>Note: A Career Design Analysis by at least one of the participants is a prerequisite.</i></p>
+      <p>In this session we will meet twice; first to go over any individual observations which have not been covered in previous sessions, and then one to look at the strengths and challenges in the relationship, as well as what can be done to improve the relationship.</p>
+      <p>You will receive a recording of all sessions and an accompanying PDF.</p>`,
 
-  //   // imageSrc:
-  //   //   'https://tailwindui.com/plus/img/ecommerce-images/product-page-05-related-product-01.jpg',
-  //   imageAlt: 'BG5 Partnership Analysis graphic',
-  // },
-  // {
-  //   id: 'penta',
-  //   productId: {
-  //     test: 'prod_RHLSpCpCV30IaW',
-  //     production: 'prod_RHK7xNjv6qcUuG',
-  //   },
-  //   name: 'Alpha One Business Leadership',
-  //   description:
-  //     'Discover your core business challenges and what exactly you can do to have the success you desire.',
-  //   href: '/offerings/penta',
-  //   image: pentaGraphic,
-  //   paymentLink: {
-  //     test: 'https://buy.stripe.com/test_5kA7vc2hM11O0P6147',
-  //     production: 'https://buy.stripe.com/00gaIo2xJ6EEeWY6or',
-  //   },
+    href: '/offerings/partnership',
+    image: partnershipGraphic,
+    paymentLink: {
+      test: 'https://buy.stripe.com/test_4gw4j02hM39W2Xe5km',
+      production: 'https://buy.stripe.com/eVaaIogoz0gg5moeUW',
+    },
 
-  //   // imageSrc:
-  //   //   'https://tailwindui.com/plus/img/ecommerce-images/product-page-05-related-product-01.jpg',
-  //   imageAlt: 'BG5 Alpha One Business Leadership graphic',
-  // },
+    // imageSrc:
+    //   'https://tailwindui.com/plus/img/ecommerce-images/product-page-05-related-product-01.jpg',
+    imageAlt: 'BG5 Partnership Analysis graphic',
+  },
+  {
+    id: 'penta',
+    productId: {
+      test: 'prod_RIDWO5ZiLxwJ7l',
+      production: 'prod_RHK7xNjv6qcUuG',
+    },
+    name: 'Alpha One Business Leadership & Small Team Analysis',
+    description:
+      'Discover your core business challenges and what exactly you can do to have the success you desire.',
+    details: `
+      <p><i>Note: A Career Design Analysis is a prerequisite before diving into your team.</i></p>
+      <p>In this extensive analysis of you and your team, we will go deeper into your own business strengths, focusing on your specific leadership skills and how they can be applied to your team.</p>
+      <p>Then we will look at each of the members of your team and how you can relate better with each of them.</p>
+      <p>Finally we will look at the team as a whole and how you can work together to achieve your goals.</p>
+      <p>You will receive a recording of all sessions and an accompanying PDF.</p>`,
+
+    href: '/offerings/penta',
+    image: pentaGraphic,
+    paymentLink: {
+      test: 'https://buy.stripe.com/test_aEU9Dk8GaeSEgO4aEI',
+      production: 'https://buy.stripe.com/8wMcQwb4faUU9CE004',
+    },
+
+    // imageSrc:
+    //   'https://tailwindui.com/plus/img/ecommerce-images/product-page-05-related-product-01.jpg',
+    imageAlt: 'BG5 Alpha One Business Leadership graphic',
+  },
 ]
