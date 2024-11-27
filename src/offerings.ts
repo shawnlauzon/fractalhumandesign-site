@@ -40,7 +40,7 @@ export default <Offering[]>[
     id: 'analysis',
     productId: {
       test: 'prod_RHLSTYF4ZmOsnJ',
-      production: 'prod_RHJtTKMXiY2E43',
+      production: 'prod_RHOucbOgHX4S8g',
     },
     name: 'Career Design Analysis',
     description:

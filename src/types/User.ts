@@ -10,6 +10,11 @@ export type User = {
   isEmailVerified: boolean
   emailToken: string
   welcomeEmailStepSent?: number
-  couponUrl?: string
-  couponExpirationDate?: string
+  coupons?: Coupon[]
+}
+
+export type Coupon = {
+  id: string
+  percentOff: number
+  redeemBy?: number
 }
