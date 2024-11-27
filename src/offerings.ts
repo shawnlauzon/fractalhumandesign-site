@@ -83,7 +83,7 @@ export default <Offering[]>[
     id: 'partnership',
     productId: {
       test: 'prod_RHLSodfWhaOO9W',
-      production: 'prod_RHK7W7CB1dCich',
+      production: 'prod_RHOwChZeXhmmjY',
     },
     name: 'Partnership Analysis',
     description:
